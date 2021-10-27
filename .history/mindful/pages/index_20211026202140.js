@@ -10,7 +10,6 @@ export default function Home() {
     <div className={styles.container}>
       <HeaderText/>
       <CompanionAvatar/>
-      <AboutCompanion/>
       
 
     </div>
