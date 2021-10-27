@@ -1,4 +1,0 @@
-
-const HeaderText = ({}) => {
-    return <>hey</>
-}
