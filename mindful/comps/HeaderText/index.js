@@ -4,6 +4,7 @@ const Container = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
+justify-content:center;
 `
 const Head = styled.h1`
 font-size:40px;
@@ -11,7 +12,7 @@ color:white;
 `
 
 const Text = styled.p`
-font-size:30;
+font-size:20px;
 color:white;
 `
 
