@@ -7,11 +7,13 @@ import AboutCompanion from '../comps/AboutCompanion'
 import JokesCard from '../comps/JokeCard'
 import TalkButton from '../comps/TalkButton'
 import NavBar from '../comps/Navigation'
+import Card from '../comps/Card'
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <NavBar/>
+      <Card/>
       <JokesCard/>
       <HeaderText/>
       <CompanionAvatar/>
