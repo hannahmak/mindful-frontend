@@ -6,10 +6,12 @@ import CompanionAvatar from '../comps/CompanionAvatar'
 import AboutCompanion from '../comps/AboutCompanion'
 import JokesCard from '../comps/JokeCard'
 import TalkButton from '../comps/TalkButton'
+import NavBar from '../comps/Navigation'
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <NavBar/>
       <JokesCard/>
       <HeaderText/>
       <CompanionAvatar/>
