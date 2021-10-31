@@ -6,33 +6,35 @@ import CompanionAvatar from '../comps/CompanionAvatar'
 import AboutCompanion from '../comps/AboutCompanion'
 import TalkButton from '../comps/TalkButton'
 
+// background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
+// .Buttons {
+//   display:flex;
+//   flex-direction: row;
+//   flex-wrap:wrap;
+
 const Container = styled.div `
-.container {
     display:flex;
-    padding-top:100px;
     flex-direction: column;
     justify-content:center;
     align-items:center;
-    background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
     color: white;
-}
+`;
 
-.Buttons {
-    display:flex;
-    flex-direction: row;
-}
+const Buttons = styled.div `
+   display:flex;
+   flex-direction: row;
+  flex-wrap:wrap;
+
 `;
 
 export default function Talk() {
   return <Container>
-    <div className="container">
-      <HeaderText head="Who would you like to chat with?" text="Select a Bubble"/>
+    <HeaderText head="Who would you like to chat with?" text="Select a Bubble"/>
 
-    <div className="Buttons">
+    <Buttons>
       <TalkButton text="BC Crisis Centre" source="https://crisiscentre.bc.ca/wp-content/themes/crisiscentre/images/logo.png"/>
       <TalkButton/>
-    </div>
+    </Buttons>
 
-    </div>
     </Container>
 }

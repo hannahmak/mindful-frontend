@@ -2,10 +2,13 @@
 
 html,
 body {
-  padding: 0;
+  padding: 20px;
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  background-color: black;
+}
+
+body {
+  background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
 }
 
 p, h1, h2, span {

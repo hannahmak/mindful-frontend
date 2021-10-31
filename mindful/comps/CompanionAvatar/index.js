@@ -9,8 +9,8 @@ align-items:center;
 
 
 const Circle = styled.img`
-width:120px;
-height:120px;
+width:100px;
+height:100px;
 box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
 border-radius:60px;
 `

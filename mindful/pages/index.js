@@ -8,10 +8,14 @@ import JokesCard from '../comps/JokeCard'
 import TalkButton from '../comps/TalkButton'
 import NavBar from '../comps/Navigation'
 import Card from '../comps/Card'
+import Buttons from '../comps/Button'
+import Breathe from '../comps/Breathe'
+
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Breathe/>
       <NavBar/>
       <Card/>
       <JokesCard/>
@@ -19,6 +23,8 @@ export default function Home() {
       <CompanionAvatar/>
       <AboutCompanion/>
       <TalkButton/>
+      <Buttons/>
+      <Buttons variant="outlined"/>
       
 
 
