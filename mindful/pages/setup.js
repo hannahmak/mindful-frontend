@@ -1,4 +1,3 @@
-import { Avatar } from '@mui/material';
 import styled from 'styled-components';
 import Buttons from '../comps/Button';
 import HeaderText from "../comps/HeaderText"

@@ -1,0 +1,34 @@
+import styled from 'styled-components';
+
+const Container = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+`
+
+
+
+const Circle = styled.img`
+width:200px;
+height:200px;
+box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
+border-radius:160px;
+`
+
+const Name = styled.h1`
+color:white;
+`
+
+
+const Avatar = ({
+    name="John Smith",
+    source="https://i.natgeofe.com/n/496b9ca3-0839-43b9-9a4f-5501502d258a/atlantic-puffin_thumb.jpg"
+}) => {
+    return <Container>
+        <Circle src={source}/>
+        <Name>{name}</Name>
+        
+    </Container>
+}
+
+export default Avatar;
