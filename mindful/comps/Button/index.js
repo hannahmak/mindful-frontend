@@ -12,13 +12,11 @@ const Container = styled.div``
 
 const Buttons = ({
     variant="contained",
-    ButtonText="Text Here"
+    ButtonText="Text Here",
 
 }) => {
     return <Container>
         <Button variant={variant}>{ButtonText}</Button>
-        
-
     </Container>
 }
 

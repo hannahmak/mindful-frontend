@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import Button from '../Button'
 
 const Container = styled.div`
 display:flex;
@@ -32,24 +33,7 @@ text-align: center;
 color: white;
 `
 
-const Button = styled.button`
-/* Rectangle 102 */
-width: 275px;
-height: 68px;
-background: #2F2E4C;
-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(40px);
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 100px;
-font-family: Quicksand;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 30px;
-/* identical to box height */
-text-align: center;
-color: #FFFFFF;
-`
+
 
 const Exit = styled.button`
 `
@@ -83,7 +67,7 @@ const JokesCard = ({
             <Joke>{joke}</Joke>
         </Holder2>
         <Holder3>
-            <Button >Next Joke</Button>
+            <Button ButtonText="Next"/>
         </Holder3>
     </Container>
 }
