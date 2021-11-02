@@ -10,11 +10,13 @@ import NavBar from '../comps/Navigation'
 import Card from '../comps/Card'
 import Buttons from '../comps/Button'
 import Breathe from '../comps/Breathe'
+import AddFriend from '../comps/AddFriend'
 
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <AddFriend/>
       <Breathe/>
       <NavBar/>
       <Card/>
