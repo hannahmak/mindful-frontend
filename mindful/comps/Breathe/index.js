@@ -5,7 +5,7 @@ import { height } from '@mui/system';
 
 
 const Container = styled.div`
-max-width:30%;
+max-width:70%;
 `
 
 // const Buttons = styled.button``

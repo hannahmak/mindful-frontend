@@ -9,9 +9,10 @@ import TalkButton from '../comps/TalkButton'
 //   flex-wrap:wrap;
 
 const Container = styled.div `
+    height:100vh;
+    width:100%;
     display:flex;
-    flex-direction: column;
-    justify-content:center;
+    flex-direction:column;
     align-items:center;
     color: white;
 `;
