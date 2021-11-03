@@ -3,6 +3,7 @@ import HeaderText from '../comps/HeaderText'
 import Card from '../comps/Card'
 import LockedBadges from '../comps/LockedBadges'
 import EarnedBadges from '../comps/EarnedBadges'
+import Menu from '../comps/Menu'
 
 const Container = styled.div `
     height:100vh;
@@ -59,6 +60,7 @@ const Header = styled.div`
 
 export default function Talk() {
   return <Container>
+      <Menu/>
     <Earned>
         <Header>Earned Badges</Header>
         <Badges>

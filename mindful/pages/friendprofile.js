@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import Avatar from '../comps/Avatar'
+import Avatar from '../comps/Avatar';
+import Menu from '../comps/Menu';
 
 const Container = styled.div `
 height:100vh;
@@ -21,6 +22,7 @@ background-color:red;
 export default function FriendProfile() {
   return (
     <Container>
+      <Menu/>
         <Avatar/>
             <p>[Friend Journal and Friend data here]</p>
         <JournalHolder>

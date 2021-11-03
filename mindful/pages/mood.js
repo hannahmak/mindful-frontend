@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Breathe from '../comps/Breathe'
 import Card from '../comps/Card'
+import Menu from '../comps/Menu';
 
 // background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
 // .Buttons {
@@ -12,25 +13,15 @@ const Container = styled.div `
 height:100vh;
 width:100%;
 display:flex;
-flex-direction:row;
+flex-direction:column;
 align-items:center;
 `;
 
 const Holder = styled.div `
-display:flex;
-flex: 1;
-flex-direction:row;
-align-items:center;
-justify-content: center;
 `;
 
 const Holder2 = styled.div `
-display:flex;
-flex: 1;
-flex-direction:column;
-align-items:space-between;
-justify-content: space-between;
-padding-right: 50px;
+
 `;
 
 const Cards = styled.div `
@@ -75,28 +66,39 @@ align-items:center;
 width: 100%;
 `
 
+const ContainerHolder = styled.div`
+display:flex;
+justify-content: center;
+align-items:center;
+width: 100%;
+flex-wrap:wrap;
+gap:30px;
+`
+
 
 export default function Mood() {
   return <Container>
+    <Menu/>
+    <ContainerHolder>
+      <Holder>
+          <BreatheHolder>
+              <Tool>
+                  <Header>Breathe Tool</Header>
+                  <Breathing>
+                      <Breathe/>
+                  </Breathing>
+              </Tool>
+          </BreatheHolder>
+      </Holder>
 
-    <Holder>
-        <BreatheHolder>
-            <Tool>
-                <Header>Breathe Tool</Header>
-                <Breathing>
-                    <Breathe/>
-                </Breathing>
-            </Tool>
-        </BreatheHolder>
-    </Holder>
-
-    <Holder2>
-      <Card text="Badges" width="700px" height="210px"/>
-      <Cards>
-        <Card text="Tell a Joke" width="330px" height="270px"/>
-        <Card text="Message a friend" width="330px" height="270px"/>
-      </Cards>
-    </Holder2>
+      <Holder2>
+        <Card text="Badges" width="700px" height="210px"/>
+        <Cards>
+          <Card text="Tell a Joke" width="330px" height="270px"/>
+          <Card text="Message a friend" width="330px" height="270px"/>
+        </Cards>
+      </Holder2>
+    </ContainerHolder>
 
     </Container>
 }
