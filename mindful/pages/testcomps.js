@@ -11,6 +11,8 @@ import Card from '../comps/Card'
 import Buttons from '../comps/Button'
 import Breathe from '../comps/Breathe'
 import AddFriend from '../comps/AddFriend'
+import LockedBadges from '../comps/LockedBadges'
+import EarnedBadges from '../comps/EarnedBadges'
 
 
 export default function TestComps() {
@@ -26,6 +28,8 @@ export default function TestComps() {
       <AboutCompanion/>
       <TalkButton/>
       <Buttons/>
+      <LockedBadges/>
+      <EarnedBadges/>
       <Buttons variant="outlined"/>
       
 
