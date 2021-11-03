@@ -9,10 +9,14 @@ flex-direction:row;
 align-items:center;
 justify-content:center;
 gap:100px;
+flex-wrap:wrap;
 `
 
 const Holder = styled.div `
+flex-wrap:wrap;
 display:flex;
+height:70%;
+padding-bottom:100px;
 `
 
 const WelcomeHeader = styled.div `
@@ -25,18 +29,18 @@ gap:30px;
 `
 
 const Image = styled.img `
-height:95%;
 width:100%;
 `
 const Cont1 = styled.div `
+height:100%;
 display:flex;
 flex-direction:column;
-align-item:center;
+justify-content:center;
 `
 
 const Cont2 = styled.div `
+height:100%;
 display:flex;
-align-item:center;
 justify-content:center;
 `
 

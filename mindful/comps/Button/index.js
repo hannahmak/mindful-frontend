@@ -16,7 +16,7 @@ const Buttons = ({
 
 }) => {
     return <Container>
-        <Button variant={variant}>{ButtonText}</Button>
+        <Button style={{width:250, height:50, borderRadius:60,}} variant={variant}>{ButtonText}</Button>
     </Container>
 }
 
