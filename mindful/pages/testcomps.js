@@ -11,11 +11,13 @@ import Card from '../comps/Card'
 import Buttons from '../comps/Button'
 import Breathe from '../comps/Breathe'
 import AddFriend from '../comps/AddFriend'
+import Menu from '../comps/Menu'
 
 
 export default function TestComps() {
   return (
     <div className={styles.container}>
+      <Menu/>
       <AddFriend/>
       <Breathe/>
       <NavBar/>
@@ -27,9 +29,6 @@ export default function TestComps() {
       <TalkButton/>
       <Buttons/>
       <Buttons variant="outlined"/>
-      
-
-
     </div>
   )
 }
