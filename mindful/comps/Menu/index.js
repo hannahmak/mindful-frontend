@@ -48,7 +48,7 @@ const Menu = ({
                 <Link>Dashboard</Link>
                 <Link>Feed</Link>
                 <Link>Chat</Link>
-                <Link>Trends</Link>
+                <Link>Trend</Link>
             </Container2>
         </Holder>
     </Container>
