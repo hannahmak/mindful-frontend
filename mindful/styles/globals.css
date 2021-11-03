@@ -9,12 +9,12 @@ body {
 
 body {
   /* background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0)); */
-  background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  /* background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
   /* background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%); */
   /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   /* background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%); */
   /* background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%); */
-}
+  background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);}
 
 p, h1, h2, span {
   color: white;
