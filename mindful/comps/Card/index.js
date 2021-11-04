@@ -7,6 +7,7 @@ const Container = styled.div`
     flex-direction: column;
     height: ${props=>props.height};
     width: ${props=>props.width};
+    grid-area: ${props=>props.area};
     background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.4) 0%, rgba(196, 196, 196, 0) 99.96%);
     box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(40px);
@@ -14,21 +15,29 @@ const Container = styled.div`
 `
 
 const Header = styled.div`
+    display: flex;
+    justify-content: start;
     padding: 20px;
     font-family: Quicksand;
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
-    line-height: 37px;
+    font-size: 24px;
     color: #FFFFFF;
+`
+
+const ContentCont = styled.div`
+    display: flex;
+    justify-content: center;
+    height: 140%;
 `
 
 const Content = styled.img`
     display: flex;
     justify-content: center;
+    align-items: center;
     align-self: center;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
 `
 
 const Card = ({
@@ -36,11 +45,14 @@ const Card = ({
     width= "300px",
     text= "Header",
     src="/logo.png",
-    routeTo='/.'
+    routeTo='/.',
+    area=''
 }) => {
-    return <Container height={height} width={width} onClick={()=>router.push(routeTo)}>
+    return <Container area={area} height={height} width={width} onClick={()=>router.push(routeTo)}>
         <Header>{text}</Header>
-        <Content src={src}></Content>
+        <ContentCont>
+            <Content src={src}/>
+        </ContentCont>
     </Container>
 }
 
