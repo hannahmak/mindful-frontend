@@ -1,6 +1,4 @@
-import { modifyRouteRegex } from 'next/dist/lib/load-custom-routes';
-import styled, { withTheme } from 'styled-components';
-import React from 'react';
+import styled from 'styled-components';
 import Card from '../comps/Card'
 
 const Container = styled.div `
@@ -58,13 +56,13 @@ export default function Dashboard() {
         <Date>Saturday, October 06</Date>
 
         <DashboardCont>
-            <Card area='mood' width='577px' height="268px" text="Update Current Mood"></Card>
-            <Card area='trends' width='577px' height="568px" text="Trends"></Card>
-            <Card area='chat' width='268px' height="268px" text="Chat"></Card>
-            <Card area='moodboost' width='268px' height="268px" text="Mood Booster"></Card>
-            <Card area='profile' width='268px' height="268px" text="My Profile"></Card>
-            <Card area='journal' width='268px' height="268px" text="Journal"></Card>
-            <Card area='badge' width='577px' height="268px" text="Badages"></Card>  
+            <Card area='mood' width='577px' height="268px" text="Update Current Mood"/>
+            <Card routeTo='#' area='trends' width='577px' height="568px" text="Trends"/>
+            <Card routeTo='/talk' area='chat' width='268px' height="268px" text="Chat"/>
+            <Card routeTo='/mood' area='moodboost' width='268px' height="268px" text="Mood Booster"/>
+            <Card routeTo='/myprofile' area='profile' width='268px' height="268px" text="My Profile"/>
+            <Card routeTo='#' area='journal' width='268px' height="268px" text="Journal"/>
+            <Card routeTo='#' area='badge' width='577px' height="268px" text="Badages"/>  
         </DashboardCont>
     </Container>
   )

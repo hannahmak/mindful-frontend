@@ -15,18 +15,26 @@ const Container = styled.div`
 `
 
 const Header = styled.div`
+    display: flex;
+    justify-content: start;
     padding: 20px;
     font-family: Quicksand;
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
-    line-height: 37px;
+    font-size: 24px;
     color: #FFFFFF;
+`
+
+const ContentCont = styled.div`
+    display: flex;
+    justify-content: center;
+    height: 100%;
 `
 
 const Content = styled.img`
     display: flex;
     justify-content: center;
+    align-items: center;
     align-self: center;
     height: 150px;
     width: 150px;
@@ -42,7 +50,9 @@ const Card = ({
 }) => {
     return <Container area={area} height={height} width={width} onClick={()=>router.push(routeTo)}>
         <Header>{text}</Header>
-        <Content src={src}></Content>
+        <ContentCont>
+            <Content src={src}/>
+        </ContentCont>
     </Container>
 }
 
