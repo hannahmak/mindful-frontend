@@ -17,6 +17,7 @@
     "@mui/styled-engine-sc": "^5.0.4",
     "axios": "^0.24.0",
     "lottie-web": "^5.7.14",
+    "mui-audio-player": "^1.0.1",
     "next": "12.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",

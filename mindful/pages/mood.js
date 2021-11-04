@@ -3,6 +3,7 @@ import Breathe from '../comps/Breathe'
 import Card from '../comps/Card'
 import Menu from '../comps/Menu';
 
+
 // background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
 // .Buttons {
 //   display:flex;
@@ -84,6 +85,9 @@ export default function Mood() {
           <BreatheHolder>
               <Tool>
                   <Header>Breathe Tool</Header>
+                  {/* <ThemeProvider theme={theme}>
+
+                  </ThemeProvider> */}
                   <Breathing>
                       <Breathe/>
                   </Breathing>
