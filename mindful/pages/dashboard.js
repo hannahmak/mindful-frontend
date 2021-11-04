@@ -1,37 +1,49 @@
-import styled from 'styled-components';
+import { modifyRouteRegex } from 'next/dist/lib/load-custom-routes';
+import styled, { withTheme } from 'styled-components';
+import React from 'react';
 import Card from '../comps/Card'
 
 const Container = styled.div `
     height:100vh;
     width:100%;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    gap:100px;
-    flex-wrap:wrap;
 `
 const Head = styled.div`
-    font-size: 26px;
-    color: white;
+    font-size: 28px;
+    color: #FFFFFF;
+    align-self: flex-start;
 `
 
 const NavCont = styled.div`
-    font-size: 26px;
-    color: white;
-    text-transform: uppercase;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:40%;
 `
 
 const Nav = styled.div`
-
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
 `
 
-const Date = styled.div`
-    font-size: 26px;
-    color: white;
+const Date = styled.div`   
+    font-size: 28px;
+    color: #FFFFFF;
+    align-self: flex-start;
 `
 const DashboardCont = styled.div`
-
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "mood mood trends trends"
+        "chat moodboost trends trends"
+        "profile journal badge badge"
+    ;
 `
 
 export default function Dashboard() {
@@ -44,17 +56,16 @@ export default function Dashboard() {
         </NavCont>
 
         <Date>Saturday, October 06</Date>
-        <DashboardCont>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-        </DashboardCont>
 
-        
+        <DashboardCont>
+            <Card area='mood' width='577px' height="268px" text="Update Current Mood"></Card>
+            <Card area='trends' width='577px' height="568px" text="Trends"></Card>
+            <Card area='chat' width='268px' height="268px" text="Chat"></Card>
+            <Card area='moodboost' width='268px' height="268px" text="Mood Booster"></Card>
+            <Card area='profile' width='268px' height="268px" text="My Profile"></Card>
+            <Card area='journal' width='268px' height="268px" text="Journal"></Card>
+            <Card area='badge' width='577px' height="268px" text="Badages"></Card>  
+        </DashboardCont>
     </Container>
   )
 }

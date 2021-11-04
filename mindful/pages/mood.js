@@ -93,7 +93,7 @@ export default function Mood() {
     <Holder2>
       <Card text="Badges" width="700px" height="210px"/>
       <Cards>
-        <Card text="Tell a Joke" width="330px" height="270px"/>
+        <Card text="Tell a Joke" width="330px" height="270px" src=''/>
         <Card text="Message a friend" width="330px" height="270px"/>
       </Cards>
     </Holder2>

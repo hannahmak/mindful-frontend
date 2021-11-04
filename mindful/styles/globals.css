@@ -5,10 +5,7 @@ body {
   padding: 20px;
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-}
-
-body {
-  /* background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0)); */
+   /* background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0)); */
   /* background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
   /* background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%); */
   /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
@@ -17,8 +14,6 @@ body {
   background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
   background-repeat: no-repeat;
   background-size: cover;
-
-
 }
 
 p, h1, h2, span {
