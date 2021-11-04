@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
 import AddFriend from '../comps/AddFriend';
+import Menu from '../comps/Menu'
 
 const Container = styled.div `
 height:100vh;
@@ -35,6 +36,7 @@ gap:20px;
 export default function MyFriends() {
   return (
     <Container>
+        <Menu/>
         <Holder>
             <MyFriendsHead>
                 <h1>My Friends</h1>

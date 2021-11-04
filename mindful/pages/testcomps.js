@@ -11,11 +11,16 @@ import Card from '../comps/Card'
 import Buttons from '../comps/Button'
 import Breathe from '../comps/Breathe'
 import AddFriend from '../comps/AddFriend'
+import Menu from '../comps/Menu'
+import LockedBadges from '../comps/LockedBadges'
+import EarnedBadges from '../comps/EarnedBadges'
+
 
 
 export default function TestComps() {
   return (
     <div className={styles.container}>
+      <Menu/>
       <AddFriend/>
       <Breathe/>
       <NavBar/>
@@ -26,10 +31,9 @@ export default function TestComps() {
       <AboutCompanion/>
       <TalkButton/>
       <Buttons/>
+      <LockedBadges/>
+      <EarnedBadges/>
       <Buttons variant="outlined"/>
-      
-
-
     </div>
   )
 }

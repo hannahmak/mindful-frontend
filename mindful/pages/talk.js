@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import HeaderText from '../comps/HeaderText'
 import TalkButton from '../comps/TalkButton'
+import Menu from '../comps/Menu';
 
 // background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
 // .Buttons {
@@ -26,6 +27,7 @@ const Buttons = styled.div `
 
 export default function Talk() {
   return <Container>
+    <Menu/>
     <HeaderText head="Who would you like to chat with?" text="Select a Bubble"/>
 
     <Buttons>
