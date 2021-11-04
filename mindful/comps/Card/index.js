@@ -28,7 +28,7 @@ const Header = styled.div`
 const ContentCont = styled.div`
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 140%;
 `
 
 const Content = styled.img`
@@ -36,8 +36,8 @@ const Content = styled.img`
     justify-content: center;
     align-items: center;
     align-self: center;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
 `
 
 const Card = ({

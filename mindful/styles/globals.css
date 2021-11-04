@@ -11,9 +11,10 @@ body {
   /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   /* background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%); */
   /* background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%); */
-  background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
+  background-image: url("/wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 p, h1, h2, span {
