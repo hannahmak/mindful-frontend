@@ -59,8 +59,6 @@ justify-content:center;
 width:100%;
 height:100vh;
 background: rgba(0, 0, 0, 0.3);
-
-
 `
 
 
@@ -68,6 +66,7 @@ const JokesCard = ({
     joke="Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”",
     show=false,
 }) => {
+
     if(show === false){
         return <></>
     }
