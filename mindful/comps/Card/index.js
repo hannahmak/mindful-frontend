@@ -56,5 +56,4 @@ const Card = ({
         </ContentCont>
     </Container>
 }
-
 export default Card;
