@@ -40,19 +40,19 @@ const Content = styled.img`
     width: 100px;
 `
 
-const Card = ({
+const JokeCardHolder = ({
     height= "300px",
     width= "300px",
     text= "Header",
     src="/logo.png",
-    routeTo='/.', //this is needed for routing pages
     area='',
+    onButtonInteract=()=>{} //added for joke ftr.
 }) => {
-    return <Container onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
+    return <Container onClick={()=>{onButtonInteract();}} area={area} height={height} width={width}>
         <Header>{text}</Header>
         <ContentCont>
             <Content src={src}/>
         </ContentCont>
     </Container>
 }
-export default Card;
+export default JokeCardHolder;

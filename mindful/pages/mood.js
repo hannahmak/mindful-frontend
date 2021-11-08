@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Breathe from '../comps/Breathe'
 import Card from '../comps/Card'
+import JokeCardHolder from '../comps/JokeCardHolder'
 import Menu from '../comps/Menu'
 import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
@@ -29,6 +30,14 @@ const Holder2 = styled.div `
 `;
 
 const Cards = styled.div `
+display:flex;
+flex-direction:row;
+align-items:space-between;
+justify-content: space-between;
+padding-top: 20px;
+`;
+
+const JokeCards = styled.div `
 display:flex;
 flex-direction:row;
 align-items:space-between;
@@ -102,7 +111,7 @@ export default function Mood() {
       <Holder2>
         <Card text="Badges" width="700px" height="210px"/>
         <Cards>
-          <Card onButtonInteract={()=>{setShowCard(true);}} text="Tell a Joke" width="330px" height="270px"/>
+          <JokeCardHolder onButtonInteract={()=>{setShowCard(true);}} text="Tell a Joke" width="330px" height="270px"/>
           <Card text="Message a friend" width="330px" height="270px"/>
         </Cards>
       </Holder2>
