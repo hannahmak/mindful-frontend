@@ -33,8 +33,6 @@ text-align: center;
 color: white;
 `
 
-
-
 const Exit = styled.button`
 `
 
@@ -53,23 +51,40 @@ justify-content:center;
 const Holder3 =styled.div`
 flex:1;
 `
+const ContainerHolder = styled.div `
+position:absolute;
+display:flex;
+align-items:center;
+justify-content:center;
+width:100%;
+height:100vh;
+background: rgba(0, 0, 0, 0.3);
 
+
+`
 
 
 const JokesCard = ({
-    joke="Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”"
+    joke="Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”",
+    show=false,
 }) => {
-    return <Container>
-        <Holder1>
-            <Exit>Exit</Exit>
-        </Holder1>
-        <Holder2>
-            <Joke>{joke}</Joke>
-        </Holder2>
-        <Holder3>
-            <Button ButtonText="Next"/>
-        </Holder3>
-    </Container>
+    if(show === false){
+        return <></>
+    }
+    return<ContainerHolder>
+        <Container>
+            <Holder1>
+                <Exit>Exit</Exit>
+            </Holder1>
+            <Holder2>
+                <Joke>{joke}</Joke>
+            </Holder2>
+            <Holder3>
+                <Button ButtonText="Next"/>
+            </Holder3>
+        </Container>
+
+    </ContainerHolder> 
 }
 
 export default JokesCard;

@@ -16,6 +16,7 @@ max-width:70%;
 const Breathe = ({
 
 }) => {
+
     const container = useRef(null)
 
     useEffect(() => {
@@ -28,6 +29,7 @@ const Breathe = ({
         })
 
     }, [])
+
     return <Container>
         <div className="container" ref={container}></div>
     </Container>

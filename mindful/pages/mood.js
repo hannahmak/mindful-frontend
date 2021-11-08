@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import Breathe from '../comps/Breathe'
 import Card from '../comps/Card'
-import Menu from '../comps/Menu';
-
+import Menu from '../comps/Menu'
+import { useState } from 'react'
+import JokesCard from '../comps/JokeCard'
 
 // background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
 // .Buttons {
@@ -76,8 +77,8 @@ flex-wrap:wrap;
 gap:30px;
 `
 
-
 export default function Mood() {
+  const [showCard, setShowCard] = useState(false)
   return <Container>
     <Menu/>
     <ContainerHolder>
@@ -85,9 +86,6 @@ export default function Mood() {
           <BreatheHolder>
               <Tool>
                   <Header>Breathe Tool</Header>
-                  {/* <ThemeProvider theme={theme}>
-
-                  </ThemeProvider> */}
                   <Breathing>
                       <Breathe/>
                   </Breathing>
@@ -98,11 +96,11 @@ export default function Mood() {
       <Holder2>
         <Card text="Badges" width="700px" height="210px"/>
         <Cards>
-          <Card text="Tell a Joke" width="330px" height="270px"/>
+          <Card onButtonInteract={()=>{setShowCard(true)}} text="Tell a Joke" width="330px" height="270px"/>
           <Card text="Message a friend" width="330px" height="270px"/>
         </Cards>
       </Holder2>
     </ContainerHolder>
-
+      <JokesCard show={showCard}/>
     </Container>
 }

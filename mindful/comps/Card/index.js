@@ -46,9 +46,10 @@ const Card = ({
     text= "Header",
     src="/logo.png",
     routeTo='/.',
-    area=''
+    area='',
+    onButtonInteract=()=>{}
 }) => {
-    return <Container area={area} height={height} width={width} onClick={()=>router.push(routeTo)}>
+    return <Container onClick={()=>{onButtonInteract();}} area={area} height={height} width={width}>
         <Header>{text}</Header>
         <ContentCont>
             <Content src={src}/>
