@@ -45,11 +45,11 @@ const Card = ({
     width= "300px",
     text= "Header",
     src="/logo.png",
-    routeTo='/.',
+    routeTo='/.', //this is needed for routing pages
     area='',
-    onButtonInteract=()=>{}
+    onButtonInteract=()=>{} //added for joke ftr.
 }) => {
-    return <Container onClick={()=>{onButtonInteract();}} area={area} height={height} width={width}>
+    return <Container onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
         <Header>{text}</Header>
         <ContentCont>
             <Content src={src}/>
