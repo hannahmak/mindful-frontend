@@ -56,6 +56,7 @@ const Menu = ({
                 <Link href="#" >Feed</Link>
                 <Link href="#" >Chat</Link>
                 <Link href="#" >Trend</Link>
+                <Link href="/testcomps" >Test</Link>
             </Container2>
         </Holder>
     </Container>

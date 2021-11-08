@@ -14,9 +14,9 @@ align-items: center;
 height: 350px;
 width: 350px;
 border-radius: 50%;
-background: linear-gradient(125deg, rgba(255,255,255,1), rgba(166, 164, 248,0.5));
+background: linear-gradient(125deg, rgba(255,255,255,0.1), rgba(166, 164, 248,0.5));
 box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(40px);
+backdrop-filter: blur(15px);
 `
 
 const Option = styled.div`

@@ -6,18 +6,18 @@ const Container = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
-width: 586px;
-height: 503px;
+width: 50%;
+height: 50%;
 background-color:white;
 padding:30px;
 
 /* Glass Effect Fill */
 
-background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.4) 0%, rgba(196, 196, 196, 0) 99.96%);
+background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.01) 0%, rgba(196, 196, 196, 0) 99.96%);
 /* Glass Effect Effect's */
 
 box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(40px);
+backdrop-filter: blur(15px);
 /* Note: backdrop-filter has minimal browser support */
 
 border-radius: 25px;
@@ -57,23 +57,25 @@ display:flex;
 align-items:center;
 justify-content:center;
 width:100%;
-height:100vh;
+height:100%;
 background: rgba(0, 0, 0, 0.3);
 `
 
 
+
 const JokesCard = ({
+
     joke="Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”",
     show=false,
+    onHideInteract=()=>{},
 }) => {
-
     if(show === false){
         return <></>
     }
     return<ContainerHolder>
         <Container>
             <Holder1>
-                <Exit>Exit</Exit>
+                <Exit onClick={()=>{onHideInteract();}}>Exit</Exit>
             </Holder1>
             <Holder2>
                 <Joke>{joke}</Joke>

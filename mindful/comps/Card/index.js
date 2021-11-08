@@ -8,9 +8,9 @@ const Container = styled.div`
     height: ${props=>props.height};
     width: ${props=>props.width};
     grid-area: ${props=>props.area};
-    background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.4) 0%, rgba(196, 196, 196, 0) 99.96%);
+    background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.1) 0%, rgba(196, 196, 196, 0) 99.96%);
     box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(15px);
     border-radius: 25px;
 `
 

@@ -14,13 +14,31 @@ import AddFriend from '../comps/AddFriend'
 import Menu from '../comps/Menu'
 import LockedBadges from '../comps/LockedBadges'
 import EarnedBadges from '../comps/EarnedBadges'
+import styled from 'styled-components';
 
 
+const Cont = styled.div `
+display:flex;
+flex-direction:column;
+`
 
 export default function TestComps() {
   return (
-    <div className={styles.container}>
+    <Cont>
       <Menu/>
+        <a href="/badges">Badges</a>
+        <a href="/dashboard">dashboard</a>
+        <a href="/friendprofile">friendprofile</a>
+        <a href="/index">intro</a>
+        <a href="/journal">journal</a>
+        <a href="/mood">mood</a>
+        <a href="/myfriend">myfriend</a>
+        <a href="/myprofile">myprofile</a>
+        <a href="/privacypolicy">privacypolicy</a>
+        <a href="/profile">profile</a>
+        <a href="/setup">setup</a>
+        <a href="/talk">talk</a>
+        <a href="/testcomps">testcomps</a>
       <AddFriend/>
       <Breathe/>
       <NavBar/>
@@ -34,6 +52,6 @@ export default function TestComps() {
       <LockedBadges/>
       <EarnedBadges/>
       <Buttons variant="outlined"/>
-    </div>
+    </Cont>
   )
 }

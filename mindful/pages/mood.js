@@ -4,6 +4,7 @@ import Card from '../comps/Card'
 import Menu from '../comps/Menu'
 import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
+const axios = require('axios').default;
 
 // background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
 // .Buttons {
@@ -17,6 +18,7 @@ width:100%;
 display:flex;
 flex-direction:column;
 align-items:center;
+position:relative;
 `;
 
 const Holder = styled.div `
@@ -78,7 +80,11 @@ gap:30px;
 `
 
 export default function Mood() {
-  const [showCard, setShowCard] = useState(false)
+  // const GetJoke = async ()=>{
+  //   const result = await axios.get("https://aws.random.cat/meow");
+  // }
+  const [showCard, setShowCard] = useState(false);
+  
   return <Container>
     <Menu/>
     <ContainerHolder>
@@ -96,11 +102,11 @@ export default function Mood() {
       <Holder2>
         <Card text="Badges" width="700px" height="210px"/>
         <Cards>
-          <Card onButtonInteract={()=>{setShowCard(true)}} text="Tell a Joke" width="330px" height="270px"/>
+          <Card onButtonInteract={()=>{setShowCard(true);}} text="Tell a Joke" width="330px" height="270px"/>
           <Card text="Message a friend" width="330px" height="270px"/>
         </Cards>
       </Holder2>
     </ContainerHolder>
-      <JokesCard show={showCard}/>
+      <JokesCard  onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
 }
