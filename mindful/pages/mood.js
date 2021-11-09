@@ -92,9 +92,9 @@ gap:30px;
 
 export default function Mood() {
   const GetJoke = async ()=>{
-    const result = await axios.get("http://api.icndb.com/jokes/random");
-    console.log(result.data.value.joke)
-    setRandJoke(result.data.value.joke)
+    const result = await axios.get("https://v2.jokeapi.dev/joke/Any?blacklistFlags=religious,political,racist,sexist,explicit&format=txt&type=single");
+    console.log(result.data)
+    setRandJoke(result.data)
   }
   const [showCard, setShowCard] = useState(false);
   const [RandJoke, setRandJoke] = useState("Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”")
