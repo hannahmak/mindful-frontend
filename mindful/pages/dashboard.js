@@ -68,13 +68,13 @@ export default function Dashboard() {
 
         <DashboardCont>
             <Date>Saturday, October 06</Date>
-            <Card area='mood' width='577px' height="268px" text="Update Current Mood"/>
+            <Card routeTo="#" area='mood' width='577px' height="268px" text="Update Current Mood"/>
             <Card routeTo='#' area='trends' width='577px' height="568px" text="Trends"/>
             <Card src='/chat.svg'routeTo='/talk' area='chat' width='268px' height="268px" text="Chat"/>
             <Card routeTo='/mood' area='moodboost' width='268px' height="268px" text="Mood Booster"/>
             <Card src='/profile.svg' routeTo='/myprofile' area='profile' width='268px' height="268px" text="My Profile"/>
-            <Card src='/journal.svg'routeTo='#' area='journal' width='268px' height="268px" text="Journal"/>
-            <Card routeTo='#' area='badge' width='577px' height="268px" text="Badages"/>  
+            <Card src='/journal.svg'routeTo='./journal' area='journal' width='268px' height="268px" text="Journal"/>
+            <Card routeTo='#' area='badge' width='577px' height="268px" text="Badges"/>  
         </DashboardCont>
     </Container>
   )

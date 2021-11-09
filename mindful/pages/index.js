@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '../comps/Button';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div `
 height:100vh;
@@ -56,7 +57,8 @@ font-size:30px;
 
 
 
-export default function Home() {
+export default function Home({
+}) {
   return (
     <Container>
       <Holder>
@@ -66,8 +68,8 @@ export default function Home() {
             <Text>Invest in yourself and blah blah blah</Text>
           </WelcomeHeader>
           <ButtonHolder>
-            <Button ButtonText="Signup"/>
-            <Button variant="outlined" ButtonText="Login"/>
+            <Button routeTo="./profile" ButtonText="Signup"/>
+            <Button routeTo="./profile" variant="outlined" ButtonText="Login"/>
           </ButtonHolder>
         </Cont1>
       </Holder>

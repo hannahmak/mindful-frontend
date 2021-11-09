@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import Button from '../Button'
+import JokesButton from '../JokesButton';
 
 const Container = styled.div`
 display:flex;
@@ -33,7 +33,7 @@ text-align: center;
 color: white;
 `
 
-const Exit = styled.button`
+const Exit = styled.img`
 `
 
 const Holder1 =styled.div`
@@ -64,7 +64,6 @@ background: rgba(0, 0, 0, 0.3);
 
 
 const JokesCard = ({
-
     joke="Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”",
     show=false,
     onHideInteract=()=>{},
@@ -75,13 +74,13 @@ const JokesCard = ({
     return<ContainerHolder>
         <Container>
             <Holder1>
-                <Exit onClick={()=>{onHideInteract();}}>Exit</Exit>
+                <Exit src="/exit.svg" onClick={()=>{onHideInteract();}}/>
             </Holder1>
             <Holder2>
                 <Joke>{joke}</Joke>
             </Holder2>
             <Holder3>
-                <Button ButtonText="Next"/>
+                <JokesButton ButtonText="Next"/>
             </Holder3>
         </Container>
 

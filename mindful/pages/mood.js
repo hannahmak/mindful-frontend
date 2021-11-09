@@ -88,11 +88,16 @@ flex-wrap:wrap;
 gap:30px;
 `
 
+// https://icanhazdadjoke.com/
+
 export default function Mood() {
-  // const GetJoke = async ()=>{
-  //   const result = await axios.get("https://aws.random.cat/meow");
-  // }
+  const GetJoke = async ()=>{
+    const result = await axios.get("http://api.icndb.com/jokes/random");
+    console.log(result.data.value.joke)
+    setRandJoke(result.data.value.joke)
+  }
   const [showCard, setShowCard] = useState(false);
+  const [RandJoke, setRandJoke] = useState("Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”")
   
   return <Container>
     <Menu/>
@@ -111,11 +116,11 @@ export default function Mood() {
       <Holder2>
         <Card text="Badges" width="700px" height="210px"/>
         <Cards>
-          <JokeCardHolder onButtonInteract={()=>{setShowCard(true);}} text="Tell a Joke" width="330px" height="270px"/>
+          <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/>
           <Card text="Message a friend" width="330px" height="270px"/>
         </Cards>
       </Holder2>
     </ContainerHolder>
-      <JokesCard  onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
+      <JokesCard joke={RandJoke}  onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
 }
