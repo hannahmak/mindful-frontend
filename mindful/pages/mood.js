@@ -97,7 +97,7 @@ export default function Mood() {
     setRandJoke(result.data)
   }
   const [showCard, setShowCard] = useState(false);
-  const [RandJoke, setRandJoke] = useState("Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”")
+  const [RandJoke, setRandJoke] = useState("")
   
   return <Container>
     <Menu/>
