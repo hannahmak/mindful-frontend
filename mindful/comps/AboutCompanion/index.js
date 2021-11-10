@@ -4,6 +4,14 @@ const Container = styled.div`
 display:flex;
 flex-direction:row;
 align-items:center;
+flex-wrap:wrap;
+
+
+@media only screen and (max-width: 768px) {
+    display:flex;
+    flex-direction:column;
+}
+
 `
 
 const Holder = styled.div`
@@ -16,13 +24,26 @@ const Holder2 = styled.div`
 display:flex;
 flex-direction:column;
 flex:1;
+
+@media only screen and (max-width: 768px) {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
 `
 
 const Image = styled.img`
 height:292px;
 width:292px;
 border-radius:150px;
+
+@media only screen and (max-width: 768px) {
+    height:100px;
+    width:100px;
+}
 `
+
 
 const CompName = styled.p`
 font-style: normal;

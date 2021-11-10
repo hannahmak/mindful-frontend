@@ -10,16 +10,15 @@ max-width:70%;
 
 // const Buttons = styled.button``
 
-
-
-
 const Breathe = ({
-
+    
+    
 }) => {
 
     const container = useRef(null)
 
-    useEffect(() => {
+    useEffect(({
+    }) => {
         lottie.loadAnimation({
             container: container.current,
             renderer: 'svg',
@@ -29,9 +28,10 @@ const Breathe = ({
         })
 
     }, [])
+    
 
     return <Container>
-        <div className="container" ref={container}></div>
+        <div className="container" onClick={()=>{}} ref={container}></div>
     </Container>
 }
 

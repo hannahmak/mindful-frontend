@@ -1,11 +1,16 @@
 import styled from 'styled-components';
-import Buttons from '../comps/Button';
+import SetupButton from '../comps/SetupButton';
 import HeaderText from "../comps/HeaderText"
 import CompanionAvatar from '../comps/CompanionAvatar';
+import { useState } from 'react';
+import AboutCompanion from '../comps/AboutCompanion';
+import Button from '../comps/Button'
+
+
+
 
 const Container = styled.div `
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
 align-items:center;
 flex-direction:column;
@@ -19,10 +24,21 @@ display:flex;
 flex-wrap:wrap;
 flex-direction:row;
 gap:20px;
-
 `
 
+
 export default function Setup() {
+  const [setup1, setSetup1] = useState (false)
+
+
+  if(setup1 === true) {
+    return<Container>
+      <HeaderText text="About your companion"/>
+      <AboutCompanion/>
+      <Button routeTo="/dashboard"  ButtonText="Submit"/>
+  </Container>
+  };
+
   return (
     <Container>
         <HeaderText/>
@@ -33,7 +49,7 @@ export default function Setup() {
           <CompanionAvatar/>
           <CompanionAvatar/>
         </Avatars>
-        <Buttons ButtonText="Next"/>
+        <SetupButton onButtonInteract={()=>{setSetup1(true)}}  ButtonText="Next"/>
     </Container>
   )
 }

@@ -11,6 +11,7 @@ body {
   /* background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%); */
   /* background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%); */
   background-image: url("/wallpaper.jpg");
+  /* background: black; */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

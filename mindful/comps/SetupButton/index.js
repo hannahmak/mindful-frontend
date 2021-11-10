@@ -10,7 +10,7 @@ const Container = styled.div``
 
 
 
-const JokesButton = ({
+const SetupButton = ({
     variant="contained",
     ButtonText="Text Here",
     onButtonInteract=()=>{}
@@ -20,4 +20,4 @@ const JokesButton = ({
     </Container>
 }
 
-export default JokesButton;
+export default SetupButton;
