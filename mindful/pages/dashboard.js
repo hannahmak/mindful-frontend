@@ -74,7 +74,7 @@ export default function Dashboard() {
             <Card routeTo='/mood' area='moodboost' width='268px' height="268px" text="Mood Booster"/>
             <Card src='/profile.svg' routeTo='/myprofile' area='profile' width='268px' height="268px" text="My Profile"/>
             <Card src='/journal.svg'routeTo='./journal' area='journal' width='268px' height="268px" text="Journal"/>
-            <Card routeTo='#' area='badge' width='577px' height="268px" text="Badges"/>  
+            <Card routeTo='/badges' area='badge' width='577px' height="268px" text="Badges"/>  
         </DashboardCont>
     </Container>
   )

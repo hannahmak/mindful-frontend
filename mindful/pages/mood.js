@@ -114,7 +114,7 @@ export default function Mood() {
       </Holder>
 
       <Holder2>
-        <Card text="Badges" width="700px" height="210px"/>
+        <Card routeTo="/badges" text="Badges" width="700px" height="210px"/>
         <Cards>
           <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/>
           <Card text="Message a friend" width="330px" height="270px"/>
