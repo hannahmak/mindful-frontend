@@ -8,12 +8,12 @@ justify-content:center;
 `
 const Head = styled.h1`
 font-size:40px;
-color:white;
+color:#420062;
 `
 
 const Text = styled.p`
 font-size:20px;
-color:white;
+color:#420062;
 `
 
 

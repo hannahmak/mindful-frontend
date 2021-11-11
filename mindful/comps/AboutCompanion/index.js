@@ -47,14 +47,14 @@ border-radius:150px;
 
 const CompName = styled.p`
 font-style: normal;
-color:white;
+color:#420062;
 font-weight: bold;
 font-size: 24px;
 `
 
 const CompDescription = styled.p`
 font-size: 18px;
-color:white;
+color:#7E7E7E;
 max-width:70%;
 `
 
