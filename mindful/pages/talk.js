@@ -25,13 +25,14 @@ const Buttons = styled.div `
 
 `;
 
+
+
 export default function Talk() {
   return <Container>
     <HeaderText head="Who would you like to chat with?" text="Select a Bubble"/>
-
     <Buttons>
-      <TalkButton text="BC Crisis Centre" source="https://crisiscentre.bc.ca/wp-content/themes/crisiscentre/images/logo.png"/>
-      <TalkButton/>
+      <TalkButton text="BC Crisis Centre" />
+      <TalkButton back="white" color="#9B738F"/>
     </Buttons>
 
     </Container>
