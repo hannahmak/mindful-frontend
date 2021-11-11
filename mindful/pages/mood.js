@@ -52,6 +52,7 @@ display:flex;
 flex-direction: column;
 justify-content:center;
 padding:20px;
+background-color:white;
 
 /* Drop Shadow */
 box-shadow: 0px 0px 20px #F2F3F7;
@@ -80,7 +81,7 @@ justify-content:center;
 const ContainerHolder = styled.div`
 display:flex;
 width:92%;
-padding:20px;
+padding:100px;
 `
 
 const ContainerHolder1 = styled.div`
@@ -107,9 +108,19 @@ display:flex;
 flex-direction:column;
 gap:20px;
 `
-const LaughHolder = styled.div ``
+const LaughHolder = styled.div `
+display:flex;
+width:100%;
+align-items:center;
+justify-content:center;
+`
 const Title = styled.h1 `
 color:#420062;
+margin-bottom:0px;
+
+`
+const Title2 = styled.h1 `
+color:#EE8B89;
 margin-bottom:0px;
 
 `
@@ -154,14 +165,19 @@ export default function Mood() {
             <Card src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
           </CardContainer>
         </CardHolder>
+        <TitleHolder>
+          <Title2>Need a laugh?</Title2>
+          <Text>Feeling a bit down? Start by using one of the tools below to help improve your mood</Text>
+        </TitleHolder>
 
         <LaughHolder>
-        <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/>
+        <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="100%" height="270px"/>
         </LaughHolder>
+        
         
       </Holder2>
     </ContainerHolder>
-      <JokesCard joke={RandJoke}  onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
+      <JokesCard joke={RandJoke} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
 
     {/* <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/> */}

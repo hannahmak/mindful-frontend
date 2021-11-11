@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
+import { Button } from '@mui/material';
 
 const Container = styled.div`
     display:flex;
@@ -8,7 +9,7 @@ const Container = styled.div`
     height: ${props=>props.height};
     width: ${props=>props.width};
     grid-area: ${props=>props.area};
-    background: #FFFFFF;
+    background: #FCEFDF;
     /* Drop Shadow */
     
     box-shadow: 0px 0px 20px #F2F3F7;
@@ -26,6 +27,8 @@ const Header = styled.div`
 
 const ContentCont = styled.div`
     display: flex;
+    flex-direction:column;
+    align-items:center;
     justify-content: center;
     height: 140%;
 `
@@ -39,18 +42,21 @@ const Content = styled.img`
     width: 100px;
 `
 
+const Text = styled.p`
+`
+
 const JokeCardHolder = ({
     height= "300px",
     width= "300px",
     text= "Header",
-    src="/logo.png",
+    src="/quotes.svg",
     area='',
     onButtonInteract=()=>{} //added for joke ftr.
 }) => {
-    return <Container onClick={()=>{onButtonInteract();}} area={area} height={height} width={width}>
-        <Header>{text}</Header>
+    return <Container area={area} height={height} width={width}>
         <ContentCont>
             <Content src={src}/>
+        <Button onClick={()=>{onButtonInteract();}} style={{width:250, height:50, borderRadius:60,}} variant="outlined">Click for a joke</Button>
         </ContentCont>
     </Container>
 }
