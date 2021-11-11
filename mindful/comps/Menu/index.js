@@ -1,64 +1,146 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+position:fixed;
+z-index: 2;
 display:flex;
-flex-direction:row;
-align-items:center;
-justify-content:center;
-padding:20px;
-width:100vw;
-background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.4) 0%, rgba(196, 196, 196, 0) 99.96%);
-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(40px);
-flex-wrap:wrap;
-margin-bottom:50px;
+flex-direction:column;
+background-color:#F2F3F7;
+height:100vh;
+width:8%;
 `
-const Container1 = styled.div`
+const Holder1 = styled.div`
 display:flex;
-align-items:center;
-`
-
-const Container2 = styled.div`
-display:flex;
-justify-content:flex-end;
-align-items:center;
-gap:5%;
-
-`
-
-const Holder = styled.div `
 flex:1;
+width:100%;
+justify-content:center;
 `
 
-const Image = styled.img `
-width:10%;
+const Images = styled.img`
+height:80px;
+width:80px;
+`
+const MyProfile = styled.img`
+width:20px;
+height:20px;
+
 `
 
-const Link = styled.a `
-color:white;
-font-size:20px;
+const Dashboard = styled.img`
+height:20px;
+width:20px;
+`
+const Feed = styled.img`
+height:20px;
+width:20px;
 `
 
+const Trends = styled.img`
+height:20px;
+width:20px;
+`
+
+const Chat = styled.img`
+height:20px;
+width:20px;
+`
+
+const Circle1 = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+background: #F2F3F7;
+box-shadow:${props=>props.press1};
+height:50px;
+width:50px;
+border-radius:100px;
+`
+
+const Circle2 = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+background: #F2F3F7;
+box-shadow:${props=>props.press2};
+height:50px;
+width:50px;
+border-radius:100px;
+`
+
+const Circle3 = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+background: #F2F3F7;
+box-shadow:${props=>props.press3};
+height:50px;
+width:50px;
+border-radius:100px;
+`
+
+const Circle4 = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+background: #F2F3F7;
+box-shadow:${props=>props.press4};
+height:50px;
+width:50px;
+border-radius:100px;
+`
+
+const Circle5 = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+background: #F2F3F7;
+box-shadow:${props=>props.press5};
+height:50px;
+width:50px;
+border-radius:100px;
+`
+// for button press inset 0px 0px 4px rgba(0, 0, 0, 0.25)
+
+
+const Holder2 = styled.div`
+display:flex;
+flex:4;
+flex-direction:column;
+align-items:center;
+justify-contnet:center;
+gap:90px;
+`
 
 const Menu = ({
-
+    press1="none",
+    press2="none",
+    press3="none",
+    press4="none",
+    press5="none",
 }) => {
     return <Container>
-        <Holder>
-            <Container1>
-                <Image src="/logo.png"/>
-            </Container1>
-        </Holder>
-        <Holder>
-            <Container2>
-                <Link href="/myprofile" >My Profile</Link>
-                <Link href="/dashboard" >Dashboard</Link>
-                <Link href="#" >Feed</Link>
-                <Link href="#" >Chat</Link>
-                <Link href="#" >Trend</Link>
-                <Link href="/testcomps" >Test</Link>
-            </Container2>
-        </Holder>
+        <Holder1>
+            <Images src="/logo2.svg"/>
+        </Holder1>
+        <Holder2>
+            <Circle1 press1={press1}>
+                <MyProfile src="/profileuser.svg"/>
+            </Circle1>
+            <Circle2 press2={press2}>
+                <Dashboard src="/dashboard.svg" />
+            </Circle2>
+            <Circle3 press3={press3}>
+                <Feed src="/feed.svg" />
+            </Circle3>
+            <Circle4 press4={press4}>
+                <Chat src="/chatt.svg" />
+            </Circle4>
+            <Circle5 press5={press5}>
+                <Trends src="/trends.svg" />
+            </Circle5>
+        </Holder2>
+        
+
     </Container>
 }
 

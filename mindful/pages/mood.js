@@ -100,7 +100,6 @@ export default function Mood() {
   const [RandJoke, setRandJoke] = useState("")
   
   return <Container>
-    <Menu/>
     <ContainerHolder>
       <Holder>
           <BreatheHolder>

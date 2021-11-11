@@ -24,7 +24,6 @@ const Header = styled.h1 `
 export default function PrivacyPolicy() {
   return (
     <Container>
-      <Menu/>
         <Holder>
             <Header>Privacy Policy</Header>
             <p>minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>

@@ -36,7 +36,6 @@ gap:20px;
 export default function MyFriends() {
   return (
     <Container>
-        <Menu/>
         <Holder>
             <MyFriendsHead>
                 <h1>My Friends</h1>

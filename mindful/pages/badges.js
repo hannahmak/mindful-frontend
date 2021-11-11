@@ -60,7 +60,6 @@ const Header = styled.div`
 
 export default function Talk() {
   return <Container>
-      <Menu/>
     <Earned>
         <Header>Earned Badges</Header>
         <Badges>

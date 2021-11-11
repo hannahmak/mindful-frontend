@@ -22,7 +22,6 @@ background-color:red;
 export default function MyProfile() {
   return (
     <Container>
-      <Menu/>
         <Avatar/>
             <p>[Journal and Friend data here]</p>
         <JournalHolder>

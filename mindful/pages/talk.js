@@ -27,7 +27,6 @@ const Buttons = styled.div `
 
 export default function Talk() {
   return <Container>
-    <Menu/>
     <HeaderText head="Who would you like to chat with?" text="Select a Bubble"/>
 
     <Buttons>
