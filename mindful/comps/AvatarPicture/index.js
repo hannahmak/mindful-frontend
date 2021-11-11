@@ -54,7 +54,7 @@ font-weight:800;
 
 
 
-const Avatar = ({
+const AvatarPicture = ({
     name="John Smith",
     source="https://i.natgeofe.com/n/496b9ca3-0839-43b9-9a4f-5501502d258a/atlantic-puffin_thumb.jpg",
     show="block",
@@ -67,15 +67,7 @@ const Avatar = ({
 }) => {
     return <Container>
         <Circle width={width} height={height} borderRadius={borderRadius} src={source}/>
-        <Holder>
-            <Name show={show} >{name}</Name>
-            <Follow display={display}>
-                <Following><FollowingNumber>{following}</FollowingNumber> Followers</Following>
-                <Follower><FollowerNumber>{follower}</FollowerNumber> Followers</Follower>
-            </Follow>
-        </Holder>
-        
     </Container>
 }
 
-export default Avatar;
+export default AvatarPicture;

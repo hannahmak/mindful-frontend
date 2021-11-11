@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
 import Menu from '../comps/Menu';
+import MoodBar from '../comps/MoodBar';
 
 const Container = styled.div `
 height:100vh
@@ -10,18 +11,23 @@ flex-direction:row;
 `
 
 const Holder1 = styled.div `
-background-color:blue;
 width:8%;
 `
 
 const Holder2 = styled.div `
 display:flex;
 flex-direction:column;
-width:92%;
+width:77%;
 height:100vh;
 padding:40px;
 gap:50px;
 `
+
+const Holder3 = styled.div `
+height:100vh;
+width:15%;
+`
+
 const ProfDetails = styled.div `
 width:92%;
 `
@@ -42,6 +48,9 @@ export default function MyProfile() {
         </ProfDetails>
         <MyJournal>My Journals</MyJournal>
       </Holder2>
+      <Holder3>
+        <MoodBar/>
+      </Holder3>
     </Container>
   )
 }

@@ -44,9 +44,9 @@ export default function MyFriends() {
                 <p>15 friends</p>
             </FriendNumber>
             <FriendAvatarHolder>
-                <Avatar width="100px" height="100px" show="none"/>
-                <Avatar width="100px" height="100px" show="none"/>
-                <Avatar width="100px" height="100px" show="none"/>
+                <Avatar display="none" width="100px" height="100px" show="none"/>
+                <Avatar display="none" width="100px" height="100px" show="none"/>
+                <Avatar display="none" width="100px" height="100px" show="none"/>
                 <AddFriend/>
             </FriendAvatarHolder>
 
