@@ -1,4 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div`
 display:flex;
@@ -33,10 +35,10 @@ const TalkButton = ({
     back="#9B738F",
     border="#9B738F",
     color="white",
-    onButtonInteract=()=>{}
+    routeTo='/.', //this is needed for routing pages
 }) => {
     return <Container>
-        <Button onClick={()=>{onButtonInteract();}} back={back} border={border}>
+        <Button onClick={()=>router.push(routeTo)} back={back} border={border}>
         <CompName color={color}>{text}</CompName>
         </Button>
     </Container>

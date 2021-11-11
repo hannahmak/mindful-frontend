@@ -1,53 +1,69 @@
+import React from 'react';
 import styled from 'styled-components';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div`
+    display:flex;
+    flex-direction: column;
+    height: ${props=>props.height};
+    width: ${props=>props.width};
+    grid-area: ${props=>props.area};
+    background: ${props=>props.background};
+    /* Drop Shadow */
+    
+    box-shadow: 0px 0px 20px #F2F3F7;
+    border-radius: 25px;
+    padding:15px;
+    gap:10px;
+`
+
+const Header = styled.div`
+    display: flex;
+    justify-content: center;
+    font-weight:600;
+    font-size:18px;
+    padding-top: 15px;
+    text-align: center;
+`
+
+const ContentCont = styled.div`
 display:flex;
-flex-direction:column;
 align-items:center;
-padding-right: 30px;
-padding-left: 30px;
-padding-bottom: 70px;
+justify-content:${props=>props.justify};
+    
 `
 
-const Button = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-height: 100px;
-width: 100px;
+const Content = styled.img`
+    padding-top: 20px;
+    height: 120px;
+    width: 120px;
 `
 
-const Option = styled.div`
-display:flex;
-flex-direction:column;
+const Description = styled.p`
+color:#7E7E7E;
+font-size:15px;
+font-weight:400;
+text-align: center;
+padding-bottom: 15px;
 `
-
-const Image = styled.img`
-width: 20%;
-`
-
-const CompName = styled.p`
-font-style: normal;
-color:white;
-width: 100px
-font-weight: 400;
-font-size: 20px;
-`
-
-
 
 const EarnedBadges = ({
-    source="/lock.svg",
-    text="Add Friend",
+    height= "900px",
+    width= "900px",
+    text= "Header",
+    description="You created a Mindful Account!",
+    src="/badges.svg",
+    routeTo='/.', //this is needed for routing pages
+    area='',
+    background="#FCEFDF",
+    justify="center",
 }) => {
-    return <Container>
-        <Button>
-            <Image src={source}/>
-        </Button>
-        <Option>
-            <CompName>{text}</CompName>
-        </Option>
+    return <Container background={background} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
+        <ContentCont justify={justify}>
+            <Content src={src}/>
+        </ContentCont>
+        <Header>{text}</Header>
+        <Description>{description}</Description>
     </Container>
 }
-
 export default EarnedBadges;
