@@ -17,7 +17,7 @@ width:8%;
 const Holder2 = styled.div `
 display:flex;
 flex-direction:column;
-width:77%;
+width:70%;
 height:100vh;
 padding:40px;
 gap:50px;
@@ -25,7 +25,7 @@ gap:50px;
 
 const Holder3 = styled.div `
 height:100vh;
-width:15%;
+width:22%;
 `
 
 const ProfDetails = styled.div `

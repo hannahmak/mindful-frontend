@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import MoodUpdate from '../MoodUpdate';
 import MoodCard from '../MoodCard';
 import Avatar from '../Avatar';
+import Moods from '../Moods';
 
 const Container = styled.div`
 display:flex;
 flex-direction:column;
 height:100vh;
-width:15%;
+width:22%;
 background-color:#F9FBFC;
 position:fixed;
 z-index: 2;
@@ -24,6 +25,11 @@ const MoodBar = ({
             <MoodUpdate/>
             <MoodCard/>
         <MoodUpdate subhead="Update Mood" text="Update"/>
+        <Moods src="check.svg"/>
+        <Moods/>
+        <Moods/>
+        <Moods/>
+        <Moods/>
         
 
     </Container>
