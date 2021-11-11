@@ -15,6 +15,7 @@ import Menu from '../comps/Menu'
 import LockedBadges from '../comps/LockedBadges'
 import EarnedBadges from '../comps/EarnedBadges'
 import styled from 'styled-components';
+import Avatar from '../comps/Avatar';
 
 
 const Cont = styled.div `
@@ -25,6 +26,7 @@ flex-direction:column;
 export default function TestComps() {
   return (
     <Cont>
+      <Avatar/>
       <Menu/>
         <a href="/badges">Badges</a>
         <a href="/dashboard">dashboard</a>

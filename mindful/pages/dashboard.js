@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Card from '../comps/Card'
+import Menu from '../comps/Menu';
 
 const Container = styled.div `
     height:100%;

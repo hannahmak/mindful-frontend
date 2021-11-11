@@ -5,6 +5,7 @@ import JokeCardHolder from '../comps/JokeCardHolder'
 import Menu from '../comps/Menu'
 import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
+
 const axios = require('axios').default;
 
 // background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
@@ -14,11 +15,10 @@ const axios = require('axios').default;
 //   flex-wrap:wrap;
 
 const Container = styled.div `
-height:100%;
+height:100vh
 width:100%;
 display:flex;
-flex-direction:column;
-align-items:center;
+flex-direction:row;
 position:relative;
 `;
 
@@ -26,16 +26,14 @@ const Holder = styled.div `
 `;
 
 const Holder2 = styled.div `
-
-`;
-
-const Cards = styled.div `
 display:flex;
-flex-direction:row;
-align-items:space-between;
-justify-content: space-between;
-padding-top: 20px;
+width:100%;
+flex-direction:column;
+gap:20px;
+align-items:center;
+
 `;
+
 
 const JokeCards = styled.div `
 display:flex;
@@ -46,20 +44,19 @@ padding-top: 20px;
 `;
 
 const BreatheHolder = styled.div `
-display:flex;
-flex-direction: column;
-align-items:center;
+
 `;
 
 const Tool = styled.div `
 display:flex;
 flex-direction: column;
-background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.4) 0%, rgba(196, 196, 196, 0) 99.96%);
-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(40px);
+justify-content:center;
+padding:20px;
+
+/* Drop Shadow */
+box-shadow: 0px 0px 20px #F2F3F7;
 border-radius: 25px;
-width: 500px;
-height: 500px;
+width: 100%;
 `;
 
 const Header = styled.div`
@@ -74,18 +71,50 @@ const Header = styled.div`
 
 const Breathing = styled.div`
 display:flex;
-justify-content: center;
+width:100%;
 align-items:center;
-width: 100%;
+justify-content:center;
+
 `
 
 const ContainerHolder = styled.div`
 display:flex;
-justify-content: center;
-align-items:center;
-width: 100%;
-flex-wrap:wrap;
-gap:30px;
+width:92%;
+padding:20px;
+`
+
+const ContainerHolder1 = styled.div`
+background-color:blue;
+width:8%;
+`
+
+const TitleHolder = styled.div `
+display:flex;
+flex-direction:column;
+width:100%;
+`
+
+const CardHolder = styled.div `
+display:flex;
+flex-direction:row;
+gap:20px;
+width:100%;
+width:100%;
+justify-content:center;
+`
+const CardContainer = styled.div `
+display:flex;
+flex-direction:column;
+gap:20px;
+`
+const LaughHolder = styled.div ``
+const Title = styled.h1 `
+color:#420062;
+margin-bottom:0px;
+
+`
+const Text = styled.p `
+color:#7E7E7E;
 `
 
 // https://icanhazdadjoke.com/
@@ -100,26 +129,40 @@ export default function Mood() {
   const [RandJoke, setRandJoke] = useState("")
   
   return <Container>
+    <ContainerHolder1>
+      <Menu/>
+    </ContainerHolder1>
     <ContainerHolder>
-      <Holder>
-          <BreatheHolder>
-              <Tool>
-                  <Header>Breathe Tool</Header>
+
+      <Holder2>
+        <TitleHolder>
+          <Title>Mood Boosters</Title>
+          <Text>Feeling a bit down? Start by using one of the tools below to help improve your mood</Text>
+        </TitleHolder>
+
+        
+        <CardHolder>
+                <Tool>
                   <Breathing>
                       <Breathe/>
                   </Breathing>
-              </Tool>
-          </BreatheHolder>
-      </Holder>
+                        <h1>Breathe tool</h1>
+                        <p>Breathe bitch</p>
+                </Tool>
+          <CardContainer>
+            <Card src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
+            <Card src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
+          </CardContainer>
+        </CardHolder>
 
-      <Holder2>
-        <Card routeTo="/badges" text="Badges" width="700px" height="210px"/>
-        <Cards>
-          <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/>
-          <Card text="Message a friend" width="330px" height="270px"/>
-        </Cards>
+        <LaughHolder>
+        <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/>
+        </LaughHolder>
+        
       </Holder2>
     </ContainerHolder>
       <JokesCard joke={RandJoke}  onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
+
+    {/* <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/> */}
 }

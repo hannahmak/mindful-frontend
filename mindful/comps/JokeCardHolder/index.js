@@ -8,9 +8,10 @@ const Container = styled.div`
     height: ${props=>props.height};
     width: ${props=>props.width};
     grid-area: ${props=>props.area};
-    background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.1) 0%, rgba(196, 196, 196, 0) 99.96%);
-    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(15px);
+    background: #FFFFFF;
+    /* Drop Shadow */
+    
+    box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
 `
 
@@ -18,11 +19,9 @@ const Header = styled.div`
     display: flex;
     justify-content: start;
     padding: 20px;
-    font-family: Quicksand;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    color: #FFFFFF;
 `
 
 const ContentCont = styled.div`

@@ -8,51 +8,57 @@ const Container = styled.div`
     height: ${props=>props.height};
     width: ${props=>props.width};
     grid-area: ${props=>props.area};
-    background: linear-gradient(140.51deg, rgba(255, 255, 255, 0.1) 0%, rgba(196, 196, 196, 0) 99.96%);
-    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(15px);
+    background: ${props=>props.background};
+    /* Drop Shadow */
+    
+    box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
+    padding:15px;
+    gap:10px;
 `
 
 const Header = styled.div`
     display: flex;
     justify-content: start;
-    padding: 20px;
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    color: #FFFFFF;
+    font-weight:800;
+    font-size:20px;
 `
 
 const ContentCont = styled.div`
-    display: flex;
-    justify-content: center;
-    height: 140%;
+display:flex;
+align-items:center;
+justify-content:${props=>props.justify};
+    
 `
 
 const Content = styled.img`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
+`
+
+const Description = styled.p`
+color:#7E7E7E;
+font-size:16px;
+font-weight:400;
+
 `
 
 const Card = ({
     height= "300px",
     width= "300px",
     text= "Header",
-    src="/logo.png",
+    src="/moodbooster.svg",
     routeTo='/.', //this is needed for routing pages
     area='',
+    background="#FFFFFF",
+    justify="left",
 }) => {
-    return <Container onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
-        <Header>{text}</Header>
-        <ContentCont>
+    return <Container background={background} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
+        <ContentCont justify={justify}>
             <Content src={src}/>
         </ContentCont>
+        <Header>{text}</Header>
+        <Description>Not feeling too well? It’s totally okay, take a breather here or let us crack up some jokes for you!</Description>
     </Container>
 }
 export default Card;
