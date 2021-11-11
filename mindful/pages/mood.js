@@ -43,9 +43,6 @@ justify-content: space-between;
 padding-top: 20px;
 `;
 
-const BreatheHolder = styled.div `
-
-`;
 
 const Tool = styled.div `
 display:flex;
@@ -75,8 +72,14 @@ display:flex;
 width:100%;
 align-items:center;
 justify-content:center;
-
 `
+
+const BreathingHolder = styled.div `
+height:250px;
+width:500px;
+position:relative;
+
+`;
 
 const ContainerHolder = styled.div`
 display:flex;
@@ -128,9 +131,18 @@ const Text = styled.p `
 color:#7E7E7E;
 `
 
+const Image = styled.img `
+width:30%;
+z-index:2;
+position:absolute;
+left:90px;
+`
+
+
 // https://icanhazdadjoke.com/
 
-export default function Mood() {
+export default function Mood({
+}) {
   const GetJoke = async ()=>{
     const result = await axios.get("https://v2.jokeapi.dev/joke/Any?blacklistFlags=religious,political,racist,sexist,explicit&format=txt&type=single");
     console.log(result.data)
@@ -138,6 +150,7 @@ export default function Mood() {
   }
   const [showCard, setShowCard] = useState(false);
   const [RandJoke, setRandJoke] = useState("")
+
   
   return <Container>
     <ContainerHolder1>
@@ -154,15 +167,15 @@ export default function Mood() {
         
         <CardHolder>
                 <Tool>
-                  <Breathing>
-                      <Breathe/>
-                  </Breathing>
+                    <Breathing>
+                        <Breathe/>
+                    </Breathing>
                         <h1>Breathe tool</h1>
-                        <p>Breathe bitch</p>
+                        <p style={{color:"#7E7E7E"}}>To begin Mindful Breathing start by clicking on the Breathe Tool and follow along.</p>
                 </Tool>
           <CardContainer>
             <Card src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
-            <Card src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
+            <Card routeTo="/badges" src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
           </CardContainer>
         </CardHolder>
         <TitleHolder>

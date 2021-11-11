@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import lottie from 'lottie-web';
 import { height } from '@mui/system';
 
@@ -11,7 +11,6 @@ max-width:50%;
 // const Buttons = styled.button``
 
 const Breathe = ({
-    
     
 }) => {
 
@@ -26,12 +25,11 @@ const Breathe = ({
             autoplay:true,
             animationData: require('../../assets/breathe.json'),
         })
-
     }, [])
     
 
     return <Container>
-        <div className="container" onClick={()=>{}} ref={container}></div>
+        <div className="container" ref={container}></div>
     </Container>
 }
 
