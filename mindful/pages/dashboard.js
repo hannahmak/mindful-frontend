@@ -13,19 +13,26 @@ flex-direction:row;
 const Cont1 = styled.div `
 display:flex;
 flex-direction:column;
+width:80%;
 `
 const Cont2 = styled.div `
 display:flex;
 flex-direction:row;
+padding: 10px;
 `
 
 const Holder1 = styled.div `
 width:8%;
 `
+const Cards = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+`
 
 const Holder2 = styled.div `
 display:flex;
-align-items:center;
 justify-content:center;
 flex-direction:row;
 flex-wrap:wrap;
@@ -66,6 +73,7 @@ export default function Dashboard() {
                 <Date>Saturday, October 06</Date>
             </Cont1>
 
+            <Cards>
             <Cont2>
                 <Card src='/journal.svg'routeTo='./journal' area='journal'width='400px' height="300px" text="Journal"/>
                 <Card routeTo='/mood' area='moodboost' width='400px' height="300px" text="Mood Booster"/>
@@ -77,6 +85,7 @@ export default function Dashboard() {
             <Cont2>
                 <Card src='/badges.svg' routeTo='/badges' area='badge' width='800px' height="300px" text="Badges"/>  
             </Cont2>
+            </Cards>
       </Holder2>
       <Holder3>
         <MoodBar/>
