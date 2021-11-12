@@ -90,8 +90,8 @@ export default function Talk() {
           <Title2>Talk to...</Title2>
         </TitleHolder>
         <Buttons>
-          <TalkButton text="BC Crisis Centre"></TalkButton>
-          <TalkButton back="white" color="#9B738F"></TalkButton>
+          <TalkButton text="BC Crisis Centre" routeTo="https://crisiscentre.bc.ca/get-help/" ></TalkButton>
+          <TalkButton back="white" color="#9B738F" routeTo="#"></TalkButton>
         </Buttons>
       </Holder2>
 
