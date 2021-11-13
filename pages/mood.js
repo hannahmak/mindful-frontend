@@ -5,6 +5,7 @@ import JokeCardHolder from '../comps/JokeCardHolder'
 import Menu from '../comps/Menu'
 import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
+import Lottie from 'lottie-web'
 
 const axios = require('axios').default;
 
@@ -156,6 +157,7 @@ export default function Mood({
     audio.play();
   }
 
+
   
   return <Container>
     <ContainerHolder1>
@@ -173,7 +175,7 @@ export default function Mood({
         <CardHolder>
                 <Tool onClick={play}>
                     <Breathing>
-                        <Breathe/>
+                        <Breathe id="lottie"/>
                     </Breathing>
                         <h1>Breathe tool</h1>
                         <p style={{color:"#7E7E7E"}}>To begin Mindful Breathing start by clicking on the Breathe Tool and follow along.</p>
