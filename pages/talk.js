@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import TalkButton from '../comps/TalkButton'
 import Menu from '../comps/Menu';
-import Image from "next/image";
 
 const Container = styled.div `
 height:100vh
