@@ -5,6 +5,8 @@ import JokeCardHolder from '../comps/JokeCardHolder'
 import Menu from '../comps/Menu'
 import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
+import Lottie from 'lottie-web'
+import { motion } from 'framer-motion'
 
 const axios = require('axios').default;
 
@@ -151,6 +153,12 @@ export default function Mood({
   const [showCard, setShowCard] = useState(false);
   const [RandJoke, setRandJoke] = useState("")
 
+  function play() {
+    var audio = document.getElementById('a1');
+    audio.play();
+  }
+
+
   
   return <Container>
     <ContainerHolder1>
@@ -166,12 +174,18 @@ export default function Mood({
 
         
         <CardHolder>
-                <Tool>
+                <Tool as={motion.div} whileHover={{
+                  scale:1.05,
+                  transition: {
+                      duration:.1,
+                  }
+                }} onClick={play}>
                     <Breathing>
-                        <Breathe/>
+                        <Breathe id="lottie"/>
                     </Breathing>
                         <h1>Breathe tool</h1>
                         <p style={{color:"#7E7E7E"}}>To begin Mindful Breathing start by clicking on the Breathe Tool and follow along.</p>
+                        <audio id='a1' src="/breathe.mp3"></audio>
                 </Tool>
           <CardContainer>
             <Card src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
@@ -190,7 +204,7 @@ export default function Mood({
         
       </Holder2>
     </ContainerHolder>
-      <JokesCard joke={RandJoke} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
+      <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
 
     {/* <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/> */}

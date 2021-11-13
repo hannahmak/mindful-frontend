@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import HeaderText from '../comps/HeaderText'
 import TalkButton from '../comps/TalkButton'
 import Menu from '../comps/Menu';
 

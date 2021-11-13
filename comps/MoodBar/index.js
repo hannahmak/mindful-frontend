@@ -3,6 +3,7 @@ import MoodUpdate from '../MoodUpdate';
 import MoodCard from '../MoodCard';
 import Avatar from '../Avatar';
 import Moods from '../Moods';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div`
 display:flex;

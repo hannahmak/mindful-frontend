@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -65,14 +66,14 @@ export default function Journal() {
               <figcaption>{post.title}</figcaption>
               <figcaption>{post.description}</figcaption>
               <figcaption>{post.timestamp}</figcaption>
-              <img src={post.image_url}></img>
+              <Image src={post.image_url}></Image>
             </figure>
           ))}
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
+        <Link
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -81,7 +82,7 @@ export default function Journal() {
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
-        </a>
+        </Link>
       </footer>
     </div>
   );

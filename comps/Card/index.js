@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
     display:flex;
@@ -53,12 +54,17 @@ const Card = ({
     background="#FFFFFF",
     justify="left",
 }) => {
-    return <Container background={background} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
-        <ContentCont justify={justify}>
-            <Content src={src}/>
-        </ContentCont>
-        <Header>{text}</Header>
-        <Description>Not feeling too well? It’s totally okay, take a breather here or let us crack up some jokes for you!</Description>
-    </Container>
+    return <Container as={motion.div} whileHover={{
+        scale:1.05,
+        transition: {
+            duration:.1,
+        }
+    }}  background={background} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
+            <ContentCont justify={justify}>
+                <Content src={src}/>
+            </ContentCont>
+            <Header>{text}</Header>
+            <Description>Not feeling too well? It’s totally okay, take a breather here or let us crack up some jokes for you!</Description>
+        </Container>
 }
 export default Card;
