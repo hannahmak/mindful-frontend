@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import HeaderText from '../comps/HeaderText'
 import TalkButton from '../comps/TalkButton'
 import Menu from '../comps/Menu';
 
@@ -77,24 +76,6 @@ align-items:center;
 export default function Talk() {
   
   return <Container>
-    <ContainerHolder1>
-      <Menu/>
-    </ContainerHolder1>
-    <ContainerHolder>
 
-      <Holder2> 
-        <Image src="/talkicon.svg"/>
-        <TitleHolder>
-          <Title>Who would you like to chat with?</Title>
-          <Text>One of the most important part of being human, is having the ability to communicate your feelings and emotions. It’s time to break the cycle, we have to choose to speak. </Text>
-          <Title2>Talk to...</Title2>
-        </TitleHolder>
-        <Buttons>
-          <TalkButton text="BC Crisis Centre" routeTo="https://crisiscentre.bc.ca/get-help/" ></TalkButton>
-          <TalkButton back="white" color="#9B738F"></TalkButton>
-        </Buttons>
-      </Holder2>
-
-      </ContainerHolder>
     </Container>
 }
