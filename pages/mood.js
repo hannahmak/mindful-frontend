@@ -151,6 +151,11 @@ export default function Mood({
   const [showCard, setShowCard] = useState(false);
   const [RandJoke, setRandJoke] = useState("")
 
+  function play() {
+    var audio = document.getElementById('a1');
+    audio.play();
+  }
+
   
   return <Container>
     <ContainerHolder1>
@@ -166,12 +171,13 @@ export default function Mood({
 
         
         <CardHolder>
-                <Tool>
+                <Tool onClick={play}>
                     <Breathing>
                         <Breathe/>
                     </Breathing>
                         <h1>Breathe tool</h1>
                         <p style={{color:"#7E7E7E"}}>To begin Mindful Breathing start by clicking on the Breathe Tool and follow along.</p>
+                        <audio id='a1' src="/breathe.mp3"></audio>
                 </Tool>
           <CardContainer>
             <Card src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
