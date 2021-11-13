@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React, {useEffect, useRef, useState} from 'react';
 import lottie from 'lottie-web';
 import { height } from '@mui/system';
+import { motion } from 'framer-motion';
 
 
 const Container = styled.div`
@@ -29,7 +30,12 @@ const Breathe = ({
     }, [])
     
 
-    return <Container>
+    return <Container as={motion.div} whileHover={{
+        scale:1.05,
+        transition: {
+            duration:.1,
+        }
+    }}>
         <div className="container" ref={container}></div>
     </Container>
 }

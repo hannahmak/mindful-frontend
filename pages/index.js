@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
-import { Button } from '@mui/material';
+import { Button, duration } from '@mui/material';
+import { motion } from "framer-motion"
+
 
 const Container = styled.div `
 height:100vh;
@@ -77,9 +79,23 @@ export default function Home({
   return (
     <Container>
       <Holder>
+            <motion.div initial="hidden" animate="visible" variants={{
+              hidden: {
+                scale:1,
+                opacity:0
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay:.10,
+                  duration:2
+                }
+              }
+            }}>
         <Cont1>
           <WelcomeHeader>
-            <Header>Welcome to Mindful</Header>
+              <Header>Welcome to Mindful</Header>
             <Text>Anyone can have a bad day, but it doesn’t mean that it’s a bad life. How we respond to it and take care of our mental health are what’s important.</Text>
           </WelcomeHeader>
           <ButtonHolder>
@@ -87,6 +103,7 @@ export default function Home({
             <Button onClick={()=>router.push('/profile')} style={{width:250, height:50, borderRadius:60, color:"#2F2E4C", borderColor:"#2F2E4C"}} routeTo="./profile" variant="outlined">Login</Button>
           </ButtonHolder>
         </Cont1>
+      </motion.div>
       </Holder>
     </Container>
   )

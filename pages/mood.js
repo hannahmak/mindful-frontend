@@ -6,6 +6,7 @@ import Menu from '../comps/Menu'
 import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
 import Lottie from 'lottie-web'
+import { motion } from 'framer-motion'
 
 const axios = require('axios').default;
 
@@ -173,7 +174,12 @@ export default function Mood({
 
         
         <CardHolder>
-                <Tool onClick={play}>
+                <Tool as={motion.div} whileHover={{
+                  scale:1.05,
+                  transition: {
+                      duration:.1,
+                  }
+                }} onClick={play}>
                     <Breathing>
                         <Breathe id="lottie"/>
                     </Breathing>
