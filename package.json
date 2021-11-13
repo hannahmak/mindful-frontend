@@ -2,11 +2,7 @@
   "name": "mindful-frontend",
   "version": "0.1.0",
   "engines": {
-<<<<<<< HEAD
-    "node": "16.13.0"
-=======
-    "node": "17.1.0"
->>>>>>> a171940dd13d980ed36f58adc1ff05b2bd1660a9
+    "node": "^16.13.0"
   },
   "private": true,
   "scripts": {
