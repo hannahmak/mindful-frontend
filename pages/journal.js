@@ -10,12 +10,12 @@ export default function Journal() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [posts, setPosts] = useState([]);
-//   useEffect(() => {
-//     (async () => {
-//       const result = await axios.get("/posts");
-//       setPosts(result.data.posts);
-//     })();
-//   }, []);
+  useEffect(() => {
+    (async () => {
+      const result = await axios.get("/posts");
+      setPosts(result.data.posts);
+    })();
+  }, []);
 
   const submit = async (event) => {
     event.preventDefault();
@@ -61,6 +61,14 @@ export default function Journal() {
         </form>
         <div>
           <h1>This is Your Post</h1>
+          {posts.map((post) => (
+            <figure key={post.id}>
+              <figcaption>{post.title}</figcaption>
+              <figcaption>{post.description}</figcaption>
+              <figcaption>{post.timestamp}</figcaption>
+              <Image src={post.image_url}></Image>
+            </figure>
+          ))}
         </div>
       </main>
 
