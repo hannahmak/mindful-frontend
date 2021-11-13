@@ -28,19 +28,7 @@ export default function TestComps() {
     <Cont>
       <Avatar/>
       <Menu/>
-        <a href="/badges">Badges</a>
-        <a href="/dashboard">dashboard</a>
-        <a href="/friendprofile">friendprofile</a>
-        <a href="/index">intro</a>
-        <a href="/journal">journal</a>
-        <a href="/mood">mood</a>
-        <a href="/myfriend">myfriend</a>
-        <a href="/myprofile">myprofile</a>
-        <a href="/privacypolicy">privacypolicy</a>
-        <a href="/profile">profile</a>
-        <a href="/setup">setup</a>
-        <a href="/talk">talk</a>
-        <a href="/testcomps">testcomps</a>
+
       <AddFriend/>
       <Breathe/>
       <NavBar/>
