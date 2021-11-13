@@ -10,12 +10,12 @@ export default function Journal() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const result = await axios.get("/posts");
-      setPosts(result.data.posts);
-    })();
-  }, []);
+//   useEffect(() => {
+//     (async () => {
+//       const result = await axios.get("/posts");
+//       setPosts(result.data.posts);
+//     })();
+//   }, []);
 
   const submit = async (event) => {
     event.preventDefault();
