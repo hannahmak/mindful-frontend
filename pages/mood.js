@@ -190,7 +190,7 @@ export default function Mood({
         
       </Holder2>
     </ContainerHolder>
-      <JokesCard joke={RandJoke} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
+      <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
 
     {/* <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/> */}

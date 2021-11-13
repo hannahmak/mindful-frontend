@@ -56,7 +56,7 @@ const JokeCardHolder = ({
     return <Container area={area} height={height} width={width}>
         <ContentCont>
             <Content src={src}/>
-        <Button onClick={()=>{onButtonInteract();}} style={{width:250, height:50, borderRadius:60,}} variant="outlined">Click for a joke</Button>
+        <Button style={{width:250, height:50, borderRadius:60, color:"#9B738F", borderColor:"#9B738F"}}  onClick={()=>{onButtonInteract();}} variant="outlined">Click for a joke</Button>
         </ContentCont>
     </Container>
 }

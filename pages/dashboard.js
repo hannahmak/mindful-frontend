@@ -18,7 +18,9 @@ width:80%;
 const Cont2 = styled.div `
 display:flex;
 flex-direction:row;
-padding: 10px;
+justify-content:center;
+gap:10px;
+width:100%;
 `
 
 const Holder1 = styled.div `
@@ -29,6 +31,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
+gap:10px;
 `
 
 const Holder2 = styled.div `
@@ -74,16 +77,16 @@ export default function Dashboard() {
             </Cont1>
 
             <Cards>
-            <Cont2>
-                <Card src='/journal.svg'routeTo='./journal' area='journal'width='400px' height="300px" text="Journal"/>
-                <Card routeTo='/mood' area='moodboost' width='400px' height="300px" text="Mood Booster"/>
-            </Cont2>
-            <Cont2>
-                <Card rc='/trend.svg' routeTo='#' area='trends' width='400px' height="300px" text="Trends"/>
-                <Card src='/message.svg'routeTo='/talk' area='chat' width='400px' height="300px" text="Chat"/>
-            </Cont2>
-            <Cont2>
-                <Card src='/badges.svg' routeTo='/badges' area='badge' width='800px' height="300px" text="Badges"/>  
+              <Cont2>
+                  <Card src='/journal.svg'routeTo='./journal' area='journal'width='40%' height="300px" text="Journal"/>
+                  <Card routeTo='/mood' area='moodboost' width='40%' height="300px" text="Mood Booster"/>
+              </Cont2>
+              <Cont2>
+                  <Card rc='/trend.svg' routeTo='#' area='trends' width='40%' height="300px" text="Trends"/>
+                  <Card src='/message.svg'routeTo='/talk' area='chat' width='40%' height="300px" text="Chat"/>
+              </Cont2>
+              <Cont2>
+                  <Card src='/badges.svg' routeTo='/badges' area='badge' width='81%' height="300px" text="Badges"/>  
             </Cont2>
             </Cards>
       </Holder2>

@@ -14,8 +14,7 @@ const Container = styled.div``
 const Buttons = ({
     variant="contained",
     ButtonText="Text Here",
-    routeTo="/."
-
+    routeTo="/.",
 }) => {
     return <Container>
         <Button onClick={()=>router.push(routeTo)} style={{width:250, height:50, borderRadius:60,}} variant={variant}>{ButtonText}</Button>

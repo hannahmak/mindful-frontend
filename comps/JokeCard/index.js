@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import JokesButton from '../JokesButton';
+import { Button } from '@mui/material';
+// import { style } from '@mui/system';
 
 const Container = styled.div`
 display:flex;
@@ -60,13 +61,14 @@ width:100%;
 height:100%;
 background: rgba(0, 0, 0, 0.3);
 `
-
+const JokeButt = styled.button ``
 
 
 const JokesCard = ({
     joke="Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type.”",
     show=false,
     onHideInteract=()=>{},
+    onGenerate=()=>{},
 }) => {
     if(show === false){
         return <></>
@@ -80,10 +82,9 @@ const JokesCard = ({
                 <Joke>{joke}</Joke>
             </Holder2>
             <Holder3>
-                <JokesButton ButtonText="Next"/>
+                <Button variant="contained" style={{width:250, height:50, borderRadius:60, backgroundColor:"#9B738F"}} onClick={()=>{onGenerate();}}>Next</Button>
             </Holder3>
         </Container>
-
     </ContainerHolder> 
 }
 

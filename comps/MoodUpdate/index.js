@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div`
 display:flex;
@@ -45,7 +46,7 @@ const MoodUpdate = ({
             <Head>{subhead}</Head>
         </HeaderHolder>
         <TextHolder>
-            <Text>{text}</Text>
+            <Text onClick={()=>router.push('/myprofile')} >{text}</Text>
         </TextHolder>
     </Container>
 }
