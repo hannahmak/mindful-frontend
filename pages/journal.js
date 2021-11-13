@@ -61,14 +61,6 @@ export default function Journal() {
         </form>
         <div>
           <h1>This is Your Post</h1>
-//           {posts.map((post) => (
-//             <figure key={post.id}>
-//               <figcaption>{post.title}</figcaption>
-//               <figcaption>{post.description}</figcaption>
-//               <figcaption>{post.timestamp}</figcaption>
-//               <Image src={post.image_url}></Image>
-//             </figure>
-//           ))}
         </div>
       </main>
 
