@@ -35,7 +35,7 @@ const TalkButton = ({
     back="#9B738F",
     border="#9B738F",
     color="white",
-    routeTo='/.', //this is needed for routing pages
+    
 }) => {
     return <Container>
         <Button onClick={()=>router.push(routeTo)} back={back} border={border}>
