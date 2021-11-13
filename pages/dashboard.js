@@ -36,7 +36,7 @@ display:flex;
 justify-content:center;
 flex-direction:row;
 flex-wrap:wrap;
-width:77%;
+width:70%;
 height:100vh;
 padding:40px;
 gap:50px;
@@ -49,7 +49,7 @@ const Date = styled.div`
 `
 const Holder3 = styled.div `
 height:100vh;
-width:25%;
+width:22%;
 `
 
 const Greeting = styled.div`
@@ -65,7 +65,7 @@ export default function Dashboard() {
   return (
     <Container>
       <Holder1>
-        <Menu />
+        <Menu press2="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />
       </Holder1>
       <Holder2>
             <Cont1>
