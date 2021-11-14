@@ -68,7 +68,8 @@ export default function Dashboard() {
   return (
     <Container>
       <Holder1>
-        <Menu press2="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />
+        <Menu press2="inset 0px 0px 4px rgba(232, 146, 79, 1)
+" />
       </Holder1>
       <Holder2>
             <Cont1>

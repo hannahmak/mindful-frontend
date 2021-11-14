@@ -8,7 +8,7 @@ display:flex;
 flex-direction:column;
 background-color:#F2F3F7;
 height:100vh;
-width:8%;
+width:144px;
 `
 const Holder1 = styled.div`
 display:flex;
@@ -18,12 +18,13 @@ justify-content:center;
 `
 
 const Images = styled.img`
-height:80px;
-width:80px;
+height:124px;
+width:124px;
 `
 const MyProfile = styled.img`
 width:20px;
 height:20px;
+background: url("/profileuser.svg");
 
 `
 
@@ -121,7 +122,7 @@ const Menu = ({
 }) => {
     return <Container>
         <Holder1>
-            <Images src="/logo2.svg"/>
+            <Images src="/logo.svg"/>
         </Holder1>
         <Holder2>
             <Circle1 onClick={()=>router.push('/myprofile')} press1={press1}>
