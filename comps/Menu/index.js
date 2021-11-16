@@ -162,7 +162,7 @@ const Menu = ({
                 transition: {
                     duration:.1,
                 }
-            }}  onClick={()=>router.push('#')} press5={press5}>
+            }}  onClick={()=>router.push('/trends')} press5={press5}>
                 <Trends src="/trends.svg" />
             </Circle5>
         </Holder2>
