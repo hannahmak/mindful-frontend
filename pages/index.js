@@ -4,7 +4,7 @@ import { Button, duration } from '@mui/material';
 import { motion } from "framer-motion"
 
 
-const Container = styled.div `
+const Container = styled(motion.div) `
 height:100vh;
 width:100%;
 display:flex;
@@ -77,16 +77,31 @@ width:50%;
 export default function Home({
 }) {
   return (
-    <Container>
+    <Container initial="hidden" animate="visible" variants={{
+      hidden: {
+        scale:1.05,
+        opacity:0,
+      },
+      visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+          delay:.10,
+          duration:2
+        }
+      }
+    }}>
       <Holder>
             <motion.div initial="hidden" animate="visible" variants={{
               hidden: {
                 scale:1,
-                opacity:0
+                opacity:0,
+                x:-50
               },
               visible: {
                 scale: 1,
                 opacity: 1,
+                x:0,
                 transition: {
                   delay:.10,
                   duration:2

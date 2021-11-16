@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
 position:fixed;
@@ -124,19 +125,44 @@ const Menu = ({
             <Images src="/logo2.svg"/>
         </Holder1>
         <Holder2>
-            <Circle1 onClick={()=>router.push('/myprofile')} press1={press1}>
+            <Circle1 as={motion.div} whileHover={{
+                scale:1.3,
+                transition: {
+                    duration:.1,
+                }
+            }} onClick={()=>router.push('/myprofile')} press1={press1}>
                 <MyProfile src="/profileuser.svg"/>
             </Circle1>
-            <Circle2 press2={press2}>
+            <Circle2 as={motion.div} whileHover={{
+                scale:1.3,
+                transition: {
+                    duration:.1,
+                }
+            }}  press2={press2}>
                 <Dashboard onClick={()=>router.push('/dashboard')} src="/dashboard.svg" />
             </Circle2>
-            <Circle3 onClick={()=>router.push('#')} press3={press3}>
+            <Circle3 as={motion.div} whileHover={{
+                scale:1.3,
+                transition: {
+                    duration:.1,
+                }
+            }}  onClick={()=>router.push('/journal')} press3={press3}>
                 <Feed src="/feed.svg" />
             </Circle3>
-            <Circle4 onClick={()=>router.push('#')} press4={press4}>
+            <Circle4 as={motion.div} whileHover={{
+                scale:1.3,
+                transition: {
+                    duration:.1,
+                }
+            }}  onClick={()=>router.push('/messaging')} press4={press4}>
                 <Chat src="/chatt.svg" />
             </Circle4>
-            <Circle5 onClick={()=>router.push('#')} press5={press5}>
+            <Circle5 as={motion.div} whileHover={{
+                scale:1.3,
+                transition: {
+                    duration:.1,
+                }
+            }}  onClick={()=>router.push('#')} press5={press5}>
                 <Trends src="/trends.svg" />
             </Circle5>
         </Holder2>

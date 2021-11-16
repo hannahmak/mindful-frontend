@@ -20,7 +20,7 @@ margin-top:20px;
 
 const Name = styled.h1`
 font-size:50px;
-color:#420062;
+color:#2F2E4C;
 display:${props=>props.show};
 margin-bottom:0px;
 `
@@ -37,18 +37,18 @@ flex-direction:row;
 gap:20px;
 `
 const Following = styled.p`
-color:#420062;
+color:#2F2E4C;
 `
 const FollowingNumber = styled.span`
-color:#420062;
+color:#2F2E4C;
 font-weight:800;
 `
 
 const Follower = styled.p`
-color:#420062;
+color:#2F2E4C;
 `
 const FollowerNumber = styled.span`
-color:#420062;
+color:#2F2E4C;
 font-weight:800;
 `
 

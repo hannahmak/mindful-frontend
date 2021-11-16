@@ -24,9 +24,6 @@ flex-direction:row;
 position:relative;
 `;
 
-const Holder = styled.div `
-`;
-
 const Holder2 = styled.div `
 display:flex;
 width:100%;
@@ -34,15 +31,6 @@ flex-direction:column;
 gap:20px;
 align-items:center;
 
-`;
-
-
-const JokeCards = styled.div `
-display:flex;
-flex-direction:row;
-align-items:space-between;
-justify-content: space-between;
-padding-top: 20px;
 `;
 
 
@@ -59,29 +47,12 @@ border-radius: 25px;
 width: 100%;
 `;
 
-const Header = styled.div`
-    padding: 20px;
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 37px;
-    color: #FFFFFF;
-`
-
 const Breathing = styled.div`
 display:flex;
 width:100%;
 align-items:center;
 justify-content:center;
 `
-
-const BreathingHolder = styled.div `
-height:250px;
-width:500px;
-position:relative;
-
-`;
 
 const ContainerHolder = styled.div`
 display:flex;
@@ -133,12 +104,6 @@ const Text = styled.p `
 color:#7E7E7E;
 `
 
-const Image = styled.img `
-width:30%;
-z-index:2;
-position:absolute;
-left:90px;
-`
 
 
 // https://icanhazdadjoke.com/
