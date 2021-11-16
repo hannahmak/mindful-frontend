@@ -88,7 +88,7 @@ export default function MyProfile() {
                     November 16, 2021
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Not a good day, I haven't seen my friends in weeks and I really miss them ):
+                    Not a good day, I haven&apos;t seen my friends in weeks and I really miss them ):
                   </Typography>
                 </CardContent>
               </CardActionArea>
