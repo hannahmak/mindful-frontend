@@ -140,7 +140,7 @@ const Menu = ({
 }) => {
     return <Container>
         <Holder1>
-            <Images src="/logo2.svg"/>
+            <Images src="/logoin.png"/>
         </Holder1>
         <Holder2>
 
