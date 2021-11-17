@@ -16,18 +16,6 @@ export default function Journal() {
   const [tags, setTags] = useState(["sample", "tag1"]);
   const [posts, setPosts] = useState([]);
 
-  // const lists = document.getElementById("lists").appendChild('li')
-  useEffect(() => {
-    (async () => {
-      // const result = await axios.get("/posts");
-      const result = await axios.get("/posts");
-      setPosts(result.data.posts);
-    })();
-    console.log("effect");
-    // lists.innerHTML = tag;
-  }, [tags]);
-  // const {pathname} =Router
-  // Router.push('./myprofile')
 
   const submit = async (event) => {
     event.preventDefault();
