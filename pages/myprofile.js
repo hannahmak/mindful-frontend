@@ -134,6 +134,7 @@ export default function MyProfile() {
                 </Button>
               </CardActions>
             </Card>
+          </JournalHolder>
             <div>
               <Button routeTo="./" ButtonText="Back to Home" />
               <Button routeTo="./talk" ButtonText="Go to chat" />
@@ -147,7 +148,6 @@ export default function MyProfile() {
                 </figure>
               ))}
             </div>
-          </JournalHolder>
 
 
 
