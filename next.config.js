@@ -1,5 +1,6 @@
 module.exports = {
   reactStrictMode: true,
+  future: { webpack5: true},
   async rewrites() {
     return [
       {
@@ -11,5 +12,8 @@ module.exports = {
         destination: "http://localhost:8080/images/:file*",
       },
     ];
+  },
+  images: {
+    domains: ['s.gravatar.com'],
   },
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
 import { Button } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
     display:flex;
@@ -51,7 +52,12 @@ const JokeCardHolder = ({
     area='',
     onButtonInteract=()=>{} //added for joke ftr.
 }) => {
-    return <Container area={area} height={height} width={width}>
+    return <Container as={motion.div} whileHover={{
+        scale:1.05,
+        transition: {
+            duration:.1,
+        }
+    }} area={area} height={height} width={width}>
         <ContentCont>
             <Content src={src}/>
         <Button style={{width:248, height:75, borderRadius:60, color:"#0F2046", borderColor:"#0F2046", border:' solid 3px', textTransform:'none', fontSize:'24px'}}  onClick={()=>{onButtonInteract();}} variant="outlined">Joke</Button>

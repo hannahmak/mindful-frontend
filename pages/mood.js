@@ -114,14 +114,13 @@ const Title2 = styled.h1 `
   const Text = styled.p `
   color:#878FA2;
 `
-
+  
 const Image = styled.img `
   width:30%;
   z-index:2;
   position:absolute;
   left:90px;
 `
-
 
 // https://icanhazdadjoke.com/
 

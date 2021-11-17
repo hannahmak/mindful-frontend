@@ -43,6 +43,7 @@ const FollowerNumber = styled.span`
     font-weight:800;
 `
 
+
 const Avatar = ({
     name="John Smith",
     show="block",

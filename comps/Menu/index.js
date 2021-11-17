@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
     position:fixed;
@@ -116,8 +117,6 @@ const Menu = ({
                 <Trends trendsrc={trendsrc}/>
             </Circle>
         </Holder2>
-        
-
     </Container>
 }
 

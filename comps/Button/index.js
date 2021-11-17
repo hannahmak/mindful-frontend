@@ -15,6 +15,7 @@ const Buttons = ({
     variant="contained",
     ButtonText="Text Here",
     routeTo="/.",
+    buttonType="text",
 }) => {
     return <Container>
         <Button onClick={()=>router.push(routeTo)} style={{width:248, height:75, borderRadius:60,}} variant={variant}>{ButtonText}</Button>
