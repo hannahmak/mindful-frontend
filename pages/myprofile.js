@@ -109,7 +109,31 @@ const JournalHolder = styled.div`
 
 
 export default function MyProfile() {
-  return (
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(true);
+  const [counter, setCounter] = useState(0);
+
+  const getPost = async () => {
+    const result = await axios.get("/posts");
+    try {
+      setLoading(true);
+      setPosts(result.data.posts);
+    } catch (e) {
+      setError(e);
+    } finally {
+      setCounter(result.data.posts.length);
+      setLoading(false);
+    }
+  }
+  useEffect(() => {
+    getPost();
+  }, [counter]);
+
+  if (error) return "Error loading the page";
+  return loading ? (
+    "Page is loading"
+  ) : (
     <Container>
     
         {/* Column 1 */}
@@ -134,6 +158,20 @@ export default function MyProfile() {
 
         {/* Column 3 */}
         <MoodBar/>
+            
+            <div>
+              <Button routeTo="./" ButtonText="Back to Home" />
+              <Button routeTo="./talk" ButtonText="Go to chat" />
+              <h1>This is Your Post</h1>
+              {posts.map((post) => (
+                <figure key={post.id}>
+                  <figcaption>{post.description}</figcaption>
+                  <figcaption>{post.timestamp}</figcaption>
+                  <img src={post.image_url}></img>
+                  <figcaption>{post.tags}</figcaption>
+                </figure>
+              ))}
+            </div>
 
 
       {/* <Holder1>
