@@ -12,10 +12,9 @@ const Container = styled.div`
 // const Buttons = styled.button``
 
 const Breathe = ({
-    go="true"
+    
     
 }) => {
-
     const container = useRef(null)
 
     useEffect(({
