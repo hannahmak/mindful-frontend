@@ -62,14 +62,6 @@ const PostsHeader = styled.div`
   margin-bottom: 54px;
 `
 
-
-const Container = styled.div`
-  height:100vh;
-  width:100%;
-  display:flex;
-  flex-direction:row;
-`
-
 const Holder1 = styled.div`
   width:8%;
 `
