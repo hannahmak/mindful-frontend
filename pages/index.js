@@ -114,8 +114,8 @@ export default function Home({
             <Text>Anyone can have a bad day, but it doesn’t mean that it’s a bad life. How we respond to it and take care of our mental health are what’s important.</Text>
           </WelcomeHeader>
           <ButtonHolder>
-            <Button onClick={()=>router.push('/profile')} style={{width:250, height:50, borderRadius:60, backgroundColor:"#2F2E4C"}} routeTo="./profile" variant="contained">Signup</Button>
-            <Button onClick={()=>router.push('/profile')} style={{width:250, height:50, borderRadius:60, color:"#2F2E4C", borderColor:"#2F2E4C"}} routeTo="./profile" variant="outlined">Login</Button>
+            <Button onClick={()=>router.push('/profile')} style={{width:250, height:50, borderRadius:60, backgroundColor:"#2F2E4C"}} routeto="./profile" variant="contained">Signup</Button>
+            <Button onClick={()=>router.push('/profile')} style={{width:250, height:50, borderRadius:60, color:"#2F2E4C", borderColor:"#2F2E4C"}} routeto="./profile" variant="outlined">Login</Button>
           </ButtonHolder>
         </Cont1>
       </motion.div>

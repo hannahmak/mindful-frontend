@@ -22,7 +22,7 @@ function Profile() {
         <h1>
           <Button routeTo="./" ButtonText="Home" type="submit" />
           <Button routeTo="./journal" ButtonText="Journal Page" type="submit" />
-
+          <Button routeTo="./api/auth/logout" ButtonText="Logout" type="submit" />
         </h1>
       </div>
     )
