@@ -23,13 +23,6 @@ const Images = styled.img`
     width:124px;
 `
 
-const MyProfile = styled.div`
-    width:24px;
-    height:24px;
-    background: no-repeat url('${props=>props.profilesrc}');
-    border: none;
-`
-
 const Dashboard = styled.div`
     width:24px;
     height:24px;
@@ -40,6 +33,20 @@ const Journal = styled.div`
     width:24px;
     height:24px;
     background: no-repeat url('${props=>props.journsrc}');
+    border: none;
+`
+
+const Mood = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.moodsrc}');
+    border: none;
+`
+
+const Badge = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.badgesrc}');
     border: none;
 `
 
@@ -78,9 +85,10 @@ const Holder2 = styled.div`
 `
 
 const Menu = ({
-    profilesrc="/profileNormal.svg",
     dashsrc="/homeNormal.svg",
     journsrc="/journalNormal.svg",
+    moodsrc="/moodNormal.svg",
+    badgesrc="/badgeNormal.svg",
     chatsrc="/chatt.svg",
     trendsrc="/trends.svg",
 }) => {
@@ -92,13 +100,16 @@ const Menu = ({
             <Circle>
                 <Dashboard onClick={()=>router.push('/dashboard')} dashsrc={dashsrc} />
             </Circle>
-            <Circle onClick={()=>router.push('/myprofile')}>
-                <MyProfile profilesrc={profilesrc}/>
-            </Circle>
             <Circle onClick={()=>router.push('/journal')} >
                 <Journal journsrc={journsrc} />
             </Circle>
-            <Circle onClick={()=>router.push('#')}>
+            <Circle onClick={()=>router.push('/mood')} >
+                <Mood moodsrc={moodsrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('/badges')} >
+                <Badge badgesrc={badgesrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('/talk')}>
                 <Chat chatsrc={chatsrc} />
             </Circle>
             <Circle onClick={()=>router.push('#')}>

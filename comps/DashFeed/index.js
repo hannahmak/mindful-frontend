@@ -6,6 +6,7 @@ const Container = styled.div`
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 51px;
 `
 
 const TextContainer = styled.div`

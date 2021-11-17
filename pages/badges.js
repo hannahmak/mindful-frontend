@@ -75,7 +75,7 @@ export default function Badges() {
   
   return <Container>
     <ContainerHolder1>
-      <Menu/>
+      <Menu badgesrc="/badgeActive.svg"/>
     </ContainerHolder1>
     <ContainerHolder>
 

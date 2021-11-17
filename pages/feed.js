@@ -49,7 +49,7 @@ const Posts = styled.div`
     padding-top: 90px;
 `
 
-export default function Dashboard() {
+export default function Feed() {
   return (
     <Container>
         {/* Column 1 */}

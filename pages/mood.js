@@ -144,7 +144,7 @@ export default function Mood({
   
   return <Container>
     <ContainerHolder1>
-      <Menu/>
+    <Menu moodsrc='/moodActive.svg' />
     </ContainerHolder1>
     <ContainerHolder>
 
@@ -170,7 +170,7 @@ export default function Mood({
                         <audio id='a1' src="/breathe.mp3"></audio>
                 </Tool>
           <CardContainer>
-            <Card src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
+            <Card routeTo="/talk" src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
             <Card routeTo="/badges" src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
           </CardContainer>
         </CardHolder>
