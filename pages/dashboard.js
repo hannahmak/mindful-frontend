@@ -69,7 +69,7 @@ export default function Dashboard() {
   return (
     <Container>
       <Holder1>
-        <Menu dashsrc= '/dashActive.svg'/>
+        <Menu dashsrc= '/homeActive.svg'/>
       </Holder1>
       <Holder2>
             <Cont1>

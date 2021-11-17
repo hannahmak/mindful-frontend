@@ -79,7 +79,7 @@ const Holder2 = styled.div`
 
 const Menu = ({
     profilesrc="/profileNormal.svg",
-    dashsrc="/dashboard.svg",
+    dashsrc="/homeNormal.svg",
     journsrc="/journalNormal.svg",
     chatsrc="/chatt.svg",
     trendsrc="/trends.svg",
@@ -89,11 +89,11 @@ const Menu = ({
             <Images src="/logo.svg"/>
         </Holder1>
         <Holder2>
-            <Circle onClick={()=>router.push('/myprofile')}>
-                <MyProfile profilesrc={profilesrc}/>
-            </Circle>
             <Circle>
                 <Dashboard onClick={()=>router.push('/dashboard')} dashsrc={dashsrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('/myprofile')}>
+                <MyProfile profilesrc={profilesrc}/>
             </Circle>
             <Circle onClick={()=>router.push('/journal')} >
                 <Journal journsrc={journsrc} />
