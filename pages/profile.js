@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from "next/image";
+import Button from '../comps/Button';
 import Link from "next/link";
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import Router from 'next/router';
@@ -15,13 +16,13 @@ function Profile() {
       <div>
         {/* Kailin hide this part */}
         {/* <p>{JSON.stringify(user, null, 2)}</p> */}
-        <Image src={user.picture} alt={user.name} />
+          <Image src={user.picture} alt={user.name} width={200} height={200} />
         <h2>name: </h2><span>{user.name}</span>
         <h2>email: </h2><span>{user.email}</span>
         <h1>
-         
-          <button type="submit"onClick={() => Router.push('/')}>Back to Home</button> 
-          <button type="submit"onClick={() => Router.push('/journal')}>Journal Page</button> 
+          <Button routeTo="./" ButtonText="Home" type="submit" />
+          <Button routeTo="./journal" ButtonText="Journal Page" type="submit" />
+
         </h1>
       </div>
     )
