@@ -9,9 +9,7 @@ const Container = styled.div`
     height: ${props=>props.height};
     width: ${props=>props.width};
     grid-area: ${props=>props.area};
-    background: #FCEFDF;
-    /* Drop Shadow */
-    
+    background: #FFFFFF;
     box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
 `
@@ -56,7 +54,7 @@ const JokeCardHolder = ({
     return <Container area={area} height={height} width={width}>
         <ContentCont>
             <Content src={src}/>
-        <Button style={{width:250, height:50, borderRadius:60, color:"#9B738F", borderColor:"#9B738F"}}  onClick={()=>{onButtonInteract();}} variant="outlined">Click for a joke</Button>
+        <Button style={{width:248, height:75, borderRadius:60, color:"#0F2046", borderColor:"#0F2046", border:' solid 3px', textTransform:'none', fontSize:'24px'}}  onClick={()=>{onButtonInteract();}} variant="outlined">Joke</Button>
         </ContentCont>
     </Container>
 }

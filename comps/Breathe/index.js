@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 
 const Container = styled.div`
-max-width:50%;
+    max-width:50%;
 `
 
 // const Buttons = styled.button``
@@ -27,6 +27,7 @@ const Breathe = ({
             autoplay:true,
             animationData: require('../../assets/breathe.json'),
         })
+        lottie.setSpeed(2.5);
     }, [])
     
 
