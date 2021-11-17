@@ -9,7 +9,7 @@ const Container = styled.div`
     align-items:center;
     width: 50%;
     height: 50%;
-    background-color:white;
+    background-color: white;
     padding:30px;
     box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
@@ -50,7 +50,7 @@ const ContainerHolder = styled.div `
     align-items:center;
     justify-content:center;
     width:100%;
-    height:100%;
+    height:140%;
     background: rgba(0, 0, 0, 0.3);
 `
 const JokeButt = styled.button ``

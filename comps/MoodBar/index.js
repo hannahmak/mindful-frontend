@@ -15,6 +15,7 @@ const Container = styled.div`
     overflow: hidden;
     background: #F9FBFC;
     height: 150%;
+    grid-area: moodbard;
 `
 
 const CurrentMoodCont = styled.div`

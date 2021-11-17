@@ -3,6 +3,7 @@ import Avatar from '../comps/Avatar'
 import Menu from '../comps/Menu';
 import MoodBar from '../comps/MoodBar';
 import Card from '../comps/Card';
+import DashFeed from '../comps/DashFeed';
 
 const Container = styled.div `
 height:100vh
@@ -68,7 +69,7 @@ export default function Dashboard() {
   return (
     <Container>
       <Holder1>
-        <Menu press2="inset 0px 0px 4px rgba(232, 146, 79, 1), src url" />
+        <Menu dashsrc= '/dashActive.svg'/>
       </Holder1>
       <Holder2>
             <Cont1>
@@ -76,6 +77,8 @@ export default function Dashboard() {
                 <Date>Saturday, October 06</Date>
             </Cont1>
 
+            <DashFeed dashsize={"24px"} dashweight={"800"}/>
+            
             <Cards>
               <Cont2>
                   <Card src='/journal.svg'routeTo='./journal' area='journal'width='40%' height="300px" text="Journal"/>

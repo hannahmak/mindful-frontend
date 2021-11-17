@@ -12,22 +12,22 @@ const Container = styled.div`
     background: ${props=>props.background};
     box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
-    padding:15px;
     gap:10px;
+    justify-content: flex-end;
 `
 
 const Header = styled.div`
     display: flex;
-    justify-content: start;
     font-weight:800;
-    font-size:20px;
+    font-size:13px;
     color: #0F2046;
+    margin-bottom: 11px;
 `
 
 const ContentCont = styled.div`
-display:flex;
-align-items:center;
-justify-content:${props=>props.justify};
+    display:flex;
+    align-items:center;
+    justify-content:${props=>props.justify};
     
 `
 
@@ -36,11 +36,18 @@ const Content = styled.img`
     width: 120px;
 `
 
-const Description = styled.p`
-color:#878FA2;
-font-size:16px;
-font-weight:400;
+const Description = styled.div`
+    color:#878FA2;
+    font-size:13px;
+    font-weight:400;
+`
 
+const TextCont = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin: 44px 34px 34px 34px;
 `
 
 const Card = ({
@@ -48,7 +55,7 @@ const Card = ({
     width= "300px",
     text= "Header",
     src="/moodbooster.svg",
-    routeTo='/.', //this is needed for routing pages
+    routeTo='/.',
     area='',
     background="#FFFFFF",
     justify="left",
@@ -62,8 +69,10 @@ const Card = ({
             <ContentCont justify={justify}>
                 <Content src={src}/>
             </ContentCont>
-            <Header>{text}</Header>
-            <Description>Not feeling too well? It’s totally okay, take a breather here or let us crack up some jokes for you!</Description>
+            <TextCont>
+                <Header>{text}</Header>
+                <Description>Not feeling too well? It’s totally okay, take a breather here or let us crack up some jokes for you!</Description>
+            </TextCont>
         </Container>
 }
 export default Card;

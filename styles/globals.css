@@ -4,13 +4,6 @@ html,
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-   /* background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0)); */
-  /* background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
-  /* background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%); */
-  /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-  /* background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%); */
-  /* background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%); */
-  /* background-image: url("/wallpaper.jpg"); */
   background: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +12,7 @@ body {
 
 
 p, h1, h2, span {
-  color: black;
+  color: #0F2046;
 }
 
 a {

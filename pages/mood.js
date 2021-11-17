@@ -11,23 +11,18 @@ import { motion } from 'framer-motion'
 const axios = require('axios').default;
 
 const Container = styled.div `
-height:100vh
-width:100%;
-display:flex;
-flex-direction:row;
-position:relative;
+  height:100vh
+  width:100%;
+  display:flex;
+  flex-direction:row;
 `;
-
-const Holder = styled.div ``;
 
 const Holder2 = styled.div `
   display:flex;
   width:100%;
   flex-direction:column;
   gap:20px;
-  align-items:center;
 `;
-
 
 const JokeCards = styled.div `
   display:flex;
@@ -36,7 +31,6 @@ const JokeCards = styled.div `
   justify-content: space-between;
   padding-top: 20px;
 `;
-
 
 const Tool = styled.div `
   display:flex;
@@ -70,7 +64,6 @@ const BreathingHolder = styled.div `
   height:250px;
   width:500px;
   position:relative;
-
 `;
 
 const ContainerHolder = styled.div`
@@ -110,24 +103,23 @@ const LaughHolder = styled.div `
   justify-content:center;
 `
 const Title = styled.h1 `
-color:#0F2046;
-margin-bottom:0px;
-
+  color:#0F2046;
+  margin-bottom:0px;
 `
 const Title2 = styled.h1 `
-color:#0F2046;
-margin-bottom:0px;
+  color:#0F2046;
+  margin-bottom:0px;
 
 `
-const Text = styled.p `
-color:#878FA2;
+  const Text = styled.p `
+  color:#878FA2;
 `
 
 const Image = styled.img `
-width:30%;
-z-index:2;
-position:absolute;
-left:90px;
+  width:30%;
+  z-index:2;
+  position:absolute;
+  left:90px;
 `
 
 
