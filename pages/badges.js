@@ -56,17 +56,17 @@ flex-direction:row;
 gap:20px;
 `
 const Title = styled.h1 `
-color:#420062;
+color:#0F2046;
 margin-bottom:0px;
 
 `
 const Title2 = styled.h1 `
-color:#EE8B89;
+color:#0F2046;
 margin-bottom:0px;
 
 `
 const Text = styled.p `
-color:#7E7E7E;
+color:#878FA2;
 `
 
 // https://icanhazdadjoke.com/
@@ -75,7 +75,7 @@ export default function Badges() {
   
   return <Container>
     <ContainerHolder1>
-      <Menu/>
+      <Menu badgesrc="/badgeActive.svg"/>
     </ContainerHolder1>
     <ContainerHolder>
 
@@ -89,9 +89,9 @@ export default function Badges() {
         <CardHolder>
           <CardContainer>
             <EarnedBadges src="/badges.svg" justify="center" text="First Badge" width="100%" height="100%"/>
-            <EarnedBadges src="/message.svg" justify="center" text="Message a friend" description="You messaged a friend through the Chat page!" background="rgba(243, 179, 150, 0.4)" width="100%" height="100%"/>
+            <EarnedBadges src="/message.svg" justify="center" text="Message a friend" description="You messaged a friend through the Chat page!" width="100%" height="100%"/>
             <EarnedBadges src="/journal.svg" justify="center" text="First Journal Entry" description="You created a public and private journal entry!" width="100%" height="100%"/>
-            <EarnedBadges src="/moodbooster.svg" justify="center" text="Message a friend" description="You entered your very first mood! You will now be able to track your mood in the Trends page" background="rgba(243, 179, 150, 0.4)" width="100%" height="100%"/>
+            <EarnedBadges src="/moodbooster.svg" justify="center" text="Message a friend" description="You entered your very first mood! You will now be able to track your mood in the Trends page" width="100%" height="100%"/>
           </CardContainer>
         </CardHolder>
         <TitleHolder>

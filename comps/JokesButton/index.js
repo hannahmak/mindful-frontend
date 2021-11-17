@@ -5,18 +5,13 @@ import Button from '@mui/material/Button';
 
 const Container = styled.div``
 
-// const Buttons = styled.button``
-
-
-
-
 const JokesButton = ({
     variant="contained",
     ButtonText="Text Here",
     onButtonInteract=()=>{}
 }) => {
     return <Container>
-        <Button onClick={()=>{onButtonInteract();}} style={{width:250, height:50, borderRadius:60,}} variant={variant}>{ButtonText}</Button>
+        <Button onClick={()=>{onButtonInteract();}} style={{width:248, height:75, borderRadius:60, textTransform:'none', fontSize:'24px'}} variant={variant}>{ButtonText}</Button>
     </Container>
 }
 

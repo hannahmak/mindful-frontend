@@ -6,9 +6,6 @@ import { useState } from 'react';
 import AboutCompanion from '../comps/AboutCompanion';
 import Button from '../comps/Button'
 
-
-
-
 const Container = styled.div `
 display:flex;
 justify-content:center;

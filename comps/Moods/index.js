@@ -1,5 +1,6 @@
 import { borderRadius, width } from '@mui/system';
 import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
 
 const Container = styled.div`
 display:flex;
@@ -39,7 +40,8 @@ const Moods = ({
     width="70px",
     height="70px",
     borderRadius="160px",
-    src="/open.svg"
+    src="/open.svg",
+    hover="fasle",
 }) => {
     return <Container>
         <Holder1>
