@@ -42,15 +42,12 @@ export default function Messaging({
   return (
     <Container>
         <Holder1>
-            <Menu press4="inset 0px 0px 4px rgba(0, 0, 0, 0.25)"/>
+            <Menu chatsrc="chatActive.svg"/>
         </Holder1>
         <Holder2>
             <Text>COMING SOON</Text>
             <Image src="/comingsoon.png"/>
-
         </Holder2>
-
-
     </Container>
   )
 }

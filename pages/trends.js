@@ -42,7 +42,7 @@ export default function Trends({
   return (
     <Container>
         <Holder1>
-            <Menu press5="inset 0px 0px 4px rgba(0, 0, 0, 0.25)"/>
+            <Menu src="trends.svg"/>
         </Holder1>
         <Holder2>
             <Text>COMING SOON</Text>

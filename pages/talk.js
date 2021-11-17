@@ -78,7 +78,7 @@ export default function Talk() {
   
   return <Container>
     <ContainerHolder1>
-      <Menu chatsrc='/chatActive.svg'/>
+      <Menu/>
     </ContainerHolder1>
     <ContainerHolder>
 

@@ -65,7 +65,7 @@ export default function Journal() {
   return (
     <div className={styles.container}>
       <div className={styles.holder1}>
-        <Menu press3="inset 0px 0px 4px rgba(0, 0, 0, 0.25)"/>
+        <Menu journsrc="journalActive.svg"/>
       </div>
       <Head>
         <title>Create Next App</title>
