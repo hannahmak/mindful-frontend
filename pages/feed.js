@@ -53,7 +53,7 @@ export default function Feed() {
   return (
     <Container>
         {/* Column 1 */}
-        <Menu dashsrc= '/dashActive.svg'/>
+        <Menu dashsrc= '/homeActive.svg'/>
 
         {/* Column 2 */}
         <FeedCont>

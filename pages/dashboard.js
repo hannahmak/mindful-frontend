@@ -76,8 +76,6 @@ export default function Dashboard() {
               <DashboardCard height="275px" width="310px" area="quote" header='' />
             </CardCont>
         </DashCont>   
-        
-
 
         {/* Column 3 */}
         <MoodBar/>
