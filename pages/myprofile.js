@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
 import Menu from '../comps/Menu';
