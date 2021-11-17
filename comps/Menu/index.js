@@ -3,171 +3,120 @@ import router, {useRouter} from 'next/router';
 import { motion } from 'framer-motion';
 
 const Container = styled.div`
-position:fixed;
-z-index: 2;
-display:flex;
-flex-direction:column;
-background-color:#F2F3F7;
-height:100vh;
-width:8%;
+    position:fixed;
+    z-index: 2;
+    display:flex;
+    flex-direction:column;
+    background-color:#F2F3F7;
+    height:100vh;
+    width:144px;
+    grid-area: menu;
 `
 const Holder1 = styled.div`
-display:flex;
-flex:1;
-width:100%;
-justify-content:center;
+    display:flex;
+    flex:1;
+    width:100%;
+    justify-content:center;
 `
 
 const Images = styled.img`
-height:80px;
-width:80px;
-`
-const MyProfile = styled.img`
-width:20px;
-height:20px;
-
+    height:124px;
+    width:124px;
 `
 
-const Dashboard = styled.img`
-height:20px;
-width:20px;
+const Dashboard = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.dashsrc}');
+    border: none;
 `
-const Feed = styled.img`
-height:20px;
-width:20px;
-`
-
-const Trends = styled.img`
-height:20px;
-width:20px;
-`
-
-const Chat = styled.img`
-height:20px;
-width:20px;
+const Journal = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.journsrc}');
+    border: none;
 `
 
-const Circle1 = styled.div `
-display:flex;
-justify-content:center;
-align-items:center;
-background: #F2F3F7;
-box-shadow:${props=>props.press1};
-height:50px;
-width:50px;
-border-radius:100px;
+const Mood = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.moodsrc}');
+    border: none;
 `
 
-const Circle2 = styled.div `
-display:flex;
-justify-content:center;
-align-items:center;
-background: #F2F3F7;
-box-shadow:${props=>props.press2};
-height:50px;
-width:50px;
-border-radius:100px;
+const Badge = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.badgesrc}');
+    border: none;
 `
 
-const Circle3 = styled.div `
-display:flex;
-justify-content:center;
-align-items:center;
-background: #F2F3F7;
-box-shadow:${props=>props.press3};
-height:50px;
-width:50px;
-border-radius:100px;
+const Trends = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.trendsrc}');
+    border: none;
 `
 
-const Circle4 = styled.div `
-display:flex;
-justify-content:center;
-align-items:center;
-background: #F2F3F7;
-box-shadow:${props=>props.press4};
-height:50px;
-width:50px;
-border-radius:100px;
+const Chat = styled.div`
+    width:24px;
+    height:24px;
+    background: no-repeat url('${props=>props.chatsrc}');
+    border: none;
 `
 
-const Circle5 = styled.div `
-display:flex;
-justify-content:center;
-align-items:center;
-background: #F2F3F7;
-box-shadow:${props=>props.press5};
-height:50px;
-width:50px;
-border-radius:100px;
+const Circle = styled.div `
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: #F2F3F7;
+    box-shadow:${props=>props.press1};
+    height:50px;
+    width:50px;
+    border-radius:100px;
 `
-// for button press inset 0px 0px 4px rgba(0, 0, 0, 0.25)
-
 
 const Holder2 = styled.div`
-display:flex;
-flex:4;
-flex-direction:column;
-align-items:center;
-justify-contnet:center;
-gap:90px;
+    display:flex;
+    flex:4;
+    flex-direction:column;
+    align-items:center;
+    justify-contnet:center;
+    gap:90px;
 `
 
 const Menu = ({
-    press1="none",
-    press2="none",
-    press3="none",
-    press4="none",
-    press5="none",
+    dashsrc="/homeNormal.svg",
+    journsrc="/journalNormal.svg",
+    moodsrc="/moodNormal.svg",
+    badgesrc="/badgeNormal.svg",
+    chatsrc="/chatt.svg",
+    trendsrc="/trends.svg",
 }) => {
     return <Container>
         <Holder1>
-            <Images src="/logo2.svg"/>
+            <Images src="/logo.svg"/>
         </Holder1>
         <Holder2>
-            <Circle1 as={motion.div} whileHover={{
-                scale:1.3,
-                transition: {
-                    duration:.1,
-                }
-            }} onClick={()=>router.push('/myprofile')} press1={press1}>
-                <MyProfile src="/profileuser.svg"/>
-            </Circle1>
-            <Circle2 as={motion.div} whileHover={{
-                scale:1.3,
-                transition: {
-                    duration:.1,
-                }
-            }}  press2={press2}>
-                <Dashboard onClick={()=>router.push('/dashboard')} src="/dashboard.svg" />
-            </Circle2>
-            <Circle3 as={motion.div} whileHover={{
-                scale:1.3,
-                transition: {
-                    duration:.1,
-                }
-            }}  onClick={()=>router.push('/journal')} press3={press3}>
-                <Feed src="/feed.svg" />
-            </Circle3>
-            <Circle4 as={motion.div} whileHover={{
-                scale:1.3,
-                transition: {
-                    duration:.1,
-                }
-            }}  onClick={()=>router.push('/messaging')} press4={press4}>
-                <Chat src="/chatt.svg" />
-            </Circle4>
-            <Circle5 as={motion.div} whileHover={{
-                scale:1.3,
-                transition: {
-                    duration:.1,
-                }
-            }}  onClick={()=>router.push('/trends')} press5={press5}>
-                <Trends src="/trends.svg" />
-            </Circle5>
+            <Circle>
+                <Dashboard onClick={()=>router.push('/dashboard')} dashsrc={dashsrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('/journal')} >
+                <Journal journsrc={journsrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('/mood')} >
+                <Mood moodsrc={moodsrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('/badges')} >
+                <Badge badgesrc={badgesrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('/talk')}>
+                <Chat chatsrc={chatsrc} />
+            </Circle>
+            <Circle onClick={()=>router.push('#')}>
+                <Trends trendsrc={trendsrc}/>
+            </Circle>
         </Holder2>
-        
-
     </Container>
 }
 

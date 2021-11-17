@@ -16,7 +16,7 @@ align-items: center;
 height: 70px;
 width: 240px;
 border-radius: 40px;
-border-style: solid;
+border: 3px solid;
 border-color: ${props=>props.border};
 background-color: ${props=>props.back};
 `
@@ -32,8 +32,8 @@ font-size: 20px;
 
 const TalkButton = ({
     text="Friends",
-    back="#9B738F",
-    border="#9B738F",
+    back="#0F2046",
+    border="#0F2046",
     color="white",
     routeTo='/.', //this is needed for routing pages
 }) => {

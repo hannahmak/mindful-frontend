@@ -24,6 +24,7 @@ const Header = styled.div`
     font-size:18px;
     padding-top: 15px;
     text-align: center;
+    color: #0F2046;
 `
 
 const ContentCont = styled.div`
@@ -40,7 +41,7 @@ const Content = styled.img`
 `
 
 const Description = styled.p`
-color:#7E7E7E;
+color:#878FA2;
 font-size:15px;
 font-weight:400;
 text-align: center;
@@ -55,7 +56,7 @@ const EarnedBadges = ({
     src="/badges.svg",
     routeTo='/.', //this is needed for routing pages
     area='',
-    background="#FCEFDF",
+    background="#FFFFFF",
     justify="center",
 }) => {
     return <Container background={background} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>

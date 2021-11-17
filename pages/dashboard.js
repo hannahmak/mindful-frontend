@@ -3,96 +3,83 @@ import Avatar from '../comps/Avatar'
 import Menu from '../comps/Menu';
 import MoodBar from '../comps/MoodBar';
 import Card from '../comps/Card';
+import DashFeed from '../comps/DashFeed';
+import JournalPost from '../comps/JournalPost';
+import DashboardCard from '../comps/DashboardCard';
 
 const Container = styled.div `
-height:100vh
-width:100%;
-display:flex;
-flex-direction:row;
+  height:100vh
+  width:100%;
+  display: inline-grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 59px;
+  grid-template-area: "menu feed feed moodbar";
 `
-const Cont1 = styled.div `
-display:flex;
-flex-direction:column;
-width:80%;
-`
-const Cont2 = styled.div `
-display:flex;
-flex-direction:row;
-justify-content:center;
-gap:10px;
-width:100%;
-`
-
-const Holder1 = styled.div `
-width:8%;
-`
-const Cards = styled.div`
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-gap:10px;
+const DashCont = styled.div `
+  height:100vh;
+  width: 60vw;
+  grid-area: feed;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 52px;
 `
 
-const Holder2 = styled.div `
-display:flex;
-justify-content:center;
-flex-direction:row;
-flex-wrap:wrap;
-width:70%;
-height:100vh;
-padding:40px;
-gap:50px;
-`
 const Date = styled.div`   
-    display: flex;
-    font-size: 18px;
-    color:  rgba(0, 0, 0, 0.49);
-    padding-top: 3%;
-`
-const Holder3 = styled.div `
-height:100vh;
-width:22%;
+  font-size: 18px;
+  color:  #878FA2;
+  padding-top: 24px;
 `
 
 const Greeting = styled.div`
-font-style: normal;
-font-weight: 800;
-font-size: 36px;
-line-height: 44px;
-color: #2F2E4C;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 44px;
+  color: #0F2046;
+`
+
+const CardCont = styled.div `
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2r 1r 1r 1r;
+  grid-template-areas: 
+    "journal trends"
+    "journal chat"
+    "badge badge"
+    "mood quote"
+  ;
+  grid-gap: 26px;
 `
 
 
 export default function Dashboard() {
   return (
     <Container>
-      <Holder1>
-        <Menu press2="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />
-      </Holder1>
-      <Holder2>
-            <Cont1>
-                <Greeting>Good Morning Kelly</Greeting>
-                <Date>Saturday, October 06</Date>
-            </Cont1>
+        {/* Column 1 */}
+        <Menu dashsrc= '/homeActive.svg'/>
 
-            <Cards>
-              <Cont2>
-                  <Card src='/journal.svg'routeTo='./journal' area='journal'width='40%' height="300px" text="Journal"/>
-                  <Card routeTo='/mood' area='moodboost' width='40%' height="300px" text="Mood Booster"/>
-              </Cont2>
-              <Cont2>
-                  <Card rc='/trend.svg' routeTo='#' area='trends' width='40%' height="300px" text="Trends"/>
-                  <Card src='/message.svg'routeTo='/talk' area='chat' width='40%' height="300px" text="Chat"/>
-              </Cont2>
-              <Cont2>
-                  <Card src='/badges.svg' routeTo='/badges' area='badge' width='81%' height="300px" text="Badges"/>  
-            </Cont2>
-            </Cards>
-      </Holder2>
-      <Holder3>
+        {/* Column 2 */}
+        <DashCont>
+            <Greeting>Good Morning Kelly</Greeting>
+            <Date>Saturday, October 06</Date>
+            <DashFeed dashsize={"24px"} dashweight={"800"}/>
+
+            <CardCont>
+              <DashboardCard routeTo="/journal" height="451px" width="431px" area="journal" src="/journalCover.svg" iheight="339px" iwidth="351px"/>
+              <DashboardCard routeTo="/trends" height="146px" width="310px" area="trend" header='Trends' src="/trendsCover.svg" iheight="209px" iwidth="224px"/>
+              <DashboardCard routeTo="/talk" height="146px" width="310px" area="chat" header='Chat' src="/chatCover.svg" iheight="67px" iwidth="206px" />
+              <DashboardCard routeTo="/badges" height="187px" width="772px" area="badge" header='Badges' src="/badgeCover.svg" iheight="57px" iwidth="487px"/>
+              <DashboardCard routeTo="/mood" height="275px" width="431px" area="mood" header='Mood Boosters' src="/moodCover.svg" iheight="202px" iwidth="196px"/>
+              <DashboardCard height="275px" width="310px" area="quote" header='' />
+            </CardCont>
+        </DashCont>   
+
+        {/* Column 3 */}
         <MoodBar/>
-      </Holder3>
+
     </Container>
   )
 }

@@ -10,101 +10,117 @@ import { motion } from 'framer-motion'
 
 const axios = require('axios').default;
 
-// background: linear-gradient(125deg, rgba(166, 164, 248,1), rgba(255,255,255,0));
-// .Buttons {
-//   display:flex;
-//   flex-direction: row;
-//   flex-wrap:wrap;
-
 const Container = styled.div `
-height:100vh
-width:100%;
-display:flex;
-flex-direction:row;
-position:relative;
+  height:100vh
+  width:100%;
+  display:flex;
+  flex-direction:row;
 `;
 
 const Holder2 = styled.div `
-display:flex;
-width:100%;
-flex-direction:column;
-gap:20px;
-align-items:center;
-
+  display:flex;
+  width:100%;
+  flex-direction:column;
+  gap:20px;
 `;
 
+const JokeCards = styled.div `
+  display:flex;
+  flex-direction:row;
+  align-items:space-between;
+  justify-content: space-between;
+  padding-top: 20px;
+`;
 
 const Tool = styled.div `
-display:flex;
-flex-direction: column;
-justify-content:center;
-padding:20px;
-background-color:white;
-
-/* Drop Shadow */
-box-shadow: 0px 0px 20px #F2F3F7;
-border-radius: 25px;
-width: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  padding:20px;
+  background-color:white;
+  box-shadow: 0px 0px 20px #F2F3F7;
+  border-radius: 25px;
+  width: 100%;
 `;
 
-const Breathing = styled.div`
-display:flex;
-width:100%;
-align-items:center;
-justify-content:center;
+const Header = styled.div`
+  padding: 20px;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #FFFFFF;
 `
 
+const Breathing = styled.div`
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:center;
+`
+
+const BreathingHolder = styled.div `
+  height:250px;
+  width:500px;
+  position:relative;
+`;
+
 const ContainerHolder = styled.div`
-display:flex;
-width:92%;
-padding:100px;
+  display:flex;
+  width:92%;
+  padding:100px;
 `
 
 const ContainerHolder1 = styled.div`
-background-color:blue;
-width:8%;
+  background-color:blue;
+  width:8%;
 `
 
 const TitleHolder = styled.div `
-display:flex;
-flex-direction:column;
-width:100%;
+  display:flex;
+  flex-direction:column;
+  width:100%;
 `
 
 const CardHolder = styled.div `
-display:flex;
-flex-direction:row;
-gap:20px;
-width:100%;
-width:100%;
-justify-content:center;
+  display:flex;
+  flex-direction:row;
+  gap:20px;
+  width:100%;
+  width:100%;
+  justify-content:center;
 `
 const CardContainer = styled.div `
-display:flex;
-flex-direction:column;
-gap:20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
 `
 const LaughHolder = styled.div `
-display:flex;
-width:100%;
-align-items:center;
-justify-content:center;
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:center;
 `
 const Title = styled.h1 `
-color:#420062;
-margin-bottom:0px;
-
+  color:#0F2046;
+  margin-bottom:0px;
 `
 const Title2 = styled.h1 `
-color:#EE8B89;
-margin-bottom:0px;
+  color:#0F2046;
+  margin-bottom:0px;
 
 `
-const Text = styled.p `
-color:#7E7E7E;
+  const Text = styled.p `
+  color:#878FA2;
 `
-
-
+  
+const Image = styled.img `
+  width:30%;
+  z-index:2;
+  position:absolute;
+  left:90px;
+`
 
 // https://icanhazdadjoke.com/
 
@@ -127,7 +143,7 @@ export default function Mood({
   
   return <Container>
     <ContainerHolder1>
-      <Menu/>
+    <Menu moodsrc='/moodActive.svg' />
     </ContainerHolder1>
     <ContainerHolder>
 
@@ -148,12 +164,12 @@ export default function Mood({
                     <Breathing>
                         <Breathe id="lottie"/>
                     </Breathing>
-                        <h1>Breathe tool</h1>
-                        <p style={{color:"#7E7E7E"}}>To begin Mindful Breathing start by clicking on the Breathe Tool and follow along.</p>
+                        <h1 style={{color:"#0F2046"}}>Breathe tool</h1>
+                        <p style={{color:"#878FA2"}}>To begin Mindful Breathing start by clicking on the Breathe Tool and follow along.</p>
                         <audio id='a1' src="/breathe.mp3"></audio>
                 </Tool>
           <CardContainer>
-            <Card src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
+            <Card routeTo="/talk" src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
             <Card routeTo="/badges" src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
           </CardContainer>
         </CardHolder>
