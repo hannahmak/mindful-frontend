@@ -109,15 +109,6 @@ const JournalHolder = styled.div`
 
 
 export default function MyProfile() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const result = await axios.get("/posts");
-      setPosts(result.data.posts);
-    })();
-    console.log("posts", posts);
-  }, []);
   return (
     <Container>
     
