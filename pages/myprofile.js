@@ -63,7 +63,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 const Container = styled.div`
-  height:100vh
+  height:100vh;
   width:100%;
   display:flex;
   flex-direction:row;
