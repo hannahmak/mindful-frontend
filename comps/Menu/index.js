@@ -131,7 +131,7 @@ const Menu = ({
             <Circle2 press2={press2}>
                 <Dashboard onClick={()=>router.push('/dashboard')} src="/dashboard.svg" />
             </Circle2>
-            <Circle3 onClick={()=>router.push('#')} press3={press3}>
+            <Circle3 onClick={()=>router.push('/journal')} press3={press3}>
                 <Feed src="/feed.svg" />
             </Circle3>
             <Circle4 onClick={()=>router.push('#')} press4={press4}>

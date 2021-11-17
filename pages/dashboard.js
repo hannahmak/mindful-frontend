@@ -47,7 +47,7 @@ gap:50px;
 const Date = styled.div`   
     display: flex;
     font-size: 18px;
-    color:  rgba(0, 0, 0, 0.49);
+    color:  #878FA2;
     padding-top: 3%;
 `
 const Holder3 = styled.div `
@@ -60,7 +60,7 @@ font-style: normal;
 font-weight: 800;
 font-size: 36px;
 line-height: 44px;
-color: #2F2E4C;
+color: #0F2046;
 `
 
 
@@ -68,8 +68,7 @@ export default function Dashboard() {
   return (
     <Container>
       <Holder1>
-        <Menu press2="inset 0px 0px 4px rgba(232, 146, 79, 1)
-" />
+        <Menu press2="inset 0px 0px 4px rgba(232, 146, 79, 1), src url" />
       </Holder1>
       <Holder2>
             <Cont1>

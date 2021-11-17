@@ -10,8 +10,6 @@ const Container = styled.div`
     width: ${props=>props.width};
     grid-area: ${props=>props.area};
     background: ${props=>props.background};
-    /* Drop Shadow */
-    
     box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
     padding:15px;
@@ -23,6 +21,7 @@ const Header = styled.div`
     justify-content: start;
     font-weight:800;
     font-size:20px;
+    color: #0F2046;
 `
 
 const ContentCont = styled.div`
@@ -38,7 +37,7 @@ const Content = styled.img`
 `
 
 const Description = styled.p`
-color:#7E7E7E;
+color:#878FA2;
 font-size:16px;
 font-weight:400;
 
