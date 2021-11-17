@@ -10,6 +10,12 @@ import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import router, {useRouter} from 'next/router';
 
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+
 const Container = styled.div `
     height:100vh;
     width:100%;
@@ -55,12 +61,8 @@ const PostsHeader = styled.div`
   line-height: 44px;
   color: #0F2046;
   margin-bottom: 54px;
+`
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
 
 const Container = styled.div`
   height:100vh;
