@@ -3,27 +3,61 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Router from 'next/router';
+import Button from '../comps/Button';
+
+
 
 export default function Journal() {
   const [file, setFile] = useState();
-  const [title, setTitle] = useState("");
+  //const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [tag, setTag] = useState("");
+  const [tags, setTags] = useState(["sample", "tag1"]);
   const [posts, setPosts] = useState([]);
+
+  // const lists = document.getElementById("lists").appendChild('li')
   useEffect(() => {
     (async () => {
+      // const result = await axios.get("/posts");
       const result = await axios.get("/posts");
       setPosts(result.data.posts);
     })();
-  }, []);
+    console.log("effect");
+    // lists.innerHTML = tag;
+  }, [tags]);
+  // const {pathname} =Router
+  // Router.push('./myprofile')
 
   const submit = async (event) => {
     event.preventDefault();
     const data = new FormData();
     data.append("image", file);
-    data.append("title", title);
+   // data.append("title", title);
     data.append("description", description);
-    const result = axios.post("/posts", data);
-    console.log(result);
+    data.append("tags", tags);
+    const result = axios.post("/posts", data);  
+    console.log("result", result);
+ 
+   
+  };
+
+  const removeTag = (i) => {
+    // console.log("i", i);
+    const newTags = tags.filter((e, idx) => idx !== i);
+    // console.log("tags", tags)
+    // console.log("newTags", newTags);
+    setTags(newTags);
+  };
+
+  const addTag = (e) => {
+    if (e.key === "Enter") {
+      console.log("value", e.target.value);
+      console.log("tag", tag);
+      setTags([...tags, tag]);
+      console.log("tags", tags);
+      e.target.value = "";
+    }
   };
 
   return (
@@ -43,32 +77,45 @@ export default function Journal() {
             type="file"
             accept="image/*"
           ></input>
-          <h4>Title</h4>
-          <input
-            onChange={(e) => setTitle(e.target.value)}
-            type="text"
-            placeholder="title"
-          ></input>
           <h4>Description</h4>
-          <input
+          <textarea
             onChange={(e) => setDescription(e.target.value)}
             type="text"
-            placeholder="Journal starts"
-          ></input>
+            placeholder="Journal starts here"
+          ></textarea>
+
           <h4>Click here to submit</h4>
-          <button type="submit">Submit</button>
+          <Button routeTo="./myprofile" ButtonText="Submit" type="submit"/>
+         {/* <button type="submit" >Submit</button> */}
+          {/* <button type="submit"onClick={() => Router.push('/myprofile')}>Submit to profile page</button>  */}
+          
         </form>
-        <div>
-          <h1>This is Your Post</h1>
-          {posts.map((post) => (
-            <figure key={post.id}>
-              <figcaption>{post.title}</figcaption>
-              <figcaption>{post.description}</figcaption>
-              <figcaption>{post.timestamp}</figcaption>
-              <img src={post.image_url}></img>
-            </figure>
-          ))}
+        <h4>Tags</h4>
+       
+        <div id="content">
+          <ul id="lists">
+            {/* <li>{tags}</li> */}
+            {tags.map((t, i) => (
+              <li key={t}>
+                {t}
+                <button
+                  type="button"
+                  onClick={() => {
+                    removeTag(i);
+                  }}
+                >
+                  -
+                </button>
+              </li>
+            ))}
+          </ul>
+          <input
+            type="text"
+            onChange={(e) => setTag(e.target.value)}
+            onKeyPress={addTag}
+          ></input>
         </div>
+        
       </main>
 
       <footer className={styles.footer}>
