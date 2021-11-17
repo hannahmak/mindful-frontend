@@ -11,7 +11,7 @@ import JournalPost from '../comps/JournalPost';
 import router, {useRouter} from 'next/router';
 
 const Container = styled.div `
-    height:100vh
+    height:100vh;
     width:100%;
     display: inline-grid;
     grid-template-columns: 1fr 2fr 1fr;
