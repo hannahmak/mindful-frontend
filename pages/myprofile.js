@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
 import Menu from '../comps/Menu';
 import MoodBar from '../comps/MoodBar';
-import Card from '../comps/Card';
 import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import router, {useRouter} from 'next/router';
