@@ -4,6 +4,7 @@ import MoodCard from '../MoodCard';
 import Avatar from '../Avatar';
 import Moods from '../Moods';
 import router, {useRouter} from 'next/router';
+import AvatarPicture from '../AvatarPicture';
 
 const Container = styled.div`
 display:flex;
@@ -15,6 +16,8 @@ position:fixed;
 z-index: 2;
 align-items:center;
 gap:30px;
+color: #0F2046;
+padding: 31px;
 `
 
 
@@ -31,8 +34,6 @@ const MoodBar = ({
         <Moods/>
         <Moods/>
         <Moods/>
-        
-
     </Container>
 }
 
