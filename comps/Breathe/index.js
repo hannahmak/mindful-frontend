@@ -12,6 +12,7 @@ const Container = styled.div`
 // const Buttons = styled.button``
 var anim = null;
 
+
 const Breathe = ({
     
 }) => {
@@ -25,12 +26,20 @@ const Breathe = ({
             loop: true,
             autoplay:false,
             animationData: require('../../assets/breathe.json'),
+            
         })
         lottie.setSpeed(2.5);
+        setTimeout(() => {
+            anim.pause()
+        }, 61000);
     }, [])
+
+
     
 
-    return <Container onClick={()=>{anim.play()}} as={motion.div} whileHover={{
+    return <Container 
+    
+    onClick={()=>{anim.play()}}  as={motion.div} whileHover={{
         scale:1.05,
         transition: {
             duration:.1,
