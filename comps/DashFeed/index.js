@@ -7,6 +7,7 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: flex-end;
     margin-top: 51px;
+    width:60%;
 `
 
 const TextContainer = styled.div`

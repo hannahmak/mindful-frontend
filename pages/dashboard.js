@@ -8,6 +8,7 @@ import Card from '../comps/Card';
 import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import DashboardCard from '../comps/DashboardCard';
+import Greeting from '../comps/Greeting';
 
 const Holder1 = styled.div `
 display:flex;
@@ -41,11 +42,6 @@ height:100%;
 const DashCont = styled.div `
 `
 
-const Date = styled.div`   
-`
-
-const Greeting = styled.div`
-`
 
 const CardCont = styled.div `
 `
@@ -59,6 +55,7 @@ width:70%;
 height:100%;
 align-items:center;
 justify-content:center;
+gap:10px;
 
 @media only screen and (max-width: 768px) {
   width:100%;
@@ -108,10 +105,57 @@ height:100%;
   width:100%;
 }
 `
+const Row = styled.div `
+display:flex;
+width:100%;
+align-items:center;
+justify-content:left;
+gap:10px;
+`
+
+const Row0 = styled.div `
+display:flex;
+width:100%;
+align-items:center;
+justify-content:flex-end;
+gap:10px;
+`
 
 const Row2 = styled.div `
+display:flex;
+width:100%;
+align-items:center;
+justify-content:center;
+gap:10px;
 `
 const Row3 = styled.div `
+display:flex;
+width:100%;
+align-items:center;
+justify-content:center;
+gap:10px;
+`
+
+const Column3 = styled.div `
+display:flex;
+align-items:center;
+justify-content:center;
+width:60%;
+
+@media only screen and (max-width: 768px) {
+  width:100%;
+}
+`
+
+const Column4 = styled.div `
+display:flex;
+align-items:center;
+justify-content:center;
+width:60%;
+
+@media only screen and (max-width: 768px) {
+  width:100%;
+}
 `
 
 export default function Dashboard() {
@@ -121,6 +165,13 @@ export default function Dashboard() {
         <Menu1 dashsrc="homeActive.svg"/>
       </Holder1>
       <Holder2>
+        <Row>
+            <Greeting/>
+        </Row>
+        <Row0>
+             <DashFeed dashsize={"24px"} dashweight={"800"}/>
+
+        </Row0>
           <Row1>
             <Column1>
               <DashboardCard routeTo="/journal"  area="journal" src="/journalCover.svg" />
@@ -131,13 +182,24 @@ export default function Dashboard() {
             </Column2>
           </Row1>
 
-          <Row2></Row2>
-          <Row3></Row3>
+          <Row2>
+            <DashboardCard routeTo="/badges" area="badge" header='Badges' src="/badgeCover.svg"/>
+          </Row2>
+
+          <Row3>
+            <Column3>
+              <DashboardCard routeTo="/mood" area="mood" header='Mood Boosters' src="/moodCover.svg"/>
+            </Column3>
+            <Column4>
+              <DashboardCard area="quote" header='Quote of the day' />
+            </Column4>
+          </Row3>
       </Holder2>
 
       <Holder3>
         <MoodBar/>
       </Holder3>
+
     </Container>
     // <Container>
     //     <Menu dashsrc= '/homeActive.svg'/>
