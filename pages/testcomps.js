@@ -17,7 +17,7 @@ import EarnedBadges from '../comps/EarnedBadges'
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar';
 import ResponsiveMenu from '../comps/ResponsiveMenu'
-import ResponsiveMenuu from '../comps/ResposiveMenuu'
+import ResponsiveMenuu from '../comps/ResponsiveMenuu'
 
 
 
@@ -29,6 +29,7 @@ flex-direction:column;
 export default function TestComps() {
   return (
     <Cont>
+      <ResponsiveMenuu/>
       <ResponsiveMenu/>
       
       <Avatar/>

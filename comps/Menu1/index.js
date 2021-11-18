@@ -19,8 +19,8 @@ justify-content:center;
 `
 
 const Images = styled.img`
-height:80px;
-width:80px;
+max-height:70px;
+max-width:70px;
 `
 const MyProfile = styled.img`
 width:20px;

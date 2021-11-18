@@ -9,6 +9,8 @@ import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import DashboardCard from '../comps/DashboardCard';
 import Greeting from '../comps/Greeting';
+import ResponsiveMenuu from '../comps/ResponsiveMenuu';
+import ResponsiveMenu from '../comps/ResponsiveMenu';
 
 const Holder1 = styled.div `
 display:flex;
@@ -194,6 +196,8 @@ export default function Dashboard() {
               <DashboardCard area="quote" header='Quote of the day' />
             </Column4>
           </Row3>
+
+          <ResponsiveMenuu/>
       </Holder2>
 
       <Holder3>

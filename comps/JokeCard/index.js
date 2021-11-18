@@ -7,13 +7,19 @@ const Container = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    width: 50%;
-    height: 50%;
+    
+    max-width: 50%;
+    max-height: 70%;
     background-color: white;
     padding:30px;
     box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
     border-radius: 25px;
+
+    @media only screen and (max-width: 768px) {
+        max-width: 80%;
+        max-height: 100%;
+      }
 `
 
 const Joke = styled.p`
@@ -24,6 +30,10 @@ const Joke = styled.p`
     line-height: 30px;
     text-align: center;
     color: #0F2046;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 12px;
+      }
 `
 
 const Exit = styled.img`
@@ -31,29 +41,28 @@ const Exit = styled.img`
 
 const Holder1 =styled.div`
     display:flex;
-    flex:0.3;
+    height:10%;
     width:100%;
     justify-content:flex-end;
 `
 const Holder2 =styled.div`
+    width:100%;
+    height:100%;
     display:flex;
-    flex:3;
-    align-items:center;
+    flex-direction:column;
     justify-content:center;
+    align-items:center;
 `
-const Holder3 =styled.div`
-flex:1;
-`
+
 const ContainerHolder = styled.div `
-    position:absolute;
+    position:fixed;
     display:flex;
     align-items:center;
     justify-content:center;
     width:100%;
-    height:140%;
+    height:100vh;
     background: rgba(0, 0, 0, 0.3);
 `
-const JokeButt = styled.button ``
 
 
 const JokesCard = ({
@@ -72,10 +81,8 @@ const JokesCard = ({
             </Holder1>
             <Holder2>
                 <Joke>{joke}</Joke>
+                <Button variant="contained" style={{width:248, height:75, borderRadius:60, backgroundColor:"#0F2046", textTransform:'none', fontSize:'24px', }} onClick={()=>{onGenerate();}}>Next</Button>
             </Holder2>
-            <Holder3>
-                <Button variant="contained" style={{width:248, height:75, borderRadius:60, backgroundColor:"#0F2046", textTransform:'none', fontSize:'24px'}} onClick={()=>{onGenerate();}}>Next</Button>
-            </Holder3>
         </Container>
     </ContainerHolder> 
 }

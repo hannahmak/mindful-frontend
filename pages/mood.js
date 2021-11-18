@@ -18,10 +18,15 @@ const Container = styled.div `
 `;
 
 const Holder2 = styled.div `
-  display:flex;
-  width:100%;
-  flex-direction:column;
-  gap:20px;
+display:flex;
+padding:40px;
+flex-direction:column;
+flex-wrap:wrap;
+width:100%;
+height:100%;
+align-items:center;
+justify-content:center;
+gap:10px;
 `;
 
 const JokeCards = styled.div `
@@ -68,13 +73,21 @@ const BreathingHolder = styled.div `
 
 const ContainerHolder = styled.div`
   display:flex;
-  width:92%;
+  width:100%;
   padding:100px;
+  @media only screen and (max-width: 768px) {
+    padding:0px;
+  }
 `
 
 const ContainerHolder1 = styled.div`
   background-color:blue;
   width:8%;
+
+  @media only screen and (max-width: 768px) {
+    display:none;
+    width:0%;
+  }
 `
 
 const TitleHolder = styled.div `
@@ -90,6 +103,10 @@ const CardHolder = styled.div `
   width:100%;
   width:100%;
   justify-content:center;
+
+  @media only screen and (max-width: 768px) {
+    flex-wrap:wrap;
+  }
 `
 const CardContainer = styled.div `
   display:flex;
@@ -122,6 +139,13 @@ const Image = styled.img `
   left:90px;
 `
 
+const JokeCont = styled.div `
+position:fixed;
+display:flex;
+height:100%;
+width:100%;
+`
+
 // https://icanhazdadjoke.com/
 
 export default function Mood({
@@ -145,8 +169,8 @@ export default function Mood({
     <ContainerHolder1>
     <Menu1 moodsrc='/moodActive.svg' />
     </ContainerHolder1>
-    <ContainerHolder>
 
+    <ContainerHolder>
       <Holder2>
         <TitleHolder>
           <Title>Mood Boosters</Title>
@@ -184,11 +208,8 @@ export default function Mood({
         <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="100%" height="270px"/>
         </LaughHolder>
         
-        
       </Holder2>
     </ContainerHolder>
-      <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
+          <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
-
-    {/* <JokeCardHolder onButtonInteract={()=>{setShowCard(true); GetJoke();}} text="Tell a Joke" width="330px" height="270px"/> */}
 }
