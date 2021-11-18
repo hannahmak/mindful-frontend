@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
 import { Button, duration } from '@mui/material';
 import { motion } from "framer-motion"
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 
 
 const Container = styled(motion.div) `
@@ -42,7 +42,7 @@ export default function Trends({
   return (
     <Container>
         <Holder1>
-            <Menu src="trends.svg"/>
+            <Menu1 src="trends.svg"/>
         </Holder1>
         <Holder2>
             <Text>COMING SOON</Text>

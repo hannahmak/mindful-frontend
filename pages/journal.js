@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Menu from "../comps/Menu";
+import Menu1 from "../comps/Menu1";
 import Button from '../comps/Button';
 
 
@@ -53,7 +53,7 @@ export default function Journal() {
   return (
     <div className={styles.container}>
       <div className={styles.holder1}>
-        <Menu journsrc="journalActive.svg"/>
+        <Menu1 journsrc="journalActive.svg"/>
       </div>
       <Head>
         <title>Create Next App</title>

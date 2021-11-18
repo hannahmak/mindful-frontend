@@ -130,7 +130,7 @@ justify-contnet:center;
 gap:70px;
 `
 
-const Menu = ({
+const Menu1 = ({
     dashsrc="/homeNormal.svg",
     journsrc="/journalNormal.svg",
     moodsrc="/moodNormal.svg",
@@ -196,7 +196,7 @@ const Menu = ({
     </Container>
 }
 
-export default Menu;
+export default Menu1;
 
 // import styled from 'styled-components';
 // import router, {useRouter} from 'next/router';

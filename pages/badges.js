@@ -3,7 +3,7 @@ import HeaderText from '../comps/HeaderText'
 import Card from '../comps/Card'
 import LockedBadges from '../comps/LockedBadges'
 import EarnedBadges from '../comps/EarnedBadges'
-import Menu from '../comps/Menu'
+import Menu1 from '../comps/Menu1'
 
 const Container = styled.div `
 height:100vh
@@ -75,7 +75,7 @@ export default function Badges() {
   
   return <Container>
     <ContainerHolder1>
-      <Menu badgesrc="badgeActive.svg"/>
+      <Menu1 badgesrc="badgeActive.svg"/>
     </ContainerHolder1>
     <ContainerHolder>
 

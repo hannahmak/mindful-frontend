@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Breathe from '../comps/Breathe'
 import Card from '../comps/Card'
 import JokeCardHolder from '../comps/JokeCardHolder'
-import Menu from '../comps/Menu'
+import Menu1 from '../comps/Menu1'
 import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
 import Lottie from 'lottie-web'
@@ -143,7 +143,7 @@ export default function Mood({
   
   return <Container>
     <ContainerHolder1>
-    <Menu moodsrc='/moodActive.svg' />
+    <Menu1 moodsrc='/moodActive.svg' />
     </ContainerHolder1>
     <ContainerHolder>
 
@@ -168,11 +168,13 @@ export default function Mood({
                         <p style={{color:"#878FA2"}}>To begin Mindful Breathing start by clicking on the Breathe Tool and follow along.</p>
                         <audio id='a1' src="/breathe.mp3"></audio>
                 </Tool>
+
           <CardContainer>
             <Card routeTo="/talk" src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
             <Card routeTo="/badges" src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
           </CardContainer>
         </CardHolder>
+
         <TitleHolder>
           <Title2>Need a laugh?</Title2>
           <Text>Feeling a bit down? Start by using one of the tools below to help improve your mood</Text>

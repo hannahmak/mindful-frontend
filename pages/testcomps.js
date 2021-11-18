@@ -11,7 +11,7 @@ import Card from '../comps/Card'
 import Buttons from '../comps/Button'
 import Breathe from '../comps/Breathe'
 import AddFriend from '../comps/AddFriend'
-import Menu from '../comps/Menu'
+import Menu from '../comps/Menu1'
 import LockedBadges from '../comps/LockedBadges'
 import EarnedBadges from '../comps/EarnedBadges'
 import styled from 'styled-components';

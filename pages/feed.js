@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 import MoodBar from '../comps/MoodBar';
 import Card from '../comps/Card';
 import DashFeed from '../comps/DashFeed';
@@ -53,7 +53,7 @@ export default function Feed() {
   return (
     <Container>
         {/* Column 1 */}
-        <Menu/>
+        <Menu1/>
 
         {/* Column 2 */}
         <FeedCont>

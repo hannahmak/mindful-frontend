@@ -1,27 +1,42 @@
+
+
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 import MoodBar from '../comps/MoodBar';
 import Card from '../comps/Card';
 import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import DashboardCard from '../comps/DashboardCard';
 
-
 const Holder1 = styled.div `
 display:flex;
+width:8%;
+
+@media only screen and (max-width: 768px) {
+  display:none;
+  width:0%;
+}
+
 `
 
-const Holder2 = styled.div `
-display:flex;
-`
 
 const Holder3 = styled.div `
 display:flex;
+width:22%;
+
+@media only screen and (max-width: 768px) {
+  display:none;
+  width:0%;
+}
 `
 
 const Container = styled.div `
-displauy:flex;
+width:100%;
+display:flex;
+flex-direction:row;
+height:100%;
+
 `
 const DashCont = styled.div `
 `
@@ -33,18 +48,95 @@ const Greeting = styled.div`
 `
 
 const CardCont = styled.div `
-
 `
 
+const Holder2 = styled.div `
+padding:40px;
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+width:70%;
+height:100%;
+align-items:center;
+justify-content:center;
+
+@media only screen and (max-width: 768px) {
+  width:100%;
+}
+`
+
+const MiddleHolder = styled.div `
+display:flex;
+width:100%;
+align-items:center;
+justify-content:center;
+`
+
+const Row1 = styled.div `
+display:flex;
+width:100%;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+@media only screen and (max-width: 768px) {
+  flex-wrap:wrap;
+}
+
+`
+const Column1 = styled.div `
+display:flex;
+align-items:center;
+justify-content:center;
+width:60%;
+
+@media only screen and (max-width: 768px) {
+  width:100%;
+}
+`
+
+const Column2 = styled.div `
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:40%;
+height:100%;
+
+@media only screen and (max-width: 768px) {
+  width:100%;
+}
+`
+
+const Row2 = styled.div `
+`
+const Row3 = styled.div `
+`
 
 export default function Dashboard() {
   return (
     <Container>
       <Holder1>
-        <Menu dashsrc="homeActive.svg"/>
+        <Menu1 dashsrc="homeActive.svg"/>
       </Holder1>
-      <Holder2></Holder2>
+      <Holder2>
+          <Row1>
+            <Column1>
+              <DashboardCard routeTo="/journal"  area="journal" src="/journalCover.svg" />
+            </Column1>
+            <Column2>
+              <DashboardCard routeTo="/trends"  area="trend" header='Trends' src="/trendsCover.svg" />
+              <DashboardCard routeTo="/talk" area="chat" header='Chat' src="/chatCover.svg" />
+            </Column2>
+          </Row1>
+
+          <Row2></Row2>
+          <Row3></Row3>
+      </Holder2>
+
       <Holder3>
+        <MoodBar/>
       </Holder3>
     </Container>
     // <Container>

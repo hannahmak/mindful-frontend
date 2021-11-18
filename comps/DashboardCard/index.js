@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
 import { motion } from 'framer-motion';
+import { height } from '@mui/system';
 
 const Container = styled.div`
     display:flex;
     flex-direction: column;
     height: ${props=>props.height};
     width: ${props=>props.width};
-    grid-area: ${props=>props.area};
     background: #FFFFFF;
     box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
@@ -34,30 +34,30 @@ const ImageCont = styled.div`
 `
 
 const Image = styled.img`
-    width: ${props=>props.iwidth};
-    height: ${props=>props.iheight};
+    max-width: ${props=>props.iwidth};
+    max-height: ${props=>props.iheight};
 `
 
 const DashboardCard = ({
-    iheight= "50px",
-    iwidth= "50px",
-    height= "202px",
-    width= "300px",
+    height= "100%",
+    width= "100%",
+    iwidth= "100%",
+    iheight= "100%",
     header= "Journal",
     routeTo='/.',
     area='',
-    src='/moodCover.svg'
+    src='/moodCover.svg',
 }) => {
-    return  <Container as={motion.div} whileHover={{
+    return  <Container height={height} width={width}  as={motion.div} whileHover={{
             scale:1.05,
             transition: {
                 duration:.1,
             }
-            }} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
+            }} onClick={()=>router.push(routeTo)} area={area} >
                 <ContentCont>
                     <Header>{header}</Header>
                     <ImageCont > 
-                        <Image src={src} iwidth={iwidth} iheight={iheight}/>
+                        <Image iheight={iheight} iwidth={iwidth} src={src}/>
                     </ImageCont>
                 </ContentCont>
             </Container>
