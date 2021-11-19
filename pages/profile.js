@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Button from '../comps/Button';
 import Link from 'next/link';
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
-import { Button } from '@mui/material';	
+import { Button as ChatButton } from '@mui/material';	
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';	
 import AuthService from '../services/AuthService';	
 import Router from 'next/router';
@@ -53,7 +53,7 @@ function Profile() {
         </h1>
 
         <Link href="/chat">
-					<Button
+					<ChatButton
 						sx={{
 							background: 'skyblue',
 							bottom: 30,
@@ -63,7 +63,7 @@ function Profile() {
 						}}
 					>
 						<ChatBubbleIcon sx={{ color: 'white' }} /> Go To Chat
-					</Button>
+					</ChatButton>
 				</Link>
       </div>
     )
