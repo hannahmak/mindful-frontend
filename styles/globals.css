@@ -23,3 +23,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.chat-room::-webkit-scrollbar,	
+.chat-panel::-webkit-scrollbar {	
+	display: none;	
+}	
+#chat-message,	
+#chat-message:focus {	
+	color: white;	
+}	
+#friend-search {	
+	height: 1px;	
+	border-radius: 100px;	
+	border: none;
+}
