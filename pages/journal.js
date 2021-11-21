@@ -81,7 +81,7 @@ export default function Journal() {
 
         <form id="newJournalForm" onSubmit={submit}>
           <h4>Choose your mood</h4>
-          <div class="mood">
+          <div className="mood">
             <label  onClick={() => setMood(1)}>
               <input type="radio" name="mood" value="1" />
               <Image
@@ -135,7 +135,7 @@ export default function Journal() {
             value="publish"
             onClick={() => makePublic()}
           />
-          <label for="publish"> Make this post private</label>
+          <label htmlFor="publish"> Make this post private</label>
           <br />
           <h4>Tags</h4>
 
