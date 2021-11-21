@@ -15,7 +15,7 @@ function Profile() {
       <div>
         {/* Kailin hide this part */}
         {/* <p>{JSON.stringify(user, null, 2)}</p> */}
-        <Image src={user.picture} alt={user.name} />
+        <img src={user.picture} alt={user.name} />
         <h2>name: </h2><span>{user.name}</span>
         <h2>email: </h2><span>{user.email}</span>
         <h1>
