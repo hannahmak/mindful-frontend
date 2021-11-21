@@ -9,11 +9,6 @@ import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import router, {useRouter} from 'next/router';
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
 
 const Container = styled.div `
     height:100vh;
@@ -122,8 +117,8 @@ export default function MyProfile() {
     } catch (e) {
       setError(e);
     } finally {
-      setCounter(result.data.posts.length);
       setLoading(false);
+      setCounter(result.data.posts.length);
     }
   }
   useEffect(() => {
@@ -160,8 +155,6 @@ export default function MyProfile() {
         <MoodBar/>
             
             <div>
-              <Button routeTo="./" ButtonText="Back to Home" />
-              <Button routeTo="./talk" ButtonText="Go to chat" />
               <h1>This is Your Post</h1>
               {posts.map((post) => (
                 <figure key={post.id}>
@@ -173,84 +166,6 @@ export default function MyProfile() {
               ))}
             </div>
 
-
-      {/* <Holder1>
-        <Menu press1="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />
-      </Holder1>
-      <Holder2>
-        <Cont1>
-          <ProfDetails>
-            <Avatar />
-          </ProfDetails>
-          <MyJournal>My Journals</MyJournal>
-          <JournalHolder>
-            <Card sx={{ maxWidth: 480 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image="/feedfill.jpeg"
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    November 16, 2021
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Not a good day, I haven&apos;t seen my friends in weeks and I really miss them ):
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button style={{ borderRadius: 60, color: "#2F2E4C", borderColor: "#2F2E4C" }} variant="outlined" size="small" color="primary">
-                  Like
-                </Button>
-              </CardActions>
-            </Card>
-
-            <Card sx={{ maxWidth: 480 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image="/feedfill2.jpeg"
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    November 17, 2021
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    started off as super swag day went to my project 2 class and was not late. A bird pooped on me tho, not cool.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button style={{ borderRadius: 60, color: "#2F2E4C", borderColor: "#2F2E4C" }} variant="outlined" size="small" color="primary">
-                  Like
-                </Button>
-              </CardActions>
-            </Card>
-          </JournalHolder>
-            <div>
-              <Button routeTo="./" ButtonText="Back to Home" />
-              <Button routeTo="./talk" ButtonText="Go to chat" />
-              <h1>This is Your Post</h1>
-              {posts.map((post) => (
-                <figure key={post.id}>
-                  <figcaption>{post.description}</figcaption>
-                  <figcaption>{post.timestamp}</figcaption>
-                  <img src={post.image_url}></img>
-                  <figcaption>{post.tags}</figcaption>
-                </figure>
-              ))}
-            </div>
-        </Cont1>
-      </Holder2>
-      <Holder3>
-        <MoodBar />
-      </Holder3>
-    */}
     </Container>
   )
 }
