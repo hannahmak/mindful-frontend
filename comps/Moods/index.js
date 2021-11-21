@@ -1,6 +1,7 @@
 import { borderRadius, width } from '@mui/system';
 import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
+import AvatarPicture from '../AvatarPicture';
 
 const Container = styled.div`
 display:flex;
@@ -12,8 +13,8 @@ width:90%;
 const Circle = styled.img`
 width:${props=>props.width};
 height:${props=>props.height};
-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
 border-radius:${props=>props.borderRadius};
+background-color: #B0D8D2;
 `
 
 const Holder1 = styled.div `
@@ -41,11 +42,11 @@ const Moods = ({
     height="70px",
     borderRadius="160px",
     src="/open.svg",
-    hover="fasle",
+    hover="false",
 }) => {
     return <Container>
         <Holder1>
-            <Circle width={width} height={height} borderRadius={borderRadius} src={source}/>
+            <AvatarPicture height="79px" width="79px" />
         </Holder1>
         <Holder2>
             <Check src={src}/>

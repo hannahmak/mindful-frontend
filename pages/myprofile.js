@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 import MoodBar from '../comps/MoodBar';
 import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import router, {useRouter} from 'next/router';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
 
 const Container = styled.div `
@@ -57,57 +64,58 @@ const PostsHeader = styled.div`
   margin-bottom: 54px;
 `
 
-const Holder1 = styled.div`
-  width:8%;
-`
+// const Holder1 = styled.div`
+// width:8%;
+// `
 
-const Holder2 = styled.div`
-  display:flex;
-  flex-direction:column;
-  width:70%;
-  align-items:center;
-  height:100vh;
-  gap:50px;
-`
+// const Holder2 = styled.div`
+// display:flex;
+// flex-direction:column;
+// width:70%;
+// align-items:center;
+// height:100vh;
+// gap:50px;
+// `
 
-const Holder3 = styled.div`
-  height:100vh;
-  width:22%;
-`
+// const Holder3 = styled.div`
+// height:100vh;
+// width:22%;
+// `
 
-const ProfDetails = styled.div`
-  width:92%;
-`
+// const ProfDetails = styled.div`
+// width:92%;
+// `
 
-const MyJournal = styled.h1`
-  color:#3C2743;
-`
+// const MyJournal = styled.h1`
+// color:#3C2743;
+// `
 
-const Cont1 = styled.div`
-  display:flex;
-  flex-direction:column;
-  width:80%;
-  height:100vh;
-  gap:50px;
-  padding-top:10px;
-`
+// const Cont1 = styled.div`
+// display:flex;
+// flex-direction:column;
+// width:80%;
+// height:100vh;
+// gap:50px;
+// padding-top:10px;
+// flex-wrap:wrap;
+// `
 
-const JournalHolder = styled.div`
-  display:flex;
-  flex-wrap:wrap;
-  width:100%;
-  align-items:center;
-  justify-content:center;
-  gap:3%;
-`
+// const JournalHolder = styled.div`
+// display:flex;
+// flex-wrap:wrap;
+// width:100%;
+// align-items:center;
+// justify-content:center;
+// gap:3%;
 
-
+// `
 
 export default function MyProfile() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(0);
+  const moodIcon = ["", "/happy.png", "/sad.png", "/angry.png"];
 
   const getPost = async () => {
     const result = await axios.get("/posts");
@@ -120,7 +128,8 @@ export default function MyProfile() {
       setLoading(false);
       setCounter(result.data.posts.length);
     }
-  }
+  };
+
   useEffect(() => {
     getPost();
   }, [counter]);
@@ -129,10 +138,9 @@ export default function MyProfile() {
   return loading ? (
     "Page is loading"
   ) : (
-    <Container>
-    
+    <Container> 
         {/* Column 1 */}
-        <Menu dashsrc= '/homeActive.svg'/>
+        <Menu1 dashsrc= '/homeActive.svg'/>
 
         {/* Column 2 */}
         <ProfileCont>
@@ -147,25 +155,58 @@ export default function MyProfile() {
             <JournalPost username="Kelly Menzul"/>
             <JournalPost username="Kelly Menzul"/>
           </Posts>
-        </ProfileCont>
 
-      
+          <div>
+              <Button routeTo="./" ButtonText="Back to Home" />
+              <Button routeTo="./talk" ButtonText="Go to chat" />
+              <h1>This is Your Post</h1>
+              {posts.map((post) => (
+                post.publish === 0 &&
+                  <figure key={post.id}>
+                    <figcaption>{post.description}</figcaption>
+                    <figcaption>{moment(post.timestamp).format('YYYY-MMM-DD')}</figcaption>
+                    <img style={{ width: 500 }} src={post.image_url}></img>
+                    <h5>these are your tags: </h5>
+                    <figcaption>{JSON.parse(post.tags)}</figcaption>
+                    <h5>this is your mood: </h5>
+                    <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
+                  </figure>
+              ))}
+            </div>
+        </ProfileCont>
 
         {/* Column 3 */}
         <MoodBar/>
-            
-            <div>
-              <h1>This is Your Post</h1>
-              {posts.map((post) => (
-                <figure key={post.id}>
-                  <figcaption>{post.description}</figcaption>
-                  <figcaption>{post.timestamp}</figcaption>
-                  <img src={post.image_url}></img>
-                  <figcaption>{post.tags}</figcaption>
-                </figure>
-              ))}
-            </div>
-
-    </Container>
+    </Container> 
+    //   {/* <Holder1>
+    //     <Menu press1="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />
+    //   </Holder1>
+    //   <Holder2>
+    //     <Cont1>
+    //       <ProfDetails>
+    //         <Avatar />
+    //       </ProfDetails>
+    //       <MyJournal>My Journals</MyJournal>
+    //       <JournalHolder>
+    //         <div>
+    //           <Button routeTo="./" ButtonText="Back to Home" />
+    //           <Button routeTo="./talk" ButtonText="Go to chat" />
+    //           <h1>This is Your Post</h1>
+    //           {posts.map((post) => (
+    //             <figure key={post.id}>
+    //               <figcaption>{post.description}</figcaption>
+    //               <figcaption>{post.timestamp}</figcaption>
+    //               <img src={post.image_url}></img>
+    //               <figcaption>{post.tags}</figcaption>
+    //             </figure>
+    //           ))}
+    //         </div>
+    //       </JournalHolder>
+    //     </Cont1>
+    //   </Holder2>
+    //   <Holder3>
+    //     <MoodBar />
+    //   </Holder3>*/}
+   
   )
 }

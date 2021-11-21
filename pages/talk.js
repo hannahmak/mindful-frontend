@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import TalkButton from '../comps/TalkButton'
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 
 const Container = styled.div `
 height:100vh
@@ -78,7 +78,7 @@ export default function Talk() {
   
   return <Container>
     <ContainerHolder1>
-      <Menu chatsrc='/chatActive.svg'/>
+      <Menu1/>
     </ContainerHolder1>
     <ContainerHolder>
 
