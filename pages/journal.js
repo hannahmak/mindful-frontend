@@ -4,6 +4,8 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import router, { useRouter } from "next/router";
+import { useUser } from "@auth0/nextjs-auth0";
 import Menu1 from "../comps/Menu1";
 import Button from '../comps/Button';
 
@@ -13,21 +15,26 @@ export default function Journal() {
   //const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tag, setTag] = useState("");
-  const [tags, setTags] = useState(["sample", "tag1"]);
-  const [posts, setPosts] = useState([]);
+  const [tags, setTags] = useState(["Tag1"]);
+  const [mood, setMood] = useState(0);
+  const [publish, setPublish] = useState(0);
 
+  const { user } = useUser();
 
   const submit = async (event) => {
     event.preventDefault();
     const data = new FormData();
     data.append("image", file);
-   // data.append("title", title);
+    // data.append("title", title);
     data.append("description", description);
     data.append("tags", tags);
-    const result = axios.post("/posts", data);  
+    data.append("mood", mood);
+    data.append("publish", publish);
+    data.append("email", user.email);
+    const result = axios.post("/posts", data);
     console.log("result", result);
- 
-   
+
+    router.push("./myprofile");
   };
 
   const removeTag = (i) => {
@@ -39,7 +46,9 @@ export default function Journal() {
   };
 
   const addTag = (e) => {
-    if (e.key === "Enter") {
+   
+    if (e.key === "Enter" ) {
+      e.preventDefault()
       console.log("value", e.target.value);
       console.log("tag", tag);
       setTags([...tags, tag]);
@@ -48,7 +57,13 @@ export default function Journal() {
     }
   };
 
-  
+  const makePublic = () => {
+    if (publish === 0) {
+      setPublish(1);
+    } else {
+      setPublish(0)
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -63,7 +78,40 @@ export default function Journal() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Journal</h1>
+
         <form id="newJournalForm" onSubmit={submit}>
+          <h4>Choose your mood</h4>
+          <div class="mood">
+            <label  onClick={() => setMood(1)}>
+              <input type="radio" name="mood" value="1" />
+              <Image
+                width={100}
+                height={100}
+                src="/happy.png"              
+              />
+            </label>
+
+            <label onClick={() => setMood(2)}>
+              <input type="radio" name="mood" value="2" />
+              <Image
+                width={100}
+                height={100}
+                src="/sad.png"               
+              />
+            </label>
+
+            <label onClick={() => setMood(3)}>
+              <input type="radio" name="mood" value="3" />
+              <Image
+                width={100}
+                height={100}
+                src="/angry.png"
+              />
+            </label>
+          </div>
+
+          <br />
+          <h4>Upload an Image</h4>
           <input
             filename={file}
             onChange={(e) => setFile(e.target.files[0])}
@@ -77,14 +125,20 @@ export default function Journal() {
             placeholder="Journal starts here"
           ></textarea>
 
-          <h4>Click here to submit</h4>
-          <Button routeTo="./myprofile" ButtonText="Submit" type="submit"/>
-         {/* <button type="submit" >Submit</button> */}
-          {/* <button type="submit"onClick={() => Router.push('/myprofile')}>Submit to profile page</button>  */}
-          
-        </form>
-        <h4>Tags</h4>
-       
+          <h4>Click here to make this post private</h4>
+
+          {/* 1 means private or not publish; 0 means publish */}
+          <input
+            type="checkbox"
+            id="publish"
+            name="publish"
+            value="publish"
+            onClick={() => makePublic()}
+          />
+          <label for="publish"> Make this post private</label>
+          <br />
+          <h4>Tags</h4>
+
         <div id="content">
           <ul id="lists">
             {/* <li>{tags}</li> */}
@@ -104,12 +158,21 @@ export default function Journal() {
           </ul>
           <input
             type="text"
+            placeholder="Enter tags"
             onChange={(e) => setTag(e.target.value)}
             onKeyPress={addTag}
           ></input>
         </div>
+
+          <h4>Click here to submit</h4>
+          {/* <Button routeTo="./myprofile" ButtonText="Submit" type="submit" /> */}
+          <button type="submit">Submit</button>
+        </form>
+
         
       </main>
     </div>
   );
 }
+
+
