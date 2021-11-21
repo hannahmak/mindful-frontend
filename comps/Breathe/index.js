@@ -6,31 +6,40 @@ import { motion } from 'framer-motion';
 
 
 const Container = styled.div`
-max-width:50%;
+    max-width:50%;
 `
 
 // const Buttons = styled.button``
+var anim = null;
+
 
 const Breathe = ({
-    go="true"
     
 }) => {
-
     const container = useRef(null)
 
     useEffect(({
     }) => {
-        lottie.loadAnimation({
+        anim = lottie.loadAnimation({
             container: container.current,
             renderer: 'svg',
             loop: true,
-            autoplay:true,
+            autoplay:false,
             animationData: require('../../assets/breathe.json'),
+            
         })
+        lottie.setSpeed(2.5);
+        setTimeout(() => {
+            anim.pause()
+        }, 61000);
     }, [])
+
+
     
 
-    return <Container as={motion.div} whileHover={{
+    return <Container 
+    
+    onClick={()=>{anim.play()}}  as={motion.div} whileHover={{
         scale:1.05,
         transition: {
             duration:.1,

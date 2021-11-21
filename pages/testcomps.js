@@ -11,11 +11,14 @@ import Card from '../comps/Card'
 import Buttons from '../comps/Button'
 import Breathe from '../comps/Breathe'
 import AddFriend from '../comps/AddFriend'
-import Menu from '../comps/Menu'
+import Menu1 from '../comps/Menu1'
 import LockedBadges from '../comps/LockedBadges'
 import EarnedBadges from '../comps/EarnedBadges'
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar';
+import ResponsiveMenu from '../comps/ResponsiveMenu'
+import ResponsiveMenuu from '../comps/ResponsiveMenuu'
+
 
 
 const Cont = styled.div `
@@ -26,8 +29,11 @@ flex-direction:column;
 export default function TestComps() {
   return (
     <Cont>
+      <ResponsiveMenuu/>
+      <ResponsiveMenu/>
+      
       <Avatar/>
-      <Menu/>
+      
 
       <AddFriend/>
       <Breathe/>

@@ -4,10 +4,11 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Menu from "../comps/Menu";
-import Button from "../comps/Button";
 import router, { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
+import Menu1 from "../comps/Menu1";
+import Button from '../comps/Button';
+
 
 export default function Journal() {
   const [file, setFile] = useState();
@@ -19,19 +20,6 @@ export default function Journal() {
   const [publish, setPublish] = useState(0);
 
   const { user } = useUser();
-
-  //const lists = document.getElementById("lists").appendChild('li')
-  // useEffect(() => {
-  //   (async () => {
-  //     // const result = await axios.get("/posts");
-  //     const result = await axios.get("/posts");
-  //     setPosts(result.data.posts);
-  //   })();
-  //   console.log("effect");
-  //   // lists.innerHTML = tag;
-  // }, [tags]);
-  // const {pathname} =Router
-  // Router.push('./myprofile')
 
   const submit = async (event) => {
     event.preventDefault();
@@ -80,7 +68,7 @@ export default function Journal() {
   return (
     <div className={styles.container}>
       <div className={styles.holder1}>
-        <Menu press3="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />
+        <Menu1 journsrc="journalActive.svg"/>
       </div>
       <Head>
         <title>Create Next App</title>

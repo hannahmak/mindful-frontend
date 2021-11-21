@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import SubtextText from '../comps/SubtextText';
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 
 const Container =styled.div `
 height:100%;

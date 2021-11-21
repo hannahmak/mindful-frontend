@@ -4,47 +4,49 @@ import { motion } from 'framer-motion';
 
 const Container = styled.div`
 position:fixed;
+bottom:0;
 z-index: 2;
-display:flex;
-flex-direction:column;
-background-color:#F2F3F7;
-height:100vh;
-width:8%;
-`
-const Holder1 = styled.div`
-display:flex;
-flex:1;
-width:100%;
+display:none;
+flex-direction:row;
+align-items:center;
 justify-content:center;
+background-color:#F2F3F7;
+height:10vh;
+width:100%;
+
+@media only screen and (max-width: 768px) {
+    display:flex;
+  }
 `
 
-const Images = styled.img`
-height:80px;
-width:80px;
-`
-const MyProfile = styled.img`
+
+const MyJournal = styled.img`
 width:20px;
 height:20px;
+`
 
+const MoodBooster = styled.img`
+width:20px;
+height:20px;
+`
+const Badge = styled.img`
+width:20px;
+height:20px;
 `
 
 const Dashboard = styled.img`
-height:20px;
 width:20px;
-`
-const Feed = styled.img`
 height:20px;
-width:20px;
 `
 
 const Trends = styled.img`
-height:20px;
 width:20px;
+height:20px;
 `
 
 const Chat = styled.img`
-height:20px;
 width:20px;
+height:20px;
 `
 
 const Circle1 = styled.div `
@@ -52,7 +54,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 background: #F2F3F7;
-box-shadow:${props=>props.press1};
 height:50px;
 width:50px;
 border-radius:100px;
@@ -63,7 +64,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 background: #F2F3F7;
-box-shadow:${props=>props.press2};
 height:50px;
 width:50px;
 border-radius:100px;
@@ -73,8 +73,6 @@ const Circle3 = styled.div `
 display:flex;
 justify-content:center;
 align-items:center;
-background: #F2F3F7;
-box-shadow:${props=>props.press3};
 height:50px;
 width:50px;
 border-radius:100px;
@@ -85,7 +83,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 background: #F2F3F7;
-box-shadow:${props=>props.press4};
 height:50px;
 width:50px;
 border-radius:100px;
@@ -96,7 +93,16 @@ display:flex;
 justify-content:center;
 align-items:center;
 background: #F2F3F7;
-box-shadow:${props=>props.press5};
+height:50px;
+width:50px;
+border-radius:100px;
+`
+
+const Circle6 = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+background: #F2F3F7;
 height:50px;
 width:50px;
 border-radius:100px;
@@ -106,69 +112,75 @@ border-radius:100px;
 
 const Holder2 = styled.div`
 display:flex;
-flex:4;
-flex-direction:column;
+width:100%;
+flex-direction:row;
 align-items:center;
-justify-contnet:center;
-gap:90px;
+justify-content:center;
+gap:10px;
+
 `
 
-const Menu = ({
-    press1="none",
-    press2="none",
-    press3="none",
-    press4="none",
-    press5="none",
+const ResponsiveMenuu = ({
+    dashsrc="/homeNormal.svg",
+    journsrc="/journalNormal.svg",
+    moodsrc="/moodNormal.svg",
+    badgesrc="/badgeNormal.svg",
+    chatsrc="/chatt.svg",
+    trendsrc="/trends.svg",
 }) => {
     return <Container>
-        <Holder1>
-            <Images src="/logo2.svg"/>
-        </Holder1>
         <Holder2>
-            <Circle1 as={motion.div} whileHover={{
+
+            <Circle1 as={motion.div} onClick={()=>router.push('/dashboard')} whileHover={{
                 scale:1.3,
                 transition: {
                     duration:.1,
                 }
-            }} onClick={()=>router.push('/myprofile')} press1={press1}>
-                <MyProfile src="/profileuser.svg"/>
+            }}>
+                <Dashboard src={dashsrc} />
             </Circle1>
-            <Circle2 as={motion.div} whileHover={{
+            <Circle2 as={motion.div} onClick={()=>router.push('/journal')}  whileHover={{
                 scale:1.3,
                 transition: {
                     duration:.1,
                 }
-            }}  press2={press2}>
-                <Dashboard onClick={()=>router.push('/dashboard')} src="/dashboard.svg" />
+            }}>
+                <MyJournal src={journsrc}/>
             </Circle2>
-            <Circle3 as={motion.div} whileHover={{
+            <Circle3 as={motion.div} onClick={()=>router.push('/mood')} whileHover={{
                 scale:1.3,
                 transition: {
                     duration:.1,
                 }
-            }}  onClick={()=>router.push('/journal')} press3={press3}>
-                <Feed src="/feed.svg" />
+            }}>
+                <MoodBooster src={moodsrc}/>
             </Circle3>
             <Circle4 as={motion.div} whileHover={{
                 scale:1.3,
                 transition: {
                     duration:.1,
                 }
-            }}  onClick={()=>router.push('/messaging')} press4={press4}>
-                <Chat src="/chatt.svg" />
+            }}  onClick={()=>router.push('/badges')}>
+                <Chat src={badgesrc} />
             </Circle4>
             <Circle5 as={motion.div} whileHover={{
                 scale:1.3,
                 transition: {
                     duration:.1,
                 }
-            }}  onClick={()=>router.push('/trends')} press5={press5}>
-                <Trends src="/trends.svg" />
+            }}  onClick={()=>router.push('/messaging')}>
+                <Trends src={chatsrc} />
             </Circle5>
+            <Circle6 as={motion.div} whileHover={{
+                scale:1.3,
+                transition: {
+                    duration:.1,
+                }
+            }}  onClick={()=>router.push('/trends')}>
+                <Trends src={trendsrc} />
+            </Circle6>
         </Holder2>
-        
-
     </Container>
 }
 
-export default Menu;
+export default ResponsiveMenuu;

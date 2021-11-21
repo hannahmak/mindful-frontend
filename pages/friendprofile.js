@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 import MoodBar from '../comps/MoodBar';
 
 const Container = styled.div `
@@ -40,7 +40,7 @@ export default function FriendProfile() {
   return (
     <Container>
       <Holder1>
-        <Menu />
+        <Menu1 />
       </Holder1>
       <Holder2>
         <ProfDetails>

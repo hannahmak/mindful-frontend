@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import TalkButton from '../comps/TalkButton'
 import AddFriend from '../comps/AddFriend';
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 
 const Container = styled.div `
 height:100vh
@@ -72,7 +72,7 @@ export default function MyFriends() {
   
   return <Container>
     <ContainerHolder1>
-      <Menu/>
+      <Menu1/>
     </ContainerHolder1>
     <ContainerHolder>
 

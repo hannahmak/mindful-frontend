@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
 import { Button, duration } from '@mui/material';
 import { motion } from "framer-motion"
-import Menu from '../comps/Menu';
+import Menu1 from '../comps/Menu1';
 
 
 const Container = styled(motion.div) `
@@ -42,15 +42,12 @@ export default function Messaging({
   return (
     <Container>
         <Holder1>
-            <Menu press4="inset 0px 0px 4px rgba(0, 0, 0, 0.25)"/>
+            <Menu1 chatsrc="chatActive.svg"/>
         </Holder1>
         <Holder2>
             <Text>COMING SOON</Text>
             <Image src="/comingsoon.png"/>
-
         </Holder2>
-
-
     </Container>
   )
 }
