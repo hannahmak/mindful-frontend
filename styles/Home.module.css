@@ -2,11 +2,11 @@
 .container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  
 }
 
 .main {
-  min-height: 100vh;
+  
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -38,6 +38,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .subtitleholder {
@@ -47,7 +48,6 @@
 }
 
 .input {
-
   color: red;
 }
 
@@ -68,6 +68,61 @@
   font-weight: 300;
   color: #878FA2;
 }
+
+.imagecont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.labelimageupload {
+  width: 30%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0px 0px 20px #F2F3F7;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #0F2046;
+}
+
+
+.imageuploads {
+  display: none;
+}
+
+.cameraimage {
+  height: 20px;
+}
+
+.descriptioncont {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+}
+
+.textareajournal {
+  font-size: 16px;
+  font-weight: 200;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0px 0px 20px #F2F3F7;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-style: none;
+  width: 30%;
+  height: 300px;
+  resize: none;
+}
+
+
 
 
 
