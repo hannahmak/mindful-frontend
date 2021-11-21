@@ -9,11 +9,13 @@ import MoodBar from '../comps/MoodBar';
 import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import router, {useRouter} from 'next/router';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+
 
 const Container = styled.div `
     height:100vh;
@@ -123,8 +125,8 @@ export default function MyProfile() {
     } catch (e) {
       setError(e);
     } finally {
-      setCounter(result.data.posts.length);
       setLoading(false);
+      setCounter(result.data.posts.length);
     }
   };
 
@@ -171,7 +173,6 @@ export default function MyProfile() {
                   </figure>
               ))}
             </div>
-
         </ProfileCont>
 
         {/* Column 3 */}

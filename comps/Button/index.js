@@ -18,7 +18,7 @@ const Buttons = ({
     buttonType="text",
 }) => {
     return <Container>
-        <Button onClick={()=>router.push(routeTo)} style={{width:248, height:75, borderRadius:60,}} variant={variant}>{ButtonText}</Button>
+        <Button onClick={()=>router.push(routeTo)} style={{width:248, height:75, borderRadius:60,}} variant={variant} type={buttonType}>{ButtonText}</Button>
     </Container>
 }
 
