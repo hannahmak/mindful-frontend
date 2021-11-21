@@ -12,6 +12,10 @@ import { motion } from "framer-motion";
 
 
 export default function Journal() {
+  
+
+
+
   const [file, setFile] = useState();
   //const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -158,9 +162,13 @@ export default function Journal() {
             </div>
           </div>
 
-          <div className="imagecont">
+          <div className={styles.imagecont}>
             <h4 className={styles.subtitleholder}>Upload an Image</h4>
-            <input
+            <label className={styles.labelimageupload} for="imageupload">
+              <img className={styles.cameraimage} src="/camera.svg"/>
+              <p>Add image</p>
+            </label>
+            <input className={styles.imageuploads} id="imageupload"
               filename={file}
               onChange={(e) => setFile(e.target.files[0])}
               type="file"
@@ -169,12 +177,12 @@ export default function Journal() {
           </div>
 
 
-          <div className="descriptioncont">
+          <div className={styles.descriptioncont}>
             <h4 className={styles.subtitleholder}>Description</h4>
-            <textarea
+            <textarea className={styles.textareajournal}
               onChange={(e) => setDescription(e.target.value)}
               type="text"
-              placeholder="Journal starts here"
+              placeholder="What's on your mind?"
             ></textarea>
           </div>
 
