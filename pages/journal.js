@@ -10,6 +10,8 @@ import Menu1 from "../comps/Menu1";
 import { motion } from "framer-motion";
 import Checkbox from '@mui/material/Checkbox';
 import ResponsiveMenuu from "../comps/ResponsiveMenuu";
+import { Radio } from "@mui/material";
+import { TextField } from "@mui/material";
 
 
 export default function Journal() {
@@ -84,13 +86,22 @@ export default function Journal() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <main className={styles.main}>
+    <motion.main 
+    initial="pageInitial" animate="pageAnimate" variants={{
+      pageInitial: {
+        opacity:0
+      },
+      pageAnimate: {
+        opacity:1,
+      },
+    }}
+    className={styles.main}>
       {/* <h1 className={styles.title}>Journal</h1> */}
 
       <form className={styles.formcont} id="newJournalForm" onSubmit={submit}>
         <div className={styles.moodcont}>
           <div className={styles.titleholder}>
-            <h4 className={styles.subtitleholder}>How are you feeling today?</h4>
+            <h1 className={styles.subtitleholder}>How are you feeling today?</h1>
           </div>
           <div className={styles.mood}>
             <motion.label 
@@ -106,6 +117,7 @@ export default function Journal() {
               />
               <p className={styles.mooddesc}>Happy</p>
               <input className={styles.input} type="radio" name="mood" value="1" />
+              {/* <Radio className={styles.input} type="radio" name="mood" value="1"/> */}
             </motion.label>
 
             <motion.label 
@@ -121,6 +133,7 @@ export default function Journal() {
               />
               <p className={styles.mooddesc}>Okay</p>
               <input className={styles.input} type="radio" name="mood" value="2" />
+              {/* <Radio className={styles.input} type="radio" name="mood" value="2"/> */}
             </motion.label>
 
             <motion.label 
@@ -156,16 +169,34 @@ export default function Journal() {
           </div>
         </div>
       </form>
-      <button onClick={()=>{setSetup1(true)}}>Next</button>
+      <motion.button
+      whileHover={{
+        scale:1.09,
+        transition: {
+            duration:.1,
+        }
+      }} 
+      className={styles.nextbutton} onClick={()=>{setSetup1(true)}}>
+        <img width="50px" src="/next.svg"/>
+      </motion.button>
 
-    </main>
+    </motion.main>
     <ResponsiveMenuu/>  
     
   </div>
   }
 
   return (
-    <div className={styles.container}>
+    <motion.div 
+    initial="pageInitial" animate="pageAnimate" variants={{
+      pageInitial: {
+        opacity:1
+      },
+      pageAnimate: {
+        opacity:1
+      }
+    }}
+    className={styles.container}>
 
       <div className={styles.holder1}>
         <Menu1 journsrc="journalActive.svg"/>
@@ -177,8 +208,28 @@ export default function Journal() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <button onClick={()=>{setSetup1(false)}}>back</button>
+      <motion.main 
+    initial="pageInitial" animate="pageAnimate" variants={{
+      pageInitial: {
+        x:"-100",
+      },
+      pageAnimate: {
+        x:0,
+      }
+    }}
+      className={styles.main}>
+        <div className={styles.buttonholder}>
+          <motion.button 
+          whileHover={{
+            scale:1.09,
+            transition: {
+                duration:.1,
+            }
+          }} 
+          className={styles.backbutton} onClick={()=>{setSetup1(false)}}>
+            <img width="40px" src="/back.svg"/>
+          </motion.button>
+        </div>
         {/* <h1 className={styles.title}>Journal</h1> */}
 
         <form className={styles.formcont} id="newJournalForm" onSubmit={submit}>
@@ -218,6 +269,7 @@ export default function Journal() {
                   onChange={(e) => setTag(e.target.value)}
                   onKeyPress={addTag}
                 ></input>
+                
               </div>
           </div>
 
@@ -262,10 +314,10 @@ export default function Journal() {
           </div>
         </form>
 
-      </main>
+      </motion.main>
       <ResponsiveMenuu/>  
       
-    </div>
+    </motion.div>
   );
 }
 
