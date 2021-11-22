@@ -157,7 +157,7 @@ export default function Journal() {
 
           <div className={styles.imagecont}>
             <h4 className={styles.subtitleholder}>Upload an Image</h4>
-            <label className={styles.labelimageupload} for="imageupload">
+            <label className={styles.labelimageupload} htmlFor="imageupload">
               <img className={styles.cameraimage} src="/camera.svg"/>
               <p>Add image</p>
             </label>
