@@ -61,6 +61,7 @@ gap:10px;
 
 @media only screen and (max-width: 768px) {
   width:100%;
+  margin-bottom:70px;
 }
 `
 
@@ -172,7 +173,6 @@ export default function Dashboard() {
         </Row>
         <Row0>
              <DashFeed dashsize={"24px"} dashweight={"800"}/>
-
         </Row0>
           <Row1>
             <Column1>
@@ -197,8 +197,8 @@ export default function Dashboard() {
             </Column4>
           </Row3>
 
-          <ResponsiveMenuu/>
       </Holder2>
+          <ResponsiveMenuu/>
 
       <Holder3>
         <MoodBar/>

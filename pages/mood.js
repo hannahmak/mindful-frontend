@@ -7,6 +7,7 @@ import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
 import Lottie from 'lottie-web'
 import { motion } from 'framer-motion'
+import ResponsiveMenuu from '../comps/ResponsiveMenuu'
 
 const axios = require('axios').default;
 
@@ -15,6 +16,11 @@ const Container = styled.div `
   width:100%;
   display:flex;
   flex-direction:row;
+  
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom:100px;
+  }
 `;
 
 const Holder2 = styled.div `
@@ -209,6 +215,7 @@ export default function Mood({
         </LaughHolder>
         
       </Holder2>
+      <ResponsiveMenuu/>
     </ContainerHolder>
           <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>

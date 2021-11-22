@@ -7,15 +7,13 @@ import axios from "axios";
 import router, { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
 import Menu1 from "../comps/Menu1";
-import Button from '../comps/Button';
 import { motion } from "framer-motion";
+import Checkbox from '@mui/material/Checkbox';
+import ResponsiveMenuu from "../comps/ResponsiveMenuu";
 
 
 export default function Journal() {
   
-
-
-
   const [file, setFile] = useState();
   //const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -65,8 +63,10 @@ export default function Journal() {
   const makePublic = () => {
     if (publish === 0) {
       setPublish(1);
+      console.log("private")
     } else {
       setPublish(0)
+      console.log("public")
     }
   }
 
@@ -155,21 +155,6 @@ export default function Journal() {
             </div>
           </div>
 
-          <div className={styles.imagecont}>
-            <h4 className={styles.subtitleholder}>Upload an Image</h4>
-            <label className={styles.labelimageupload} htmlFor="imageupload">
-              <img className={styles.cameraimage} src="/camera.svg"/>
-              <p>Add image</p>
-            </label>
-            <input className={styles.imageuploads} id="imageupload"
-              filename={file}
-              onChange={(e) => setFile(e.target.files[0])}
-              type="file"
-              accept="image/*"
-            ></input>
-          </div>
-
-
           <div className={styles.descriptioncont}>
             <h4 className={styles.subtitleholder}>Description</h4>
             <textarea className={styles.textareajournal}
@@ -179,56 +164,79 @@ export default function Journal() {
             ></textarea>
           </div>
 
-          <div className="privatecont">
-            <h4 className={styles.subtitleholder}>Click here to make this post private</h4>
-            {/* 1 means private or not publish; 0 means publish */}
-            <input
-              type="checkbox"
-              id="publish"
-              name="publish"
-              value="publish"
-              onClick={() => makePublic()}
-            />
-            <label htmlFor="publish"> Make this post private</label>
-          </div>
 
-          <div className="tagscont">
+          <div className={styles.tagscont}>
             <h4 className={styles.subtitleholder}>Tags</h4>
-              <div id="content">
-                <ul id="lists">
+              <div className={styles.tagscontent} id="content">
+                <ul className={styles.taglist}  id="lists">
                   {/* <li>{tags}</li> */}
                   {tags.map((t, i) => (
-                    <li key={t}>
-                      {t}
-                      <button
+                    <li className={styles.tagholder} key={t}>
+                      <button className={styles.trashbutton}
                         type="button"
                         onClick={() => {
                           removeTag(i);
                         }}
                       >
-                        -
+                        <img height="15px" src="/trash.svg"/>
+                      {t}
                       </button>
                     </li>
                   ))}
                 </ul>
-                <input
+                <input id="entertags" className={styles.entertag}
                   type="text"
-                  placeholder="Enter tags"
+                  placeholder="Enter what you did today"
                   onChange={(e) => setTag(e.target.value)}
                   onKeyPress={addTag}
                 ></input>
               </div>
           </div>
 
-          <div className="submitcont">
-            <h4 className={styles.subtitleholder}>Click here to submit</h4>
+          <div className={styles.imagecont}>
+            <h4 className={styles.subtitleholder}>Upload an Image</h4>
+            {/* <label className={styles.labelimageupload} htmlFor="imageupload">
+              <img className={styles.cameraimage} src="/camera.svg"/>
+              <p>Add image</p>
+            </label> */}
+            <input className={styles.imageuploads} id="imageupload"
+              filename={file}
+              onChange={(e) => setFile(e.target.files[0])}
+              type="file"
+              accept="image/*"
+            ></input>
+          </div>
+
+          <div className={styles.privatecont}>
+            <h4 className={styles.subtitleholder}>Click on the lock to make this post private</h4>
+            {/* 1 means private or not publish; 0 means publish */}
+            {/* <input
+              type="checkbox"
+              id="publish"
+              name="publish"
+              value="publish"
+              onClick={() => makePublic()}
+            /> */}
+
+            <Checkbox 
+            type="checkbox"
+            id="publish"
+            name="publish"
+            value="publish"
+            onClick={() => makePublic()}
+            icon={<img width="43px" src="unlock.svg"/>} checkedIcon={<img width="28px" src="lock.svg"/>} />
+          </div>
+
+          <div className={styles.submitcont}>
+            {/* <h4 className={styles.subtitleholder}>Click here to submit</h4> */}
             {/* <Button routeTo="./myprofile" ButtonText="Submit" type="submit" /> */}
-            <button type="submit">Submit</button>
+            <button className={styles.submitbutton} type="submit">Submit Journal</button>
           </div>
         </form>
 
-        
       </main>
+      <ResponsiveMenuu/>  
+      
     </div>
   );
 }
