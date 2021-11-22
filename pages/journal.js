@@ -100,9 +100,7 @@ export default function Journal() {
                 }
               }} 
               className={styles.moodlabel}  onClick={() => setMood(1)}>
-                <Image
-                  width={100}
-                  height={100}
+                <img className={styles.moodimages}
                   src="/happyearth.svg"              
                 />
                 <p className={styles.mooddesc}>Happy</p>
@@ -117,9 +115,7 @@ export default function Journal() {
                 }
               }} 
               className={styles.moodlabel}  onClick={() => setMood(2)}>
-                <Image
-                  width={100}
-                  height={100}
+                <img className={styles.moodimages}
                   src="/okayearth.svg"               
                 />
                 <p className={styles.mooddesc}>Okay</p>
@@ -134,10 +130,9 @@ export default function Journal() {
                 }
               }} 
               className={styles.moodlabel}  onClick={() => setMood(3)}>
-                <Image className={styles.sadimage}
-                  width={100}
-                  height={100}
+                <img id={styles.sad} className={styles.moodimages}
                   src="/sadearth.svg"
+
                 />
                 <p className={styles.mooddesc}>Sad</p>
                 <input className={styles.input} type="radio" name="mood" value="3" />
@@ -151,9 +146,7 @@ export default function Journal() {
                 }
               }} 
               className={styles.moodlabel}  onClick={() => setMood(4)}>
-                <Image
-                  width={100}
-                  height={100}
+                <img className={styles.moodimages}
                   src="/angryearth.svg"
                 />
                 <p className={styles.mooddesc}>Angry</p>
