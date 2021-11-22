@@ -11,6 +11,8 @@ import DashboardCard from '../comps/DashboardCard';
 import Greeting from '../comps/Greeting';
 import ResponsiveMenuu from '../comps/ResponsiveMenuu';
 import ResponsiveMenu from '../comps/ResponsiveMenu';
+import axios from 'axios';
+import { useState } from 'react';
 
 const Holder1 = styled.div `
 display:flex;
@@ -162,6 +164,12 @@ width:60%;
 `
 
 export default function Dashboard() {
+  // const GetQuote = async ()=> {
+  //   const result = await axios.get("https://type.fit/api/quotes");
+  //   console.log(result.data)
+  // }
+
+  // const [Quote, setQuote] = useState("hi")
   return (
     <Container>
       <Holder1>
