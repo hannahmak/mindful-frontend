@@ -7,6 +7,7 @@ import { useState } from 'react'
 import JokesCard from '../comps/JokeCard'
 import Lottie from 'lottie-web'
 import { motion } from 'framer-motion'
+import ResponsiveMenuu from '../comps/ResponsiveMenuu'
 
 const axios = require('axios').default;
 
@@ -15,6 +16,11 @@ const Container = styled.div `
   width:100%;
   display:flex;
   flex-direction:row;
+  
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom:100px;
+  }
 `;
 
 const Holder2 = styled.div `
@@ -132,19 +138,19 @@ const Title2 = styled.h1 `
   color:#878FA2;
 `
   
-const Image = styled.img `
-  width:30%;
-  z-index:2;
-  position:absolute;
-  left:90px;
-`
+// const Image = styled.img `
+//   width:30%;
+//   z-index:2;
+//   position:absolute;
+//   left:90px;
+// `
 
-const JokeCont = styled.div `
-position:fixed;
-display:flex;
-height:100%;
-width:100%;
-`
+// const JokeCont = styled.div `
+// position:fixed;
+// display:flex;
+// height:100%;
+// width:100%;
+// `
 
 // https://icanhazdadjoke.com/
 
@@ -209,6 +215,7 @@ export default function Mood({
         </LaughHolder>
         
       </Holder2>
+      <ResponsiveMenuu/>
     </ContainerHolder>
           <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>

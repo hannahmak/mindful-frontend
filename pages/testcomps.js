@@ -18,6 +18,8 @@ import styled from 'styled-components';
 import Avatar from '../comps/Avatar';
 import ResponsiveMenu from '../comps/ResponsiveMenu'
 import ResponsiveMenuu from '../comps/ResponsiveMenuu'
+import QuoteCard from '../comps/QuoteCard'
+import { useState } from 'react'
 
 
 
@@ -27,8 +29,15 @@ flex-direction:column;
 `
 
 export default function TestComps() {
+  const GetQuote = async ()=> {
+    const result = await axios.get("https://type.fit/api/quotes");
+    console.log(result.data)
+  }
+
+  const [Quote, setQuote] = useState("hi")
   return (
     <Cont>
+      <QuoteCard quote={Quote}/>
       <ResponsiveMenuu/>
       <ResponsiveMenu/>
       
