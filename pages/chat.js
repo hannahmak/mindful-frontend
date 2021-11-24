@@ -16,6 +16,9 @@ import ChatService from '../services/ChatService';
 
 const socket = io(process.env.NEXT_PUBLIC_BASE_URL);
 
+const currMessages = [];
+const currRoomId = null;
+
 const ChatPage = () => {
 	const { user, error, isLoading } = useUser();
 	const newMessageRef = useRef();
@@ -29,6 +32,7 @@ const ChatPage = () => {
 	const [partnerKeyword, setPartnerKeyword] = useState('');
 	const [partners, setPartners] = useState([]);
 	const [rooms, setRooms] = useState([]);
+	const [isPartnerOnline, setIsPartnerOnline] = useState(false);
 	const [selectedRoom, setSelectedRoom] = useState(null);
 
 	useEffect(() => {
@@ -48,17 +52,59 @@ const ChatPage = () => {
 	useEffect(() => {
 		(async () => {
 			if (selectedRoom) {
+				const chatService = new ChatService();
+
 				await getMessagesByRoomId();
+
+				await chatService.readMessages({
+					owner_sub: user.sub,
+					room_id: selectedRoom.roomId,
+				});
+
+				getChatRooms();
 			}
 		})();
 	}, [selectedRoom]);
 
-	socket.on('newMessage', (message) => {
-		const newMessages = [...messages];
+	useEffect(() => {
+		if (window) {
+			window.addEventListener('focus', setUserOnline);
+			window.addEventListener('blur', setUserOffline);
+		}
+
+		return () => {
+			if (window) {
+				window.removeEventListener('focus', setUserOnline);
+				window.removeEventListener('blur', setUserOffline);
+			}
+		};
+	}, []);
+
+	useEffect(() => {
+		socket.on('newMessage', onNewMessageHandler);
+		socket.on('updatePartnerRooms', onUpdatePartnerRoomHandler);
+		socket.on('isOnline', onIsOnlineHandler);
+
+		return () => {
+			socket.off('newMessage', onNewMessageHandler);
+			socket.off('updatePartnerRooms', onUpdatePartnerRoomHandler);
+			socket.off('isOnline', onIsOnlineHandler);
+		};
+	}, []);
+
+	const onNewMessageHandler = (message) => {
+		const newMessages = [...currMessages];
 		newMessages.push(message);
 
 		setMessages(newMessages);
-	});
+		currMessages = newMessages;
+		getChatRooms();
+	};
+
+	const onUpdatePartnerRoomHandler = () => getChatRooms();
+	const onIsOnlineHandler = (isOnline) => {
+		setIsPartnerOnline(isOnline.is_online);
+	};
 
 	const createNewChat = async ({ avatar, partnerName, sub }) => {
 		try {
@@ -72,7 +118,7 @@ const ChatPage = () => {
 			openChatRoom({
 				partner_name: partnerName,
 				partner_avatar: avatar,
-				room_id: response.roomid,
+				room_id: response.room_id,
 			});
 
 			setIsSelectingPartner(false);
@@ -108,10 +154,20 @@ const ChatPage = () => {
 			});
 
 			setMessages(response);
+			currMessages = response;
 		} catch (error) {
 			console.error(error.message);
 		} finally {
 			setIsLoadingMessage(false);
+			const el = document.getElementById('chat-room-wrapper');
+
+			el.scrollTop = el.scrollHeight;
+		}
+	};
+
+	const onChatKeyUpHandler = (e) => {
+		if (e.key === 'Enter' && e.shiftKey) {
+			sendMessage();
 		}
 	};
 
@@ -140,27 +196,55 @@ const ChatPage = () => {
 			roomId: room_id,
 			partnerName: partner_name,
 		});
+		currRoomId = room_id;
 
 		socket.emit('join', room_id);
 	};
 
 	const sendMessage = async () => {
 		try {
-			const timestamp = new Date()
-				.toISOString()
-				.replace(/T/g, ' ')
-				.replace(/Z/g, '');
-			socket.emit('newMessage', {
-				message: newMessage,
-				room_id: selectedRoom.roomId,
-				sub: user.sub,
-				timestamp,
-			});
+			if (newMessage === '' || !newMessage) {
+				return;
+			} else {
+				const timestamp = new Date()
+					.toISOString()
+					.replace(/T/g, ' ')
+					.replace(/Z/g, '');
 
-			newMessageRef.current.value = '';
+				socket.emit('newMessage', {
+					message: newMessage,
+					room_id: selectedRoom.roomId,
+					sub: user.sub,
+					timestamp,
+				});
+
+				setNewMessage('');
+
+				socket.emit('updatePartnerRooms', {
+					room_id: selectedRoom.roomId,
+				});
+			}
 		} catch (error) {
 			console.error(error.message);
 		}
+	};
+
+	const setUserOffline = () => {
+		console.log('I am logging of');
+
+		socket.emit('isOnline', {
+			room_id: currRoomId,
+			is_online: false,
+		});
+	};
+
+	const setUserOnline = () => {
+		console.log('I am here');
+
+		socket.emit('isOnline', {
+			room_id: currRoomId,
+			is_online: true,
+		});
 	};
 
 	if (isLoading) return <div>Loading...</div>;
@@ -224,7 +308,7 @@ const ChatPage = () => {
 							<Stack
 								className="chat-panel"
 								sx={{ maxHeight: '85vh', overflowY: 'auto' }}
-								spacing={3}
+								spacing={1}
 							>
 								{isLoadingRoom ? (
 									new Array(8)
@@ -248,8 +332,15 @@ const ChatPage = () => {
 											last_partner_message,
 											last_chat_minute,
 											room_id,
+											unread_messages,
 										}) => (
 											<ChatPanel
+												partnerName={partner_name}
+												image={partner_avatar}
+												message={last_partner_message}
+												lastMessage={last_chat_minute}
+												key={`cht-pnl-key_${room_id}`}
+												unread={unread_messages}
 												onClick={() =>
 													openChatRoom({
 														partner_name,
@@ -258,11 +349,6 @@ const ChatPage = () => {
 														room_id,
 													})
 												}
-												partnerName={partner_name}
-												image={partner_avatar}
-												message={last_partner_message}
-												lastMessage={last_chat_minute}
-												key={`cht-pnl-key_${room_id}`}
 											/>
 										)
 									)
@@ -349,20 +435,21 @@ const ChatPage = () => {
 						>
 							<ChatRoomHeader
 								name={selectedRoom.partnerName}
-								isOnline={true}
+								isOnline={isPartnerOnline}
 								image={selectedRoom.avatar}
 							/>
 						</Stack>
 
 						<Stack
 							className="chat-room"
+							id="chat-room-wrapper"
+							spacing={3}
 							sx={{
 								maxHeight: '70vh',
 								minHeight: '70vh',
 								overflowY: 'auto',
 								scrollbarWidth: 'none',
 							}}
-							spacing={3}
 						>
 							{isLoadingMessage ? (
 								new Array(8)
@@ -378,15 +465,21 @@ const ChatPage = () => {
 									Start chatting with your fiend
 								</Typography>
 							) : (
-								messages.map(({ message, sub }, index) => {
-									return (
-										<Message
-											key={`msg-key_${index}`}
-											message={message}
-											isMyMessage={sub === user.sub}
-										/>
-									);
-								})
+								messages.map(
+									(
+										{ created_at, message, sub, is_seen },
+										index
+									) => {
+										return (
+											<Message
+												key={`msg-key_${index}`}
+												message={message}
+												isMyMessage={sub === user.sub}
+												isSeen={is_seen}
+											/>
+										);
+									}
+								)
 							)}
 						</Stack>
 
@@ -409,6 +502,7 @@ const ChatPage = () => {
 									placeholder="Write your message here..."
 									color="secondary"
 									value={newMessage}
+									onKeyUp={onChatKeyUpHandler}
 									onChange={(e) =>
 										setNewMessage(e.target.value)
 									}

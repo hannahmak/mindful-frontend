@@ -1,16 +1,32 @@
 import React from 'react';
 
-import { Stack, Typography, Avatar } from '@mui/material';
+import { Badge, Stack, Typography, Avatar } from '@mui/material';
 import { Box } from '@mui/system';
 
-const ChatPanel = ({ image, partnerName, message, lastMessage, onClick }) => {
+const ChatPanel = ({
+	image,
+	partnerName,
+	message,
+	lastMessage,
+	onClick,
+	unread,
+}) => {
+	const renderLastMinute = () => {
+		if (lastMessage / 60 > 1) {
+			return `${Math.ceil(lastMessage / 60)} hours`;
+		}
+
+		return `${lastMessage} minutes`;
+	};
+
 	return (
 		<Stack
 			onClick={onClick}
 			alignItems="center"
 			direction="row"
-			spacing={2}
-			sx={{ cursor: 'pointer' }}
+			spacing={1}
+			py={1}
+			sx={{ cursor: 'pointer', borderBottom: '1px solid #505496' }}
 		>
 			<Box sx={{ width: '15%' }}>
 				<Avatar
@@ -40,7 +56,7 @@ const ChatPanel = ({ image, partnerName, message, lastMessage, onClick }) => {
 				</Typography>
 			</Stack>
 
-			<Box sx={{ width: '15%' }}>
+			<Stack sx={{ width: '15%' }} alignItems="center" spacing={0.5}>
 				<Typography
 					color="white"
 					fontSize={13}
@@ -51,9 +67,26 @@ const ChatPanel = ({ image, partnerName, message, lastMessage, onClick }) => {
 						textOverflow: 'ellipsis',
 					}}
 				>
-					{lastMessage ? `${Math.ceil(lastMessage)} min` : ''}
+					{lastMessage ? renderLastMinute() : ''}
 				</Typography>
-			</Box>
+
+				{unread > 0 && (
+					<Stack
+						alignItems="center"
+						justifyContent="center"
+						sx={{
+							background: 'white',
+							borderRadius: '100%',
+							height: 20,
+							width: 20,
+						}}
+					>
+						<Typography sx={{ fontSize: 12, color: '#50549c' }}>
+							{unread}
+						</Typography>
+					</Stack>
+				)}
+			</Stack>
 		</Stack>
 	);
 };
