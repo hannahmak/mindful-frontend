@@ -8,15 +8,24 @@ import Login from '../comps/Login';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 // import { styled } from '@mui/system';
+import { Button as ChatButton } from "@mui/material";
 import styled from 'styled-components';
 import styles from "../styles/Home.module.css";
+import AuthService from '../services/AuthService';	
+import Router from 'next/router';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
 
+const checkIfUserAlreadyStoreProfile = () => {	
+	const profile = localStorage.getItem('hasStoreProfile');	
+	return profile ? true : false;	
+};
 
 function Profile() {
-  const [setup1, setSetup1] =  useState(false)
-  const { user, error, isLoading } = useUser();
-
+	const authService = new AuthService();
+	const [setup1, setSetup1] =  useState(false)
+	const { user, error, isLoading } = useUser();
+  
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
@@ -61,6 +70,19 @@ function Profile() {
         <Button onClick={()=>router.push('/api/auth/logout')} style={{width:250, height:50, borderRadius:60, color:"#0F2046", borderColor:"#0F2046"}} routeto="./profile" variant="outlined">Logout</Button>
           {/* <Button style={{width:250, height:50, borderRadius:60, backgroundColor:"#0F2046"}} variant="contained"  routeTo="./dashboard" ButtonText="Go to dashboard" type="submit" />
           <Button routeTo="./api/auth/logout" ButtonText="Logout" type="submit" /> */}
+		  <Link href="/chat">
+					<ChatButton
+						sx={{
+							background: 'skyblue',
+							bottom: 30,
+							color: 'white',
+							position: 'fixed',
+							right: 50,
+						}}
+					>
+						<ChatBubbleIcon sx={{ color: 'white' }} /> Go To Chat
+					</ChatButton>
+				</Link>
         </div>
       </motion.div>
     )

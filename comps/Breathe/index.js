@@ -44,7 +44,6 @@ const Breathe = ({
         }, 60000)
       }
 
-    
 
     return <Container 
     

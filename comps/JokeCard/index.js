@@ -108,9 +108,7 @@ const JokesCard = ({
                 pageAnimate: {
                   opacity:1,
                 },
-                
               }}
-            
             >
                 <Joke as={motion.p}
                 initial="pageInitial" animate="pageAnimate" variants={{
