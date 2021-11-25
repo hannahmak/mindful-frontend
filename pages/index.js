@@ -12,7 +12,7 @@ const Container = styled.div `
   justify-content:center;
   gap:100px;
   flex-wrap:wrap;
-  background-image: url("/sunset.png");
+  background-image: url("/indexbg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
