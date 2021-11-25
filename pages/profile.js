@@ -1,13 +1,15 @@
 import React from 'react';
 import Image from "next/image";
-import Button from '../comps/Button';
+import { Button } from '@mui/material';
 import Link from "next/link";
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
-import Router from 'next/router';
+import router, {useRouter} from 'next/router';
 import Login from '../comps/Login';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+// import { styled } from '@mui/system';
+import styled from 'styled-components';
+import styles from "../styles/Home.module.css";
 
 
 
@@ -21,10 +23,11 @@ function Profile() {
   if (setup1 === false) {
     setTimeout(() => {
       setSetup1(true)
-    },2000)
+    },3000)
 
     return <motion.div
-    initial="pageInitial" transition={{delay:1.2}} animate="pageAnimate" variants={{
+    className={styles.profileloading}
+    initial="pageInitial" transition={{delay:2.5}} animate="pageAnimate" variants={{
       pageAnimate: {
         opacity:0,
       },
@@ -36,7 +39,7 @@ function Profile() {
   
   return (
     user && (
-      <motion.div
+      <motion.div className={styles.profilecontainer}
       initial="pageInitial" animate="pageAnimate" variants={{
         pageInitial: {
           opacity:0
@@ -47,14 +50,18 @@ function Profile() {
         
       }}
       >
-        <h2>Hi <span>{user.name}</span></h2>
-        <Image src={user.picture} alt={user.name} width={200} height={200} />
-        <p>We're glad you're here!</p>
+        <Image className={styles.profileimage} src={user.picture} alt={user.name} width={200} height={200}/>
+        <div className={styles.textholderprofile}>
+          <h2 className={styles.greetingprofile}>Hey <span className={styles.profilename}> {user.name} </span></h2>
+          <p className={styles.profiletext}>We're so glad you're here!</p>
+        </div>
         {/* <h2>email: </h2><span>{user.email}</span> */}
-        <h1>
-          <Button routeTo="./journal" ButtonText="Go to dashboard" type="submit" />
-          <Button routeTo="./api/auth/logout" ButtonText="Logout" type="submit" />
-        </h1>
+        <div className={styles.profilebuttonholder}>
+        <Button onClick={()=>router.push('/dashboard')} style={{width:250, height:50, borderRadius:60, backgroundColor:"#0F2046"}} routeto="./profile" variant="contained">Go to dashboard</Button>
+        <Button onClick={()=>router.push('/api/auth/logout')} style={{width:250, height:50, borderRadius:60, color:"#0F2046", borderColor:"#0F2046"}} routeto="./profile" variant="outlined">Logout</Button>
+          {/* <Button style={{width:250, height:50, borderRadius:60, backgroundColor:"#0F2046"}} variant="contained"  routeTo="./dashboard" ButtonText="Go to dashboard" type="submit" />
+          <Button routeTo="./api/auth/logout" ButtonText="Logout" type="submit" /> */}
+        </div>
       </motion.div>
     )
   );

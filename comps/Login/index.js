@@ -23,9 +23,9 @@ const Login = ({
         anim = lottie.loadAnimation({
             container: container.current,
             renderer: 'svg',
-            loop: false,
+            loop: true,
             autoplay:true,
-            animationData: require('../../assets/login.json')
+            animationData: require('../../assets/login2.json')
             
         })
         lottie.setSpeed(2.5);
