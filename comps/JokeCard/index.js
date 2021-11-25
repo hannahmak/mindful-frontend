@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { Button } from '@mui/material';
+import { motion } from 'framer-motion';
 // import { style } from '@mui/system';
 
 const Container = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    
     max-width: 50%;
     max-height: 70%;
     background-color: white;
@@ -74,13 +74,54 @@ const JokesCard = ({
     if(show === false){
         return <></>
     }
-    return<ContainerHolder>
-        <Container>
+    return<ContainerHolder as={motion.div}
+    initial="pageInitial" animate="pageAnimate" variants={{
+        pageInitial: {
+          opacity:0
+        },
+        pageAnimate: {
+          opacity:1,
+        },
+
+      }}
+    >
+        <Container as={motion.div}
+            initial="pageInitial" animate="pageAnimate" variants={{
+                pageInitial: {
+                  opacity:0
+                },
+                pageAnimate: {
+                  opacity:1,
+                },
+
+              }}
+        >
             <Holder1>
                 <Exit src="/exit.svg" onClick={()=>{onHideInteract();}}/>
             </Holder1>
-            <Holder2>
-                <Joke>{joke}</Joke>
+            <Holder2 as={motion.div}
+            initial="pageInitial" animate="pageAnimate" variants={{
+                pageInitial: {
+                  opacity:0
+                },
+                pageAnimate: {
+                  opacity:1,
+                },
+
+              }}
+
+            >
+                <Joke as={motion.p}
+                initial="pageInitial" animate="pageAnimate" variants={{
+                    pageInitial: {
+                    opacity:0
+                    },
+                    pageAnimate: {
+                    opacity:1,
+                    },
+
+                }}
+                >{joke}</Joke>
                 <Button variant="contained" style={{width:248, height:75, borderRadius:60, backgroundColor:"#0F2046", textTransform:'none', fontSize:'24px', }} onClick={()=>{onGenerate();}}>Next</Button>
             </Holder2>
         </Container>
