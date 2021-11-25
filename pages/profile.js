@@ -53,7 +53,7 @@ function Profile() {
         <Image className={styles.profileimage} src={user.picture} alt={user.name} width={200} height={200}/>
         <div className={styles.textholderprofile}>
           <h2 className={styles.greetingprofile}>Hey <span className={styles.profilename}> {user.name} </span></h2>
-          <p className={styles.profiletext}>We're so glad you're here!</p>
+          <p className={styles.profiletext}>We&apos;re so glad you&apos;re here!</p>
         </div>
         {/* <h2>email: </h2><span>{user.email}</span> */}
         <div className={styles.profilebuttonholder}>
