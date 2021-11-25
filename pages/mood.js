@@ -164,10 +164,6 @@ export default function Mood({
   const [showCard, setShowCard] = useState(false);
   const [RandJoke, setRandJoke] = useState("")
 
-  function play() {
-    var audio = document.getElementById('a1');
-    audio.play();
-  }
 
 
   
@@ -190,7 +186,7 @@ export default function Mood({
                   transition: {
                       duration:.1,
                   }
-                }} onClick={play}>
+                }} >
                     <Breathing>
                         <Breathe id="lottie"/>
                     </Breathing>
