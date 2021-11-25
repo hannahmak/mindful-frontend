@@ -62,6 +62,7 @@ const ContainerHolder = styled.div `
     width:100%;
     height:100vh;
     background: rgba(0, 0, 0, 0.3);
+    
 `
 
 
@@ -82,7 +83,7 @@ const JokesCard = ({
         pageAnimate: {
           opacity:1,
         },
-
+        
       }}
     >
         <Container as={motion.div}
@@ -93,7 +94,7 @@ const JokesCard = ({
                 pageAnimate: {
                   opacity:1,
                 },
-
+                
               }}
         >
             <Holder1>
@@ -107,9 +108,7 @@ const JokesCard = ({
                 pageAnimate: {
                   opacity:1,
                 },
-
               }}
-
             >
                 <Joke as={motion.p}
                 initial="pageInitial" animate="pageAnimate" variants={{
@@ -119,7 +118,7 @@ const JokesCard = ({
                     pageAnimate: {
                     opacity:1,
                     },
-
+                    
                 }}
                 >{joke}</Joke>
                 <Button variant="contained" style={{width:248, height:75, borderRadius:60, backgroundColor:"#0F2046", textTransform:'none', fontSize:'24px', }} onClick={()=>{onGenerate();}}>Next</Button>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import moment from 'moment';
+
 import styled from 'styled-components';
 import Avatar from '../comps/Avatar'
 import Menu1 from '../comps/Menu1';
@@ -7,20 +9,13 @@ import MoodBar from '../comps/MoodBar';
 import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import router, {useRouter} from 'next/router';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-
-// const Container = styled.div`
-// height:100vh
-// max-width:100%;
-// display:flex;
-// flex-wrap:wrap;
-// flex-direction:row;
-// `
 
 const Container = styled.div `
     height:100vh;
@@ -115,12 +110,12 @@ const PostsHeader = styled.div`
 
 // `
 
-
 export default function MyProfile() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(0);
+  const moodIcon = ["", "/happy.png", "/sad.png", "/angry.png"];
 
   const getPost = async () => {
     const result = await axios.get("/posts");
@@ -130,10 +125,11 @@ export default function MyProfile() {
     } catch (e) {
       setError(e);
     } finally {
-      setCounter(result.data.posts.length);
       setLoading(false);
+      setCounter(result.data.posts.length);
     }
-  }
+  };
+
   useEffect(() => {
     getPost();
   }, [counter]);
@@ -142,8 +138,7 @@ export default function MyProfile() {
   return loading ? (
     "Page is loading"
   ) : (
-    <Container>
-    
+    <Container> 
         {/* Column 1 */}
         <Menu1 dashsrc= '/homeActive.svg'/>
 
@@ -166,19 +161,22 @@ export default function MyProfile() {
               <Button routeTo="./talk" ButtonText="Go to chat" />
               <h1>This is Your Post</h1>
               {posts.map((post) => (
-                <figure key={post.id}>
-                  <figcaption>{post.description}</figcaption>
-                  <figcaption>{post.timestamp}</figcaption>
-                  <img src={post.image_url}></img>
-                  <figcaption>{post.tags}</figcaption>
-                </figure>
+                post.publish === 0 &&
+                  <figure key={post.id}>
+                    <figcaption>{post.description}</figcaption>
+                    <figcaption>{moment(post.timestamp).format('YYYY-MMM-DD')}</figcaption>
+                    <img style={{ width: 500 }} src={post.image_url}></img>
+                    <h5>these are your tags: </h5>
+                    <figcaption>{JSON.parse(post.tags)}</figcaption>
+                    <h5>this is your mood: </h5>
+                    <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
+                  </figure>
               ))}
             </div>
-
         </ProfileCont>
 
         {/* Column 3 */}
-        <MoodBar/>
+        {/* <MoodBar/> */}
     </Container> 
     //   {/* <Holder1>
     //     <Menu press1="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />

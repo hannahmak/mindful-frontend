@@ -15,6 +15,7 @@ import AuthService from '../services/AuthService';
 import Router from 'next/router';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
+
 const checkIfUserAlreadyStoreProfile = () => {	
 	const profile = localStorage.getItem('hasStoreProfile');	
 	return profile ? true : false;	

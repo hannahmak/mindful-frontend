@@ -42,7 +42,8 @@ const Breathe = ({
         setTimeout(function(){
             audio.pause
         }, 60000)
-    }
+      }
+
 
     return <Container 
     

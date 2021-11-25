@@ -4,6 +4,7 @@ import MoodBar from '../comps/MoodBar';
 import DashFeed from '../comps/DashFeed';
 import JournalPost from '../comps/JournalPost';
 import Greeting from '../comps/Greeting';
+import ResponsiveMenuu from '../comps/ResponsiveMenuu';
 
 const Container = styled.div `
 width:100%;
@@ -57,6 +58,7 @@ gap:10px;
 
 @media only screen and (max-width: 768px) {
     width:100%;
+    margin-bottom:20px;
   }
 `
 
@@ -126,6 +128,7 @@ export default function Feed() {
         <Holder3>
             <MoodBar/>
         </Holder3>
+            <ResponsiveMenuu/>
 
     </Container>
   )
