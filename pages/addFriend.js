@@ -9,6 +9,9 @@ export default function addFriend() {
     const [loading, setLoading] = useState(true);
     const [counter, setCounter] = useState(0);
 
+    return (
+        <div></div>
+        )
 
   //const [emails, setEmails] = useState([]);
   // const [error, setError] = useState();
