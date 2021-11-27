@@ -37,7 +37,7 @@ export default function Journal() {
     data.append("mood", mood);
     data.append("publish", publish);
     data.append("email", user.email);
-    const result = axios.post("/posts", data);
+    const result = axios.post("/mypost", data);
     console.log("result", result);
 
     router.push("./myprofile");
@@ -113,11 +113,10 @@ export default function Journal() {
             }} 
             className={styles.moodlabel}  onClick={() => setMood(1)}>
               <img className={styles.moodimages}
-                src="/happyearth.svg"              
+                src="/happy.svg"              
               />
               <p className={styles.mooddesc}>Happy</p>
               <input className={styles.input} type="radio" name="mood" value="1" />
-              {/* <Radio className={styles.input} type="radio" name="mood" value="1"/> */}
             </motion.label>
 
             <motion.label 
@@ -129,11 +128,10 @@ export default function Journal() {
             }} 
             className={styles.moodlabel}  onClick={() => setMood(2)}>
               <img className={styles.moodimages}
-                src="/okayearth.svg"               
+                src="/good.svg"               
               />
-              <p className={styles.mooddesc}>Okay</p>
+              <p className={styles.mooddesc}>Good</p>
               <input className={styles.input} type="radio" name="mood" value="2" />
-              {/* <Radio className={styles.input} type="radio" name="mood" value="2"/> */}
             </motion.label>
 
             <motion.label 
@@ -145,10 +143,9 @@ export default function Journal() {
             }} 
             className={styles.moodlabel}  onClick={() => setMood(3)}>
               <img id={styles.sad} className={styles.moodimages}
-                src="/sadearth.svg"
-
+                src="/indifferent.svg"
               />
-              <p className={styles.mooddesc}>Sad</p>
+              <p className={styles.mooddesc}>Indifferent</p>
               <input className={styles.input} type="radio" name="mood" value="3" />
             </motion.label>
 
@@ -161,10 +158,25 @@ export default function Journal() {
             }} 
             className={styles.moodlabel}  onClick={() => setMood(4)}>
               <img className={styles.moodimages}
-                src="/angryearth.svg"
+                src="/sad.svg"
               />
-              <p className={styles.mooddesc}>Angry</p>
-              <input className={styles.input} type="radio" name="mood" value="3" />
+              <p className={styles.mooddesc}>Sad</p>
+              <input className={styles.input} type="radio" name="mood" value="4" />
+            </motion.label>
+
+            <motion.label 
+            whileHover={{
+              scale:1.05,
+              transition: {
+                  duration:.1,
+              }
+            }} 
+            className={styles.moodlabel}  onClick={() => setMood(5)}>
+              <img className={styles.moodimages}
+                src="/stressed.svg"
+              />
+              <p className={styles.mooddesc}>Stressed</p>
+              <input className={styles.input} type="radio" name="mood" value="5" />
             </motion.label>
           </div>
         </div>
@@ -320,5 +332,3 @@ export default function Journal() {
     </motion.div>
   );
 }
-
-

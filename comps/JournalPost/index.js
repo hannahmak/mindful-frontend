@@ -38,7 +38,7 @@ const UserName = styled.div`
     color: #0F2046;
 `
 
-const Mood = styled.div`
+const Timestamp = styled.div`
     margin-top: 8px;
     font-family: Inter;
     font-weight: normal;
@@ -59,17 +59,18 @@ const Journal = styled.div`
 
 const JournalPost = ({
     username="Nick Law",
-    mood="Happy",
+    timestamp="",
     journal="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis lacinia eget urna, quam facilisis. Aliquet enim ullamcorper id non metus placerat. Volutpat volutpat nec dignissim fermentum. Nec suspendisse vitae lectus feugiat nunc. Habitant urna, urna tortor in aliquam. At nulla in at rhoncus. Etiam ultricies faucibus tellus vitae urna. Et pellentesque nisi, urna turpis vel consectetur magna risus. Vitae odio eu cras sed maecenas ac felis.",
-
+    source="/",
+    // tag=[]
 }) => {
     return <Container>
             <PostCont>
                 <MoodCont>
-                    <AvatarPicture width={"76px"} height={"76px"}/>
+                    <AvatarPicture width={"76px"} height={"76px"} source={source}/>
                     <TextCont>
                         <UserName>{username}</UserName>
-                        <Mood>{mood}</Mood>
+                        <Timestamp>{timestamp}</Timestamp>
                         <Journal>{journal}</Journal>
 
                         <Tag></Tag>

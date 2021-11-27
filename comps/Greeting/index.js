@@ -34,7 +34,7 @@ const Greeting = ({
 src="badges.svg"
 }) => {
     return <Container>
-        <Greetings>Good Morning Kelly</Greetings>
+        <Greetings>Good Morning </Greetings>
         <Date>Saturday, October 06</Date>
     </Container>
 }
