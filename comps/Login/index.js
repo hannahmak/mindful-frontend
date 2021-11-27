@@ -13,7 +13,7 @@ const Container = styled.div`
 var anim = null;
 
 
-const Breathe = ({
+const Login = ({
     
 }) => {
     const container = useRef(null)
@@ -24,8 +24,8 @@ const Breathe = ({
             container: container.current,
             renderer: 'svg',
             loop: true,
-            autoplay:false,
-            animationData: require('../../assets/breathe.json'),
+            autoplay:true,
+            animationData: require('../../assets/login2.json')
             
         })
         lottie.setSpeed(2.5);
@@ -35,27 +35,11 @@ const Breathe = ({
     }, [])
 
 
-    function play() {
-        var audio = document.getElementById('a1');
-        audio.play();
-
-        setTimeout(function(){
-            audio.pause
-        }, 60000)
-      }
-
     
 
-    return <Container 
-    
-    onClick={()=>{anim.play(), play()}}  as={motion.div} whileHover={{
-        scale:1.05,
-        transition: {
-            duration:.1,
-        }
-    }}>
+    return <Container>
         <div className="container" ref={container}></div>
     </Container>
 }
 
-export default Breathe;
+export default Login;

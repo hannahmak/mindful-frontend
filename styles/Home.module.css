@@ -37,12 +37,29 @@
   
 }
 
+.backbutton {
+  background-color: transparent;
+  border-style: none;
+}
+
+.nextbutton {
+  background-color: transparent;
+  border-style: none;
+}
+
+.buttonholder {
+  display: flex;
+  width: 100%;
+}
+
 .moodcont {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 70vh;
+  gap:90px;
 }
 
 .mood {
@@ -330,6 +347,59 @@
   }
 }
 
+/* Profile */
+
+.profileloading {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilecontainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profilebuttonholder {
+  width: 100%;
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.textholderprofile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:0px;
+  padding: 0px;
+}
+
+.profileimage {
+  border-radius: 100px;
+}
+
+.profilename {
+  font-weight: 200;
+}
+
+.profiletext {
+  font-weight: 200;
+  color: #7E7E7E;
+}
+
+
 @media only screen and (max-width: 768px) {
   .holder1 {
     display: none;
@@ -349,5 +419,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .profilebuttonholder {
+    flex-direction: column;
   }
 }
