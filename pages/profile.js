@@ -14,7 +14,7 @@ function Profile() {
   return (
     user && (
       <div>
-        <Image src={user.picture} alt={user.name} width={200} height={200} />
+        {/* <Image src={user.picture} alt={user.name} width={200} height={200} /> */}
         <h2>name: </h2><span>{user.name}</span>
         <h2>email: </h2><span>{user.email}</span>
         <h1>
