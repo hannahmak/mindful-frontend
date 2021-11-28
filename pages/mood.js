@@ -25,7 +25,7 @@ const Container = styled.div `
 
 const Holder2 = styled.div `
 display:flex;
-padding:40px;
+padding-top:40px;
 flex-direction:column;
 flex-wrap:wrap;
 width:100%;
@@ -80,7 +80,8 @@ const BreathingHolder = styled.div `
 const ContainerHolder = styled.div`
   display:flex;
   width:100%;
-  padding:100px;
+  padding:50px;
+  padding-top:0px;
   @media only screen and (max-width: 768px) {
     padding:0px;
   }
@@ -211,7 +212,7 @@ export default function Mood({
         </LaughHolder>
         
       </Holder2>
-      <ResponsiveMenuu moodsrc='/moodActive.svg'/>
+      <ResponsiveMenuu />
     </ContainerHolder>
           <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
