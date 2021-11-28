@@ -10,13 +10,8 @@ module.exports = {
       },
       {
         source: "/myfeed",
-        destination: "http://mindful-idsp3380.herokuapp.com/feed",
+        destination: "http://mindful-idsp3380.herokuapp.com/myfeed",
         //destination: "http://localhost:8080/myfeed"
-      },
-      {
-        source: "/myfriend",
-        destination: "http://mindful-idsp3380.herokuapp.com/users",
-        //destination: "http://localhost:8080/myfriend"
       },
       {
         source: "/images/:file*",
