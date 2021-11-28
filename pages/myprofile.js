@@ -3,6 +3,7 @@ import axios from "axios";
 import moment from "moment";
 
 import styled from "styled-components";
+import styles from "../styles/Home.module.css";
 import Avatar from "../comps/Avatar";
 import Menu1 from "../comps/Menu1";
 import MoodBar from "../comps/MoodBar";
@@ -16,6 +17,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import Name from "../comps/Name";
 
 const Container = styled.div`
   height: 100vh;
@@ -171,8 +173,16 @@ export default function MyProfile() {
           {posts.map(
             (post) =>
               post.publish === 0 && (
-                <figure key={post.id}>
-                  <figcaption>{post.description}</figcaption>
+                <figure className={styles.myprofcont} key={post.id}>
+                  <div>
+                    <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
+                  </div>
+                  <div>
+                    <Name/>
+                    
+                    
+                  </div>
+                  {/* <figcaption>{post.description}</figcaption>
                   <figcaption>
                     {moment(post.timestamp).format("YYYY-MMM-DD")}
                   </figcaption>
@@ -182,8 +192,7 @@ export default function MyProfile() {
                   ></img>
                   <h5>these are your tags: </h5>
                   <figcaption>{JSON.parse(post.tags)}</figcaption>
-                  <h5>this is your mood: </h5>
-                  <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
+                   */}
                 </figure>
               )
           )}
