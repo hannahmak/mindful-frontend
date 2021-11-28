@@ -166,42 +166,6 @@ export default function Feed() {
         </Row0>
         <Row1>
           <FeedCont>
-            <Posts>
-              {/* {posts.map(
-                (post) =>
-                  post.publish === 0 && (
-                    <figure key={post.id}>
-                      <figcaption>{post.email}</figcaption>
-                      <figcaption>{post.description}</figcaption>
-                      <figcaption>
-                        {moment(post.timestamp).format("YYYY-MMM-DD")}
-                      </figcaption>
-                      <img
-                        style={{ width: 500 }}
-                        src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
-                      ></img>
-                      <h5>these are your tags: </h5>
-                      <figcaption>{JSON.parse(post.tags)}</figcaption>
-                      <h5>this is your mood: </h5>
-                      <img
-                        style={{ width: 100 }}
-                        src={moodIcon[post.mood]}
-                      ></img>
-                    </figure>
-                  )
-              )} */}
-              {posts.map(
-                  (post) => {
-                      post.publish === 0 && (
-                          <JournalPost username={user.name} timestamp={moment(post.timestamp).format("YYYY-MMM-DD")} journal={post.description} source={moodIcon[post.mood]} />
-                      )
-                  }
-              )}
-              <JournalPost></JournalPost>
-                        <JournalPost timestamp={"2021-Nov-26"} source={moodIcon[1]} journal={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis lacinia eget urna, quam facilisis. Aliquet enim ullamcorper id non metus placerat. Volutpat volutpat nec dignissim fermentum. Nec suspendisse vitae lectus feugiat nunc. Habitant urna, urna tortor in aliquam. At nulla in at rhoncus. Etiam ultricies faucibus tellus vitae urna. Et pellentesque nisi, urna turpis vel consectetur magna risus. Vitae odio eu cras sed maecenas ac felis. "}/>
-                        <JournalPost journal={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis lacinia eget urna, quam facilisis. Aliquet enim ullamcorper id non metus placerat. Volutpat volutpat nec dignissim fermentum. Nec suspendisse vitae lectus feugiat nunc. Habitant urna, urna tortor in aliquam. At nulla in at rhoncus. Etiam ultricies faucibus tellus vitae urna. Et pellentesque nisi, urna turpis vel consectetur magna risus. Vitae odio eu cras sed maecenas ac felis. Suspendisse pharetra vitae aliquet et accumsan, velit eget lacus sed. Donec lorem lacus fames vulputate mattis magna penatibus. Et rutrum a, sed penatibus ipsum. Hac nullam pharetra nisi, ultrices. Vulputate aliquam ac mi mi rhoncus a sagittis. Sodales cursus et commodo iaculis ultrices vitae suspendisse id metus. Lorem tellus, imperdiet eget amet nisi. Suspendisse pharetra vitae aliquet et accumsan, velit eget lacus sed. Donec lorem lacus fames vulputate mattis magna penatibus. Et rutrum a, sed penatibus ipsum. Hac nullam pharetra nisi, ultrices. Vulputate aliquam ac mi mi rhoncus a sagittis. Sodales cursus et commodo iaculis ultrices vitae suspendisse id metus. Lorem tellus, imperdiet eget amet nisi. Suspendisse pharetra vitae aliquet et accumsan, velit eget lacus sed. Donec lorem lacus fames vulputate mattis magna penatibus. Et rutrum a, sed penatibus ipsum. Hac nullam pharetra nisi, ultrices. Vulputate aliquam ac mi mi rhoncus a sagittis. Sodales cursus et commodo iaculis ultrices vitae suspendisse id metus. Lorem tellus, imperdiet eget amet nisi. Suspendisse pharetra vitae aliquet et accumsan, velit eget lacus sed. Donec lorem lacus fames vulputate mattis magna penatibus. Et rutrum a, sed penatibus ipsum. Hac nullam pharetra nisi, ultrices. Vulputate aliquam ac mi mi rhoncus a sagittis. Sodales cursus et commodo iaculis ultrices vitae suspendisse id metus. Lorem tellus, imperdiet eget amet nisi."}/>
-                        {/* <JournalPost username={user.name} mood={}></JournalPost> */}
-            </Posts>
 
             <div>
               <Button routeTo="./" ButtonText="Back to Home" />

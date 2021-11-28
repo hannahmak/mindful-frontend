@@ -177,7 +177,7 @@ export default function Dashboard() {
       </Holder1>
       <Holder2>
         <Row>
-            <Greeting/>
+            <h1>Welcome,</h1>
         </Row>
         <Row0>
              <DashFeed dashsize={"24px"} dashweight={"800"}/>

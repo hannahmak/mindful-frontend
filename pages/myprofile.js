@@ -17,7 +17,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import Name from "../comps/Name";
 
 const Container = styled.div`
   height: 100vh;
@@ -169,7 +168,7 @@ export default function MyProfile() {
         <div>
           <Button routeTo="./" ButtonText="Back to Home" />
           <Button routeTo="./talk" ButtonText="Go to chat" />
-          <h1>This is Your Post</h1>
+          <h1>This is Your Post1</h1>
           {posts.map(
             (post) =>
               post.publish === 0 && (
@@ -178,7 +177,7 @@ export default function MyProfile() {
                     <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
                   </div>
                   <div>
-                    <Name/>
+                    
                     
                     
                   </div>
