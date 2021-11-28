@@ -206,7 +206,7 @@ export default function Dashboard() {
           </Row3>
 
       </Holder2>
-          <ResponsiveMenuu/>
+          <ResponsiveMenuu dashsrc="homeActive.svg"/>
 
       <Holder3>
         <MoodBar/>

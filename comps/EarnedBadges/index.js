@@ -10,10 +10,8 @@ const Container = styled.div`
     grid-area: ${props=>props.area};
     background: ${props=>props.background};
     /* Drop Shadow */
-    
     box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
-    padding:15px;
     gap:10px;
 `
 
@@ -22,7 +20,6 @@ const Header = styled.div`
     justify-content: center;
     font-weight:600;
     font-size:18px;
-    padding-top: 15px;
     text-align: center;
     color: #0F2046;
 `
@@ -35,7 +32,6 @@ justify-content:${props=>props.justify};
 `
 
 const Content = styled.img`
-    padding-top: 20px;
     height: 120px;
     width: 120px;
 `
@@ -45,12 +41,11 @@ color:#878FA2;
 font-size:15px;
 font-weight:400;
 text-align: center;
-padding-bottom: 15px;
 `
 
 const EarnedBadges = ({
-    height= "900px",
-    width= "900px",
+    height= "250px",
+    width= "700px",
     text= "Header",
     description="You created a Mindful Account!",
     src="/badges.svg",

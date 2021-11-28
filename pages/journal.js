@@ -193,7 +193,7 @@ export default function Journal() {
       </motion.button>
 
     </motion.main>
-    <ResponsiveMenuu/>  
+    <ResponsiveMenuu journsrc="journalActive.svg"/>  
     
   </div>
   }
@@ -327,7 +327,7 @@ export default function Journal() {
         </form>
 
       </motion.main>
-      <ResponsiveMenuu/>  
+      <ResponsiveMenuu journsrc="journalActive.svg"/>  
       
     </motion.div>
   );

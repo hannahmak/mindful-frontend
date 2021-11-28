@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import TalkButton from '../comps/TalkButton'
 import Menu1 from '../comps/Menu1';
+import ResponsiveMenuu from '../comps/ResponsiveMenuu';
 
 const Container = styled.div `
 height:100vh
@@ -31,6 +32,10 @@ justify-content:center;
 const ContainerHolder1 = styled.div`
 background-color:blue;
 width:8%;
+@media only screen and (max-width: 768px) {
+  display:none;
+  width:0%;
+}
 `
 
 const TitleHolder = styled.div `
@@ -93,6 +98,7 @@ export default function Talk() {
           <TalkButton text="BC Crisis Centre" routeTo="https://crisiscentre.bc.ca/get-help/" ></TalkButton>
           <TalkButton back="white" color="#0F2046" routeTo="#"></TalkButton>
         </Buttons>
+        <ResponsiveMenuu/>
       </Holder2>
 
       </ContainerHolder>

@@ -211,7 +211,7 @@ export default function Mood({
         </LaughHolder>
         
       </Holder2>
-      <ResponsiveMenuu/>
+      <ResponsiveMenuu moodsrc='/moodActive.svg'/>
     </ContainerHolder>
           <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>
