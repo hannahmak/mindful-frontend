@@ -13,6 +13,11 @@ module.exports = {
         destination: "http://mindful-idsp3380.herokuapp.com/myfeed",
         //destination: "http://localhost:8080/myfeed"
       },
+        {
+        source: "/myfriend",
+        destination: "http://mindful-idsp3380.herokuapp.com/users",
+        //destination: "http://localhost:8080/myfriend"
+      },
       {
         source: "/images/:file*",
         destination: "http://mindful-idsp3380.herokuapp.com/:file*",
