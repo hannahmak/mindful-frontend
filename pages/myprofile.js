@@ -64,18 +64,18 @@ const PostsHeader = styled.div`
   margin-bottom: 54px;
 `;
 
-// const Holder1 = styled.div`
-// width:8%;
-// `
+const Holder1 = styled.div`
+width:8%;
+`
 
-// const Holder2 = styled.div`
-// display:flex;
-// flex-direction:column;
-// width:70%;
-// align-items:center;
-// height:100vh;
-// gap:50px;
-// `
+const Holder2 = styled.div`
+display:flex;
+flex-direction:column;
+width:92%;
+align-items:center;
+height:100vh;
+gap:50px;
+`
 
 // const Holder3 = styled.div`
 // height:100vh;
@@ -152,21 +152,17 @@ export default function MyProfile() {
   ) : (
     <Container>
       {/* Column 1 */}
-      <Menu1 dashsrc="/homeActive.svg" />
+      <Holder1>
+        <Menu1 dashsrc="/homeActive.svg" />
+      </Holder1>
 
+      <Holder2>
       {/* Column 2 */}
       <ProfileCont>
         <NewJournalCont>
           <NewJournalButton onClick={() => router.push("/journal")} />
         </NewJournalCont>
         <Avatar name={user.name} />
-        <Posts>
-          <PostsHeader>My Journals</PostsHeader>
-          <JournalPost username={user.name} />
-          <JournalPost username={user.name} />
-          <JournalPost username={user.name} />
-          <JournalPost username={user.name} />
-        </Posts>
 
         <div>
           <Button routeTo="./" ButtonText="Back to Home" />
@@ -193,6 +189,7 @@ export default function MyProfile() {
           )}
         </div>
       </ProfileCont>
+      </Holder2>
 
       {/* Column 3 */}
       {/* <MoodBar/> */}
