@@ -5,18 +5,18 @@ module.exports = {
     return [
       {
         source: "/mypost",
-        // destination: "http://mindful-idsp3380.herokuapp.com/mypost",
-        destination: "http://localhost:8080/mypost"
+        destination: "http://mindful-idsp3380.herokuapp.com/mypost",
+        //destination: "http://localhost:8080/mypost"
       },
       {
         source: "/myfeed",
-        //destination: "http://mindful-idsp3380.herokuapp.com/feed",
-        destination: "http://localhost:8080/myfeed"
+        destination: "http://mindful-idsp3380.herokuapp.com/feed",
+        //destination: "http://localhost:8080/myfeed"
       },
       {
         source: "/myfriend",
-        //destination: "http://mindful-idsp3380.herokuapp.com/users",
-        destination: "http://localhost:8080/myfriend"
+        destination: "http://mindful-idsp3380.herokuapp.com/users",
+        //destination: "http://localhost:8080/myfriend"
       },
       {
         source: "/images/:file*",
