@@ -168,7 +168,7 @@ export default function MyProfile() {
         <div>
           <Button routeTo="./" ButtonText="Back to Home" />
           <Button routeTo="./talk" ButtonText="Go to chat" />
-          <h1>This is Your Post1</h1>
+          <h1>This is Your Post</h1>
           {posts.map(
             (post) =>
               post.publish === 0 && (
@@ -177,6 +177,7 @@ export default function MyProfile() {
                     <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
                   </div>
                   <div>
+                    
                     
                     
                     
