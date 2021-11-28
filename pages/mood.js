@@ -33,6 +33,10 @@ height:100%;
 align-items:center;
 justify-content:center;
 gap:10px;
+
+@media only screen and (max-width: 768px) {
+  padding:30px;
+}
 `;
 
 const JokeCards = styled.div `
@@ -212,7 +216,7 @@ export default function Mood({
         </LaughHolder>
         
       </Holder2>
-      <ResponsiveMenuu />
+      <ResponsiveMenuu moodsrc='/moodActive.svg' />
     </ContainerHolder>
           <JokesCard joke={RandJoke} onGenerate={()=>{GetJoke();}} onHideInteract={()=>{setShowCard(false);}}show={showCard}/>
     </Container>

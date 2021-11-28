@@ -177,22 +177,16 @@ export default function MyProfile() {
                     <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
                   </div>
                   <div>
-                    
-                    
-                    
-                    
-                  </div>
-                  {/* <figcaption>{post.description}</figcaption>
                   <figcaption>
                     {moment(post.timestamp).format("YYYY-MMM-DD")}
                   </figcaption>
                   <img
-                    style={{ width: 500 }}
+                    style={{ width: "100%" }}
                     src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
                   ></img>
-                  <h5>these are your tags: </h5>
+                  <figcaption>{post.description}</figcaption>
                   <figcaption>{JSON.parse(post.tags)}</figcaption>
-                   */}
+                  </div>
                 </figure>
               )
           )}
