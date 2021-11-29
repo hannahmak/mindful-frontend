@@ -12,6 +12,7 @@ import styles from "../styles/Home.module.css";
 import router, { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { style } from "@mui/system";
 
 const Container = styled.div`
   width: 100%;
@@ -21,20 +22,12 @@ const Container = styled.div`
 `;
 const FeedCont = styled.div`
   display: flex;
+  width:100%;
   flex-direction: column;
+  align-items:center;
+  justify-content:center;
 `;
 
-const Date = styled.div`
-  font-size: 18px;
-  color: #878fa2;
-  padding-top: 24px;
-`;
-
-const Posts = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
 
 const Holder1 = styled.div`
   display: flex;
@@ -97,6 +90,10 @@ const Row1 = styled.div`
   gap: 10px;
 `;
 
+const Holder = styled.div `
+display:flex;
+width:100%;
+`
 export default function Feed() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState();
@@ -167,25 +164,24 @@ export default function Feed() {
         </Row0>
         <Row1>
           <FeedCont>
-
-            <div>
-              <Button routeTo="./" ButtonText="Back to Home" />
-              <Button routeTo="./talk" ButtonText="Go to chat" />
-              <h1>This is Your Feed</h1>
+              {/* <Button routeTo="./" ButtonText="Back to Home" />
+              <Button routeTo="./talk" ButtonText="Go to chat" /> */}
+              <Holder>
+                <h1>This is Your Feed</h1>
+              </Holder>
               {posts.map(
                 (post) =>
                   post.publish === 0 && (
                     <figure className={styles.feedcont} key={post.id}>
                       <div className={styles.feedmoodcont}>
                         <img className={styles.feedmoodstyling}
-                          style={{ width: 100 }}
                           src={moodIcon[post.mood]}
                         ></img>
                       </div>
                       <div className={styles.feedinfoholder}>
-                        <figcaption>{post.email}</figcaption>
+                        <figcaption className={styles.feedemail}>{post.email}</figcaption>
                         <img className={styles.feedpicpost}
-                          style={{ width: 500 }}
+                          style={{ width: "100%" }}
                           src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
                         ></img>
                         <figcaption>{post.description}</figcaption>
@@ -200,7 +196,6 @@ export default function Feed() {
                     </figure>
                   )
               )}
-            </div>
           </FeedCont>
         </Row1>
       </Holder2>

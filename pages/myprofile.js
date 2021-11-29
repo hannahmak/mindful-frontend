@@ -113,6 +113,18 @@ align-items:center;
 justify-content:flex-end;
 `
 
+const CardHolder = styled.div `
+display:flex;
+align-items:center;
+justify-content:center;
+width:100%;
+`
+
+const Rowholder = styled.div `
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+`
 // const ProfDetails = styled.div`
 // width:92%;
 // `
@@ -204,31 +216,36 @@ export default function MyProfile() {
               </Add>
 
             </PostHolder>
-            {posts.map(
-              (post) =>
-                post.publish === 0 && (
-                  <figure className={styles.myprofcont} key={post.id}>
-                    <div className={styles.myprofmoodcont}>
-                      <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>
-                    </div>
-                    <div className={styles.myprofinfoholder} >
-                      <img className={styles.myprofpicpost} 
-                        style={{ width: "100%" }}
-                        src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
-                      ></img>
-                      <figcaption>{post.description}</figcaption>
+            <CardHolder>
+                <Rowholder>
 
-                      <div className={styles.myprofinfo}>
-                        <figcaption className={styles.myproftag}>{JSON.parse(post.tags)} |</figcaption>
-                        <figcaption>
-                          {moment(post.timestamp).format("| YYYY-MMM-DD")}
-                        </figcaption>
+              {posts.map(
+                (post) =>
+                  post.publish === 0 && (
+                    <figure className={styles.myprofcont} key={post.id}>
+                      <div className={styles.myprofmoodcont}>
+                        <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>
                       </div>
+                      <div className={styles.myprofinfoholder} >
+                        <img className={styles.myprofpicpost} 
+                          style={{ width: "100%" }}
+                          src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
+                        ></img>
+                        <figcaption>{post.description}</figcaption>
 
-                    </div>
-                  </figure>
-                )
-            )}
+                        <div className={styles.myprofinfo}>
+                          <figcaption className={styles.myproftag}>{JSON.parse(post.tags)} |</figcaption>
+                          <figcaption>
+                            {moment(post.timestamp).format("| YYYY-MMM-DD")}
+                          </figcaption>
+                        </div>
+
+                      </div>
+                    </figure>
+                  )
+              )}
+              </Rowholder>
+            </CardHolder>
       </ProfileCont>
       <ResponsiveMenuu/>
       </Holder2>

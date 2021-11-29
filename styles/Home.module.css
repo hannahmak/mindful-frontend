@@ -411,11 +411,13 @@
 .myprofinfoholder {
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 
 .feedinfoholder {
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 
 
@@ -423,9 +425,11 @@
 
 .myprofcont {
   display: flex;
-  flex-direction: row;
+  width: 100%;
+  max-height: 50%;
+  flex-direction: column;
   gap: 20px;
-  background-color: white;
+  background-color: #ffffff;
   padding:30px;
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(15px);
@@ -434,6 +438,7 @@
 
 .feedcont {
   display: flex;
+  width: 100%;
   flex-direction: row;
   gap: 20px;
   background-color: white;
@@ -457,6 +462,12 @@
 
 .myprofmoodcont {
   
+}
+
+.feedemail {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0F2046;
 }
 
 .myprofpicpost {
@@ -505,6 +516,21 @@
 
   .myprofmoodstyling {
     width: 60px;
+  }
+
+  .feedmoodstyling {
+    width: 60px;
+  }
+  .myprofcont {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+  }
+
+  .feedcont {
+    display: flex;
+    flex-direction: column;
   }
 
 }
