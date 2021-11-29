@@ -17,24 +17,18 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import ResponsiveMenuu from "../comps/ResponsiveMenuu";
 
 const Container = styled.div`
-  height: 100vh;
+display:flex;
+flex-direction:row;
+  height: 100%;
   width: 100%;
-  display: inline-grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr;
-  column-gap: 59px;
-  grid-template-area: "menu profile profile moodbar";
 `;
 const ProfileCont = styled.div`
-  height: 100vh;
-  width: 60vw;
-  grid-area: profile;
+  width: 92%;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  margin-top: 52px;
 `;
 
 const NewJournalCont = styled.div`
@@ -66,22 +60,40 @@ const PostsHeader = styled.div`
 `;
 
 const Holder1 = styled.div`
+display:flex;
 width:8%;
+@media only screen and (max-width: 768px) {
+  display:none;
+}
 `
 
 const Holder2 = styled.div`
 display:flex;
 flex-direction:column;
-width:92%;
+width:70%;
 align-items:center;
 height:100vh;
 gap:50px;
+
+@media only screen and (max-width: 768px) {
+  width:100%;
+}
 `
 
-// const Holder3 = styled.div`
-// height:100vh;
-// width:22%;
-// `
+const Holder3 = styled.div`
+height:100vh;
+width:22%;
+
+@media only screen and (max-width: 768px) {
+  display:none;
+}
+`
+
+const AvatarHolder = styled.div `
+display:flex;
+width:100%;
+flex-wrap:wrap;
+`
 
 // const ProfDetails = styled.div`
 // width:92%;
@@ -159,43 +171,48 @@ export default function MyProfile() {
 
       <Holder2>
       {/* Column 2 */}
-      <ProfileCont>
         <NewJournalCont>
           <NewJournalButton onClick={() => router.push("/journal")} />
         </NewJournalCont>
-        <Avatar name={user.name} />
+        <AvatarHolder>
+          <Avatar name={user.name} />
+        </AvatarHolder>
+        <ProfileCont>
+            <Button routeTo="./" ButtonText="Back to Home" />
+            <Button routeTo="./talk" ButtonText="Go to chat" />
+            <h1>This is Your Post</h1>
+            {posts.map(
+              (post) =>
+                post.publish === 0 && (
+                  <figure className={styles.myprofcont} key={post.id}>
+                    <div className={styles.myprofmoodcont}>
+                      <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>
+                    </div>
+                    <div className={styles.myprofinfoholder} >
+                      <img className={styles.myprofpicpost} 
+                        style={{ width: "100%" }}
+                        src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
+                      ></img>
+                      <figcaption>{post.description}</figcaption>
 
-        <div>
-          <Button routeTo="./" ButtonText="Back to Home" />
-          <Button routeTo="./talk" ButtonText="Go to chat" />
-          <h1>This is Your Post</h1>
-          {posts.map(
-            (post) =>
-              post.publish === 0 && (
-                <figure className={styles.myprofcont} key={post.id}>
-                  <div>
-                    <img style={{ width: 100 }} src={moodIcon[post.mood]}></img>
-                  </div>
-                  <div>
-                  <figcaption>
-                    {moment(post.timestamp).format("YYYY-MMM-DD")}
-                  </figcaption>
-                  <img
-                    style={{ width: "100%" }}
-                    src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
-                  ></img>
-                  <figcaption>{post.description}</figcaption>
-                  <figcaption>{JSON.parse(post.tags)}</figcaption>
-                  </div>
-                </figure>
-              )
-          )}
-        </div>
+                      <div className={styles.myprofinfo}>
+                        <figcaption className={styles.myproftag}>{JSON.parse(post.tags)} |</figcaption>
+                        <figcaption>
+                          {moment(post.timestamp).format("| YYYY-MMM-DD")}
+                        </figcaption>
+                      </div>
+
+                    </div>
+                  </figure>
+                )
+            )}
       </ProfileCont>
+      <ResponsiveMenuu/>
       </Holder2>
 
-      {/* Column 3 */}
-      {/* <MoodBar/> */}
+      <Holder3>
+        <MoodBar/>
+      </Holder3>
     </Container>
     //   {/* <Holder1>
     //     <Menu press1="inset 0px 0px 4px rgba(0, 0, 0, 0.25)" />

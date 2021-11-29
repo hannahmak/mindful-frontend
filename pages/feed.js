@@ -8,6 +8,7 @@ import ResponsiveMenuu from "../comps/ResponsiveMenuu";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import styles from "../styles/Home.module.css";
 import router, { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
 import { Button, CardActionArea, CardActions } from "@mui/material";
@@ -174,23 +175,28 @@ export default function Feed() {
               {posts.map(
                 (post) =>
                   post.publish === 0 && (
-                    <figure key={post.id}>
-                      <figcaption>{post.email}</figcaption>
-                      <figcaption>{post.description}</figcaption>
-                      <figcaption>
-                        {moment(post.timestamp).format("YYYY-MMM-DD")}
-                      </figcaption>
-                      <img
-                        style={{ width: 500 }}
-                        src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
-                      ></img>
-                      <h5>these are your tags: </h5>
-                      <figcaption>{JSON.parse(post.tags)}</figcaption>
-                      <h5>this is your mood: </h5>
-                      <img
-                        style={{ width: 100 }}
-                        src={moodIcon[post.mood]}
-                      ></img>
+                    <figure className={styles.feedcont} key={post.id}>
+                      <div className={styles.feedmoodcont}>
+                        <img className={styles.feedmoodstyling}
+                          style={{ width: 100 }}
+                          src={moodIcon[post.mood]}
+                        ></img>
+                      </div>
+                      <div className={styles.feedinfoholder}>
+                        <figcaption>{post.email}</figcaption>
+                        <img className={styles.feedpicpost}
+                          style={{ width: 500 }}
+                          src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
+                        ></img>
+                        <figcaption>{post.description}</figcaption>
+                        <div className={styles.feedinfo}>
+                          <figcaption className={styles.feedtag}>{JSON.parse(post.tags)}</figcaption>
+                          <figcaption>
+                          {moment(post.timestamp).format("YYYY-MMM-DD")}
+                          </figcaption>
+
+                        </div>
+                      </div>
                     </figure>
                   )
               )}

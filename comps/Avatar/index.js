@@ -14,10 +14,15 @@ const Name = styled.h1`
     color:#0F2046;
     display:${props=>props.show};
     margin-bottom:0px;
+
+    @media only screen and (max-width: 768px) {
+        font-size:20px;
+      }
 `
 
 const Holder = styled.div`
     display:flex;
+    width:100%;
     flex-direction:column;
     justify-content:center;
 `
@@ -52,7 +57,7 @@ const Avatar = ({
     display="flex",
 }) => {
     return <Container>
-        <AvatarPicture height="147px" width="147px"/>
+        <AvatarPicture/>
         <Holder>
             <Name show={show}>{name}</Name>
             <Follow display={display}>
