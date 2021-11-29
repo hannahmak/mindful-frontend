@@ -16,7 +16,7 @@ const Name = styled.h1`
     margin-bottom:0px;
 
     @media only screen and (max-width: 768px) {
-        font-size:20px;
+        font-size:30px;
       }
 `
 

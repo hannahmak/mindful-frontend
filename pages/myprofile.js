@@ -26,38 +26,26 @@ flex-direction:row;
   width: 100%;
 `;
 const ProfileCont = styled.div`
-  width: 92%;
+  width: 95%;
   display: flex;
   flex-direction: column;
+  align-items:center;
+  justify-content:center;
 `;
 
 const NewJournalCont = styled.div`
   display: flex;
   justify-content: flex-end;
+  width:95%;
 `;
 
 const NewJournalButton = styled.div`
   pointer: cursor;
-  height: 55px;
+  height: 35px;
   width: 55px;
   background: no-repeat url("/newJournal.svg");
 `;
 
-const Posts = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 90px;
-`;
-const PostsHeader = styled.div`
-  font-family: Inter;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 44px;
-  color: #0f2046;
-  margin-bottom: 54px;
-`;
 
 const Holder1 = styled.div`
 display:flex;
@@ -68,6 +56,7 @@ width:8%;
 `
 
 const Holder2 = styled.div`
+padding-top: 50px;
 display:flex;
 flex-direction:column;
 width:70%;
@@ -91,8 +80,37 @@ width:22%;
 
 const AvatarHolder = styled.div `
 display:flex;
-width:100%;
+width:95%;
 flex-wrap:wrap;
+@media only screen and (max-width: 768px) {
+  width:85%;
+}
+`
+
+const PostHolder = styled.div `
+display:flex;
+width:95%;
+flex-direction:row;
+align-items:center;
+justify-content:center;
+
+@media only screen and (max-width: 768px) {
+  width:85%;
+}
+`
+
+const YourPost = styled.div `
+display:flex;
+flex:1;
+align-items:center;
+justify-content:flex-start;
+`
+
+const Add = styled.div `
+display:flex;
+flex:1;
+align-items:center;
+justify-content:flex-end;
 `
 
 // const ProfDetails = styled.div`
@@ -171,16 +189,21 @@ export default function MyProfile() {
 
       <Holder2>
       {/* Column 2 */}
-        <NewJournalCont>
-          <NewJournalButton onClick={() => router.push("/journal")} />
-        </NewJournalCont>
         <AvatarHolder>
           <Avatar name={user.name} />
         </AvatarHolder>
         <ProfileCont>
-            <Button routeTo="./" ButtonText="Back to Home" />
-            <Button routeTo="./talk" ButtonText="Go to chat" />
-            <h1>This is Your Post</h1>
+            {/* <Button routeTo="./" ButtonText="Back to Home" />
+            <Button routeTo="./talk" ButtonText="Go to chat" /> */}
+            <PostHolder>
+              <YourPost>
+                <h1>This is Your Post</h1>
+              </YourPost>
+              <Add>
+                <NewJournalButton onClick={() => router.push("/journal")} />
+              </Add>
+
+            </PostHolder>
             {posts.map(
               (post) =>
                 post.publish === 0 && (
