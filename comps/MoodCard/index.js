@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import AvatarPicture from '../AvatarPicture';
 
@@ -46,12 +47,14 @@ font-size:10px;
 
 const MoodCard = ({
     name="[name]",
-    mood="[mood]"
+    mood="[mood]",
+    source="/happy.svg"
 
 }) => {
+
     return <Container>
         <Holder1>
-            <AvatarPicture width="70px" height="70px"/>
+            <AvatarPicture source={source} width="70px" height="70px"/>
         </Holder1>
         <Holder2>
             <Name>{name}</Name>

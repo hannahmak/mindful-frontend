@@ -1,6 +1,8 @@
 import { border, borderRadius, style, width } from '@mui/system';
 import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
+import Radio from '@mui/material/Radio';
+import FormControl from '@mui/material/FormControl';
 
 
 const Container = styled.div`
@@ -37,7 +39,7 @@ width:20px;
 
 
 const Moods = ({
-    source="/camera.svg",
+    source="/happy.svg",
     width="79px",
     height="79px",
     borderRadius="160px",
@@ -45,13 +47,18 @@ const Moods = ({
     hover="false",
 }) => {
     return <Container>
-        <Holder1>
-            <Circle borderRadius={borderRadius}  source={source} height={height} width={width} />
-        </Holder1>
-        <Holder2>
-            <Check src={src}/>
-        </Holder2>
+
     </Container>
 }
 
 export default Moods;
+
+// <Container>
+//         <Holder1>
+//             <Circle borderRadius={borderRadius}  src={source} height={height} width={width} />
+//         </Holder1>
+//         <Holder2>
+            
+//             <Radio/>
+//         </Holder2>
+//     </Container>
