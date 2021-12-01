@@ -13,12 +13,14 @@ const Container = styled.div`
     box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
     gap:10px;
+
 `
 
 const ContentCont = styled.div`
     display:flex;
     flex-direction: column;
     margin: 22px;
+    height:100%;
 `
 
 const Header = styled.div`
@@ -30,7 +32,9 @@ const Header = styled.div`
 
 const ImageCont = styled.div`
     display: flex;
-    align-self center;
+    flex-direction:column;
+    justify-contnet:center;
+    height:100%;
 `
 
 const Image = styled.img`
@@ -38,7 +42,20 @@ const Image = styled.img`
     max-height: ${props=>props.iheight};
 `
 
-const Text = styled.p ``
+const Text = styled.p `
+font-size:30px;
+
+@media only screen and (max-width: 768px) {
+    font-size:20px;
+  }
+
+
+`
+
+const Author = styled.p `
+
+
+`
 
 const QuoteCard = ({
     height= "100%",
@@ -46,21 +63,18 @@ const QuoteCard = ({
     iwidth= "100%",
     iheight= "100%",
     header= "Journal",
-    routeTo='/.',
+    routeTo='#',
     area='',
     src='/moodCover.svg',
-    quote="hi"
+    quote="hi",
+    author="author"
 }) => {
-    return  <Container height={height} width={width}  as={motion.div} whileHover={{
-            scale:1.05,
-            transition: {
-                duration:.1,
-            }
-            }} onClick={()=>router.push(routeTo)} area={area} >
+    return  <Container height={height} width={width} area={area} >
                 <ContentCont>
                     <Header>{header}</Header>
                     <ImageCont > 
-                        <Text>{quote}</Text>
+                        <Text>"{quote}"</Text>
+                        <Author>- {author}</Author>
                     </ImageCont>
                 </ContentCont>
             </Container>

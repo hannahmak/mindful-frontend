@@ -11,8 +11,9 @@ import DashboardCard from '../comps/DashboardCard';
 import Greeting from '../comps/Greeting';
 import ResponsiveMenuu from '../comps/ResponsiveMenuu';
 import ResponsiveMenu from '../comps/ResponsiveMenu';
+import QuoteCard from '../comps/QuoteCard';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Holder1 = styled.div `
 display:flex;
@@ -136,9 +137,14 @@ gap:10px;
 const Row3 = styled.div `
 display:flex;
 width:100%;
+height:260px;
 align-items:center;
 justify-content:center;
 gap:10px;
+
+@media only screen and (max-width: 768px) {
+  height:230px;
+}
 `
 
 const Column3 = styled.div `
@@ -146,7 +152,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 width:60%;
-
+max-height:100%;
+flex:1;
 @media only screen and (max-width: 768px) {
   width:100%;
 }
@@ -157,20 +164,40 @@ display:flex;
 align-items:center;
 justify-content:center;
 width:60%;
+height:100%;
+flex:1;
+
 
 @media only screen and (max-width: 768px) {
   width:100%;
 }
 `
+// document.addEventListener("DOMContentLoaded", function(){
+//   GetQuote()
+// });
+
+
 
 export default function Dashboard() {
-  // const GetQuote = async ()=> {
-  //   const result = await axios.get("https://type.fit/api/quotes");
-  //   console.log(result.data)
-  // }
+  const GetQuote = async ()=> {
+    const result = await axios.get("https://quotes.rest/qod?category=inspire");
+    console.log(result.data.contents.quotes[0].quote)
+    setQuote(result.data.contents.quotes[0].quote)
+    console.log(result.data.contents.quotes[0].author)
+    setAuthor(result.data.contents.quotes[0].author)
+    // alert(result.data.contents.quotes[0].quote)
+  }
+  const [Quote, setQuote] = useState("")
+  const [Author, setAuthor] = useState("")
 
-  // const [Quote, setQuote] = useState("hi")
+  useEffect(()=> {
+    GetQuote()
+  }, 1000)
+
+
   return (
+    
+    
     <Container>
       <Holder1>
         <Menu1 dashsrc="homeActive.svg"/>
@@ -201,13 +228,11 @@ export default function Dashboard() {
               <DashboardCard routeTo="/mood" area="mood" header='Mood Boosters' src="/moodCover.svg"/>
             </Column3>
             <Column4>
-              <DashboardCard area="quote" header='Quote of the day' />
+              <QuoteCard area="quote" header='Quote of the day' quote={Quote} author={Author}/>
             </Column4>
           </Row3>
-
       </Holder2>
           <ResponsiveMenuu dashsrc="homeActive.svg"/>
-
       <Holder3>
         <MoodBar/>
       </Holder3>
