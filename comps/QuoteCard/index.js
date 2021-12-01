@@ -9,11 +9,8 @@ const Container = styled.div`
     flex-direction: column;
     height: ${props=>props.height};
     width: ${props=>props.width};
-    background: #FFFFFF;
-    box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
     gap:10px;
-
 `
 
 const ContentCont = styled.div`
@@ -48,8 +45,6 @@ font-size:30px;
 @media only screen and (max-width: 768px) {
     font-size:15px;
   }
-
-
 `
 
 const Author = styled.p `
@@ -62,18 +57,13 @@ const Author = styled.p `
 const QuoteCard = ({
     height= "100%",
     width= "100%",
-    iwidth= "100%",
-    iheight= "100%",
     header= "Journal",
-    routeTo='#',
     area='',
-    src='/moodCover.svg',
     quote="hi",
     author="author"
 }) => {
     return  <Container height={height} width={width} area={area} >
                 <ContentCont>
-                    <Header>{header}</Header>
                     <ImageCont > 
                         <Text>"{quote}"</Text>
                         <Author>- {author}</Author>

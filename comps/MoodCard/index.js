@@ -54,7 +54,7 @@ const MoodCard = ({
 
     return <Container>
         <Holder1>
-            <AvatarPicture source={source} width="70px" height="70px"/>
+            <AvatarPicture source={source} width="81px" height="81px"/>
         </Holder1>
         <Holder2>
             <Name>{name}</Name>
