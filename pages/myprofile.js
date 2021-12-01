@@ -10,7 +10,7 @@ import MoodBar from "../comps/MoodBar";
 import DashFeed from "../comps/DashFeed";
 import JournalPost from "../comps/JournalPost";
 import router, { useRouter } from "next/router";
-import { useUser } from "@auth0/nextjs-auth0";
+import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -153,7 +153,7 @@ flex-wrap:wrap;
 
 // `
 
-export default function MyProfile() {
+function MyProfile() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
@@ -285,3 +285,5 @@ export default function MyProfile() {
     //   </Holder3>*/}
   );
 }
+
+export default withPageAuthRequired(MyProfile)

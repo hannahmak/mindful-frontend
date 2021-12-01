@@ -10,7 +10,7 @@ import axios from "axios";
 import moment from "moment";
 import styles from "../styles/Home.module.css";
 import router, { useRouter } from "next/router";
-import { useUser } from "@auth0/nextjs-auth0";
+import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { style } from "@mui/system";
 
@@ -94,7 +94,7 @@ const Holder = styled.div `
 display:flex;
 width:100%;
 `
-export default function Feed() {
+function Feed() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
@@ -208,3 +208,5 @@ export default function Feed() {
     </Container>
   );
 }
+
+export default withPageAuthRequired(Feed)
