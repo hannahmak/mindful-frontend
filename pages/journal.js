@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import router, { useRouter } from "next/router";
-import { useUser } from "@auth0/nextjs-auth0";
+import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Menu1 from "../comps/Menu1";
 import { motion } from "framer-motion";
 import Checkbox from '@mui/material/Checkbox';
@@ -14,7 +14,7 @@ import { Radio } from "@mui/material";
 import { TextField } from "@mui/material";
 
 
-export default function Journal() {
+function Journal() {
   
   const [setup1, setSetup1] =  useState(false)
   const [file, setFile] = useState();
@@ -332,3 +332,5 @@ export default function Journal() {
     </motion.div>
   );
 }
+
+export default withPageAuthRequired(Journal);

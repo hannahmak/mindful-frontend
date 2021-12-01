@@ -3,7 +3,7 @@ import MoodUpdate from '../MoodUpdate';
 import MoodCard from '../MoodCard';
 import Avatar from '../Avatar';
 import Moods from '../Moods';
-import router, {useRouter} from 'next/router';
+import router, { useRouter } from 'next/router';
 import AvatarPicture from '../AvatarPicture';
 import { useState } from 'react';
 import * as React from 'react';
@@ -13,6 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import { style } from '@mui/system';
+import { useUser } from '@auth0/nextjs-auth0';
 
 const Container = styled.div`
 display:flex;
@@ -29,7 +30,7 @@ padding:30px;
 
 `
 
-const MoodHolder = styled.div `
+const MoodHolder = styled.div`
 display:flex;
 flex-direction:column;
 width:100%;
@@ -37,15 +38,16 @@ align-items:center;
 ksutify-content:center;
 `
 
-const FormHolder = styled.div `
+const FormHolder = styled.div`
 `
 
-const ImageHolder = styled.div `
+const ImageHolder = styled.div`
 display:flex;
 flex-direction:row;
 justify-content:space-between;
 width:100%;
 `
+
 
 const Image = styled.img `
 width: 81px;
@@ -53,23 +55,28 @@ width: 81px;
 
 const MoodBar = ({
 
-
 }) => {
-    const [showMood, setShowMood] = useState("happy.svg")
-    const [UpdateMood, SetUpdateMood] = useState("Happy")
+  const { user, isLoading, error } = useUser();
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+  const [showMood, setShowMood] = useState("happy.svg")
+  const [UpdateMood, SetUpdateMood] = useState("Happy")
 
-    return <Container>
-            <MoodUpdate/>
-            <MoodCard mood={UpdateMood} source={showMood}/>
-        <MoodUpdate subhead="Update Mood" text=""/>
+  return (user &&
+    (
+      <Container>
+        <MoodUpdate />
+        <MoodCard mood={UpdateMood} source={showMood} name={user.name} />
+        <MoodUpdate subhead="Update Mood" text="" />
         <MoodHolder>
-            {/* <ImageHolder>
+          {/* <ImageHolder>
                 <Image src="happy.svg"/>
                 <Image src="good.svg"/>
                 <Image src="indifferent.svg"/>
                 <Image src="sad.svg"/>
                 <Image src="stressed.svg"/>
             </ImageHolder> */}
+
             <FormHolder
             style={{display:"flex", width:"100%", height:"100%"}}
             >

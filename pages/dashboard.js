@@ -14,6 +14,7 @@ import ResponsiveMenu from '../comps/ResponsiveMenu';
 import QuoteCard from '../comps/QuoteCard';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0'
 
 const Holder1 = styled.div `
 display:flex;
@@ -177,7 +178,7 @@ height:100%;
 
 
 
-export default function Dashboard() {
+function Dashboard() {
   const GetQuote = async ()=> {
     const result = await axios.get("https://quotes.rest/qod?category=inspire");
     console.log(result.data.contents.quotes[0].quote)
@@ -188,22 +189,23 @@ export default function Dashboard() {
   }
   const [Quote, setQuote] = useState("")
   const [Author, setAuthor] = useState("")
+  const { user, error, isLoading } = useUser();
 
   useEffect(()=> {
     GetQuote()
   }, 1000)
-
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   return (
-    
-    
+    user && (    
     <Container>
       <Holder1>
         <Menu1 dashsrc="homeActive.svg"/>
       </Holder1>
       <Holder2>
         <Row>
-            <h1>Welcome,</h1>
+            <h1>Welcome, {user.name}</h1>
         </Row>
         <Row0>
              <DashFeed dashsize={"24px"} dashweight={"800"}/>
@@ -237,5 +239,6 @@ export default function Dashboard() {
       </Holder3>
 
     </Container>
-  )
+  ))
 }
+export default withPageAuthRequired(Dashboard)

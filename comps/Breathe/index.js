@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import lottie from 'lottie-web';
 import { height } from '@mui/system';
 import { motion } from 'framer-motion';
@@ -10,52 +10,71 @@ const Container = styled.div`
 `
 
 // const Buttons = styled.button``
-var anim = null;
+let anim = null;
+// let audio = document.getElementById('a1');
 
 
 const Breathe = ({
-    
+
 }) => {
-    const container = useRef(null)
+  const container = useRef(null)
+  const [ isPlaying, setIsPlaying ] = useState(false);
+  
+  useEffect(() => {
+    anim = lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: false,
+      animationData: require('../../assets/breathe.json'),
 
-    useEffect(({
-    }) => {
-        anim = lottie.loadAnimation({
-            container: container.current,
-            renderer: 'svg',
-            loop: true,
-            autoplay:false,
-            animationData: require('../../assets/breathe.json'),
-            
-        })
-        lottie.setSpeed(2.5);
-        setTimeout(() => {
-            anim.pause()
-        }, 61000);
-    }, [])
+    })
+    lottie.setSpeed(2.5);
+    
+  }, [])
+
+  useEffect(() => {
+    if (isPlaying) {
+      play();
+    } else {
+      stop();
+    }
+  }, [isPlaying])
 
 
-    function play() {
-        var audio = document.getElementById('a1');
-        audio.play();
 
-        setTimeout(function(){
-            audio.pause
-        }, 60000)
+  function play() {
+    let audio = document.getElementById('a1');
+
+    audio.play();
+    anim.play();
+
+    setTimeout(function () {
+      setIsPlaying(false);
+      audio.pause();
+      anim.pause();
+
+    }, 60000)
+  }
+
+  function stop() {
+    let audio = document.getElementById('a1');
+    audio.pause();
+    anim.pause();
+  }
+
+
+
+  return <Container
+
+    onClick={() => { setIsPlaying(!isPlaying) }} as={motion.div} whileHover={{
+      scale: 1.05,
+      transition: {
+        duration: .1,
       }
-
-    
-
-    return <Container 
-    
-    onClick={()=>{anim.play(), play()}}  as={motion.div} whileHover={{
-        scale:1.05,
-        transition: {
-            duration:.1,
-        }
     }}>
-        <div className="container" ref={container}></div>
-    </Container>
+    <div className="container" ref={container}></div>
+  </Container>
 }
 
 export default Breathe;
