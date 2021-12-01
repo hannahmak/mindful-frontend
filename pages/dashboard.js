@@ -136,14 +136,14 @@ gap:10px;
 `
 const Row3 = styled.div `
 display:flex;
+flex-direction:row;
 width:100%;
-height:260px;
 align-items:center;
 justify-content:center;
 gap:10px;
 
 @media only screen and (max-width: 768px) {
-  height:230px;
+  flex-direction:column;
 }
 `
 
@@ -153,7 +153,7 @@ align-items:center;
 justify-content:center;
 width:60%;
 max-height:100%;
-flex:1;
+
 @media only screen and (max-width: 768px) {
   width:100%;
 }
@@ -165,7 +165,6 @@ align-items:center;
 justify-content:center;
 width:60%;
 height:100%;
-flex:1;
 
 
 @media only screen and (max-width: 768px) {

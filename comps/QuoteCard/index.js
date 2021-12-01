@@ -46,14 +46,16 @@ const Text = styled.p `
 font-size:30px;
 
 @media only screen and (max-width: 768px) {
-    font-size:20px;
+    font-size:15px;
   }
 
 
 `
 
 const Author = styled.p `
-
+@media only screen and (max-width: 768px) {
+    font-size:10px;
+  }
 
 `
 
