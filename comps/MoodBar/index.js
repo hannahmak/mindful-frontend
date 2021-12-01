@@ -48,11 +48,8 @@ width:100%;
 `
 
 const Image = styled.img `
-width:25%;
+width: 81px;
 `
-
-
-
 
 const MoodBar = ({
 
@@ -112,10 +109,7 @@ const MoodBar = ({
                     </RadioGroup>
                 </FormControl>
             </FormHolder>
-
-
         </MoodHolder>
-
     </Container>
 }
 
