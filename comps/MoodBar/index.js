@@ -25,12 +25,16 @@ z-index: 2;
 align-items:center;
 gap:30px;
 color: #0F2046;
-padding: 31px;
+padding:30px;
+
 `
 
 const MoodHolder = styled.div `
 display:flex;
-
+flex-direction:column;
+width:100%;
+align-items:center;
+ksutify-content:center;
 `
 
 const FormHolder = styled.div `
@@ -40,10 +44,11 @@ const ImageHolder = styled.div `
 display:flex;
 flex-direction:row;
 justify-content:space-between;
+width:100%;
 `
 
 const Image = styled.img `
-width:40%;
+width:25%;
 `
 
 
@@ -68,10 +73,14 @@ const MoodBar = ({
                 <Image src="sad.svg"/>
                 <Image src="stressed.svg"/>
             </ImageHolder> */}
-            <FormHolder>
-                <FormControl component="fieldset">
+            <FormHolder
+            style={{display:"flex", width:"100%", height:"100%"}}
+            >
+                <FormControl
+                style={{display:"flex", width:"100%", height:"100%"}}
+                component="fieldset">
                     <RadioGroup
-                        style={{display:"flex", gap:15, maxHeight:"100%"}}
+                        style={{display:"flex", gap:40, width:"100%"}}
                         aria-label="mood"
                         defaultValue="Happy"
                         name="radio-buttons-group"
