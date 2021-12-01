@@ -39,6 +39,7 @@ const FormHolder = styled.div `
 const ImageHolder = styled.div `
 display:flex;
 flex-direction:row;
+justify-content:space-between;
 `
 
 const Image = styled.img `
@@ -52,13 +53,13 @@ const MoodBar = ({
 
 
 }) => {
-    const [showMood, setShowMood] = useState("sad.svg")
+    const [showMood, setShowMood] = useState("happy.svg")
     const [UpdateMood, SetUpdateMood] = useState("Happy")
 
     return <Container>
             <MoodUpdate/>
             <MoodCard mood={UpdateMood} source={showMood}/>
-        <MoodUpdate subhead="Update Mood" text="Update"/>
+        <MoodUpdate subhead="Update Mood" text=""/>
         <MoodHolder>
             {/* <ImageHolder>
                 <Image src="happy.svg"/>
@@ -70,34 +71,34 @@ const MoodBar = ({
             <FormHolder>
                 <FormControl component="fieldset">
                     <RadioGroup
-                        style={{display:"flex", gap:15}}
+                        style={{display:"flex", gap:15, maxHeight:"100%"}}
                         aria-label="mood"
                         defaultValue="Happy"
                         name="radio-buttons-group"
                     >
                         <ImageHolder>
                         <Image src="happy.svg"/>
-                        <FormControlLabel onClick={()=>{setShowMood("happy.svg"), SetUpdateMood("Happy")}} value="Happy" control={<Radio />} label="Happy" />
+                        <FormControlLabel onClick={()=>{setShowMood("happy.svg"), SetUpdateMood("Happy")}} value="Happy" control={<Radio />} label="" />
                         </ImageHolder>
                         
                         <ImageHolder>
                         <Image src="good.svg"/>
-                        <FormControlLabel onClick={()=>{setShowMood("good.svg"), SetUpdateMood("Good")}} value="Good" control={<Radio />} label="Good" />
+                        <FormControlLabel onClick={()=>{setShowMood("good.svg"), SetUpdateMood("Good")}} value="Good" control={<Radio />} label="" />
                         </ImageHolder>
 
                         <ImageHolder>
                         <Image src="indifferent.svg"/>
-                        <FormControlLabel onClick={()=>{setShowMood("indifferent.svg"), SetUpdateMood("Indifferent")}} value="Indifferent" control={<Radio />} label="Indifferent" />
+                        <FormControlLabel onClick={()=>{setShowMood("indifferent.svg"), SetUpdateMood("Indifferent")}} value="Indifferent" control={<Radio />} label="" />
                         </ImageHolder>
 
                         <ImageHolder>
                         <Image src="sad.svg"/>
-                        <FormControlLabel onClick={()=>{setShowMood("sad.svg"), SetUpdateMood("Sad")}} value="Sad" control={<Radio />} label="Sad" />
+                        <FormControlLabel onClick={()=>{setShowMood("sad.svg"), SetUpdateMood("Sad")}} value="Sad" control={<Radio />} label="" />
                         </ImageHolder>
 
                         <ImageHolder>
                         <Image src="stressed.svg"/>
-                        <FormControlLabel onClick={()=>{setShowMood("stressed.svg"), SetUpdateMood("Stressed")}} value="Stressed" control={<Radio />} label="Stressed" />
+                        <FormControlLabel onClick={()=>{setShowMood("stressed.svg"), SetUpdateMood("Stressed")}} value="Stressed" control={<Radio />} label="" />
                         </ImageHolder>
                     </RadioGroup>
                 </FormControl>
