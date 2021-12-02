@@ -2,17 +2,12 @@ import styled from "styled-components";
 import Menu1 from "../comps/Menu1";
 import MoodBar from "../comps/MoodBar";
 import DashFeed from "../comps/DashFeed";
-import JournalPost from "../comps/JournalPost";
-import Greeting from "../comps/Greeting";
 import ResponsiveMenuu from "../comps/ResponsiveMenuu";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 import styles from "../styles/Home.module.css";
-import router, { useRouter } from "next/router";
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
-import { Button, CardActionArea, CardActions } from "@mui/material";
-import { style } from "@mui/system";
 
 const Container = styled.div`
   width: 100%;
@@ -180,11 +175,11 @@ function Feed() {
                       </div>
                       <div className={styles.feedinfoholder}>
                         <figcaption className={styles.feedemail}>{post.email}</figcaption>
+                        <figcaption>{post.description}</figcaption>
                         <img className={styles.feedpicpost}
                           style={{ width: "100%" }}
                           src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
                         ></img>
-                        <figcaption>{post.description}</figcaption>
                         <div className={styles.feedinfo}>
                           <figcaption className={styles.feedtag}>{JSON.parse(post.tags)}</figcaption>
                           <figcaption>
