@@ -97,11 +97,11 @@ function Feed() {
   const mood = ["", "Happy", "Good", "Indifferent", "Sad", "Stressed"];
   const moodIcon = [
     "",
-    "/happy.png",
-    "/good.png",
-    "/indifferent.png",
-    "/sad.png",
-    "/stressed.png",
+    "/happy.svg",
+    "/good.svg",
+    "/indiff.svg",
+    "/sad.svg",
+    "/stressed.svg",
   ];
   const [testArr, setTestArr] = useState([]);
 

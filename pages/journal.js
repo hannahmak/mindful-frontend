@@ -21,7 +21,7 @@ function Journal() {
   //const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tag, setTag] = useState("");
-  const [tags, setTags] = useState(["Tag1"]);
+  const [tags, setTags] = useState(["Journaled"]);
   const [mood, setMood] = useState(0);
   const [publish, setPublish] = useState(0);
 
@@ -143,7 +143,7 @@ function Journal() {
             }} 
             className={styles.moodlabel}  onClick={() => setMood(3)}>
               <img id={styles.sad} className={styles.moodimages}
-                src="/indifferent.svg"
+                src="/indiff.svg"
               />
               <p className={styles.mooddesc}>Indifferent</p>
               <input className={styles.input} type="radio" name="mood" value="3" />
@@ -172,9 +172,7 @@ function Journal() {
               }
             }} 
             className={styles.moodlabel}  onClick={() => setMood(5)}>
-              <img className={styles.moodimages}
-                src="/stressed.svg"
-              />
+              <img className={styles.moodimages} src="/stressed.svg"/>
               <p className={styles.mooddesc}>Stressed</p>
               <input className={styles.input} type="radio" name="mood" value="5" />
             </motion.label>
@@ -277,7 +275,7 @@ function Journal() {
                 </ul>
                 <input id="entertags" className={styles.entertag}
                   type="text"
-                  placeholder="Enter what you did today"
+                  placeholder="What Have You Been Up To?"
                   onChange={(e) => setTag(e.target.value)}
                   onKeyPress={addTag}
                 ></input>

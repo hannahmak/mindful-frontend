@@ -100,8 +100,8 @@ const MoodBar = ({
                         </ImageHolder>
 
                         <ImageHolder>
-                        <Image src="indifferent.svg"/>
-                        <FormControlLabel onClick={()=>{setShowMood("indifferent.svg"), SetUpdateMood("Indifferent")}} value="Indifferent" control={<Radio />} label="" />
+                        <Image src="indiff.svg"/>
+                        <FormControlLabel onClick={()=>{setShowMood("indifferrent.svg"), SetUpdateMood("Indifferent")}} value="Indifferent" control={<Radio />} label="" />
                         </ImageHolder>
 
                         <ImageHolder>

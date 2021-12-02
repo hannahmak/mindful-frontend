@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
 import Avatar from "../comps/Avatar";
@@ -11,12 +10,6 @@ import DashFeed from "../comps/DashFeed";
 import JournalPost from "../comps/JournalPost";
 import router, { useRouter } from "next/router";
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
-
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
 import ResponsiveMenuu from "../comps/ResponsiveMenuu";
 
 const Container = styled.div`
@@ -131,7 +124,7 @@ function MyProfile() {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(0);
-  const moodIcon = ["", "/happy.png", "/good.png", "/indifferent.png", "/sad.png", "/stressed.png"];
+  const moodIcon = ["", "/happy.svg", "/good.svg", "/indiff.svg", "/sad.svg", "/stressed.svg"];
 
   const { user } = useUser();
 
