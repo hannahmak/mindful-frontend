@@ -167,7 +167,7 @@ function Feed() {
               {/* <Button routeTo="./" ButtonText="Back to Home" />
               <Button routeTo="./talk" ButtonText="Go to chat" /> */}
               <Holder>
-                <h1>This is Your Feed</h1>
+                <h1></h1>
               </Holder>
               {posts.map(
                 (post) =>
