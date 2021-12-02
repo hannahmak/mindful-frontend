@@ -118,6 +118,6 @@ const MoodBar = ({
             </FormHolder>
         </MoodHolder>
     </Container>
-}
+))}
 
 export default MoodBar;
