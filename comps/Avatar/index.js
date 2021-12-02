@@ -61,8 +61,8 @@ const Avatar = ({
         <Holder>
             <Name show={show}>{name}</Name>
             <Follow display={display}>
-                <Following><FollowingNumber>{following}</FollowingNumber> Followers</Following>
-                <Follower><FollowerNumber>{follower}</FollowerNumber> Followers</Follower>
+                <Following><FollowingNumber>{following}</FollowingNumber> Friends</Following>
+                <Follower><FollowerNumber>{follower}</FollowerNumber> Journals</Follower>
             </Follow>
         </Holder>
         
