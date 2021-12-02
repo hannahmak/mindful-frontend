@@ -14,6 +14,7 @@ const Container = styled.div`
     border-radius: 25px;
     gap:10px;
     justify-content: flex-end;
+    padding-top: 5%;
 `
 
 const Header = styled.div`

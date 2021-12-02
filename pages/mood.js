@@ -201,8 +201,8 @@ export default function Mood({
                 </Tool>
 
           <CardContainer>
-            <Card routeTo="/talk" src="/message.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
-            <Card routeTo="/badges" src="/badges.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
+            <Card routeTo="/talk" src="/chatButtonIcon.svg" justify="center" text="Message a friend" width="100%" height="90%"/>
+            <Card routeTo="/badges" src="/badge1.svg" justify="center" text="Collect Badges" width="100%" height="90%"/>
           </CardContainer>
         </CardHolder>
 
