@@ -23,7 +23,7 @@ color:#F09682;
 
 const HeaderHolder = styled.div`
 display:flex;
-flex:1;
+
 align-items:flex-end;
 `
 

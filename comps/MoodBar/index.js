@@ -67,7 +67,7 @@ const MoodBar = ({
       <Container>
         <MoodUpdate />
         <MoodCard mood={UpdateMood} source={showMood} name={user.name} />
-        <MoodUpdate subhead="Update Mood" text="" />
+        <MoodUpdate subhead="How are we feeling?" text="" />
         <MoodHolder>
           {/* <ImageHolder>
                 <Image src="happy.svg"/>
