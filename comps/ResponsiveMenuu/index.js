@@ -139,7 +139,7 @@ const ResponsiveMenuu = ({
             }}>
                 <Dashboard src={dashsrc} />
             </Circle1>
-            <Circle2 as={motion.div} onClick={()=>router.push('/journal')}  whileHover={{
+            <Circle2 as={motion.div} onClick={()=>router.push('/myjournal')}  whileHover={{
                 scale:1.3,
                 transition: {
                     duration:.1,
