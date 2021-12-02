@@ -194,7 +194,7 @@ text-decoration:underline;
 `
 
 
-export default function Dashboard() {
+function Dashboard() {
   const GetQuote = async ()=> {
     const result = await axios.get("https://quotes.rest/qod?category=inspire");
     console.log(result.data.contents.quotes[0].quote)
@@ -261,3 +261,4 @@ export default function Dashboard() {
     </Container>
   ))
 }
+export default withPageAuthRequired(Dashboard)
