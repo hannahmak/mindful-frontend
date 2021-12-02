@@ -22,10 +22,6 @@ const Images = styled.img`
 max-height:70px;
 max-width:70px;
 `
-const MyProfile = styled.img`
-width:20px;
-height:20px;
-`
 
 const MyJournal = styled.img`
 width:20px;
@@ -42,10 +38,6 @@ height:20px;
 `
 
 const Dashboard = styled.img`
-height:20px;
-width:20px;
-`
-const Feed = styled.img`
 height:20px;
 width:20px;
 `
@@ -172,7 +164,7 @@ const Menu1 = ({
                     duration:.1,
                 }
             }}  onClick={()=>router.push('/badges')}>
-                <Chat src={badgesrc} />
+                <Badge src={badgesrc} />
             </Circle4>
             <Circle5 as={motion.div} whileHover={{
                 scale:1.3,
@@ -180,8 +172,16 @@ const Menu1 = ({
                     duration:.1,
                 }
             }}  onClick={()=>router.push('/talk')}>
-                <Trends src={chatsrc} />
+                <Chat src={chatsrc} />
             </Circle5>
+            <Circle6 as={motion.div} whileHover={{
+                scale:1.3,
+                transition: {
+                    duration:.1,
+                }
+            }}  onClick={()=>router.push('/trends')}>
+                <Trends src={trendsrc} />
+            </Circle6>
         </Holder2>
     </Container>
 }

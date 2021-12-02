@@ -83,7 +83,7 @@ export default function Talk() {
   
   return <Container>
     <ContainerHolder1>
-      <Menu1/>
+      <Menu1 chatsrc="chatActive.svg"/>
     </ContainerHolder1>
     <ContainerHolder>
 
