@@ -13,6 +13,7 @@ import QuoteCard from '../comps/QuoteCard';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import router, {useRouter} from 'next/router';
 
 const Holder1 = styled.div `
 display:flex;
@@ -172,6 +173,25 @@ height:100%;
 //   GetQuote()
 // });
 
+const LogoutCont = styled.button `
+border-style:none;
+background-color:transparent;
+color:#0F2046;
+font-size:16px;
+`
+
+const Logout = styled.div `
+display:none;
+align-items:center;
+justify-content:center;
+width:100%;
+padding:40px;
+text-decoration:underline;
+
+@media only screen and (max-width: 1024px) {
+  display:flex;
+}
+`
 
 
 export default function Dashboard() {
@@ -196,6 +216,10 @@ export default function Dashboard() {
         <Menu1 dashsrc="homeActive.svg"/>
       </Holder1>
       <Holder2>
+        {/* <LogoutCont>
+          <Logout src="logout.svg"/>
+
+        </LogoutCont> */}
         <Row>
             <h1>Welcome, </h1>
         </Row>
@@ -224,6 +248,9 @@ export default function Dashboard() {
               <QuoteCard area="quote" header='Quote of the day' quote={Quote} author={Author}/>
             </Column4>
           </Row3>
+          <Logout>
+          <LogoutCont onClick={()=>router.push("./profile")}>Logout</LogoutCont>
+          </Logout>
       </Holder2>
           <ResponsiveMenuu dashsrc="homeActive.svg"/>
       <Holder3>
