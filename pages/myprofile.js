@@ -125,33 +125,6 @@ display:flex;
 flex-direction:row;
 flex-wrap:wrap;
 `
-// const ProfDetails = styled.div`
-// width:92%;
-// `
-
-// const MyJournal = styled.h1`
-// color:#3C2743;
-// `
-
-// const Cont1 = styled.div`
-// display:flex;
-// flex-direction:column;
-// width:80%;
-// height:100vh;
-// gap:50px;
-// padding-top:10px;
-// flex-wrap:wrap;
-// `
-
-// const JournalHolder = styled.div`
-// display:flex;
-// flex-wrap:wrap;
-// width:100%;
-// align-items:center;
-// justify-content:center;
-// gap:3%;
-
-// `
 
 function MyProfile() {
   const [posts, setPosts] = useState([]);
@@ -209,7 +182,7 @@ function MyProfile() {
             <Button routeTo="./talk" ButtonText="Go to chat" /> */}
             <PostHolder>
               <YourPost>
-                <h1>This is Your Post</h1>
+                <h1>My Journals</h1>
               </YourPost>
               <Add>
                 <NewJournalButton onClick={() => router.push("/journal")} />

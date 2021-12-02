@@ -465,8 +465,10 @@
 }
 
 .feedemail {
-  font-size: 20px;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
   color: #0F2046;
 }
 
@@ -531,6 +533,15 @@
   .feedcont {
     display: flex;
     flex-direction: column;
+  }
+
+  .feedtag {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0F2046;
   }
 
 }
