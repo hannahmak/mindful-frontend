@@ -32,7 +32,7 @@ const Joke = styled.p`
     color: #0F2046;
 
     @media only screen and (max-width: 768px) {
-        font-size: 12px;
+        font-size: 20px;
       }
 `
 
@@ -123,7 +123,7 @@ const JokesCard = ({
                     
                 }}
                 >{joke}</Joke>
-                <Button variant="contained" style={{width:248, height:75, borderRadius:60, backgroundColor:"#0F2046", textTransform:'none', fontSize:'24px', }} onClick={()=>{onGenerate();}}>Next</Button>
+                <Button variant="contained" style={{width:248, height:60, borderRadius:60, backgroundColor:"#0F2046", textTransform:'none', fontSize:'24px', }} onClick={()=>{onGenerate();}}>Next</Button>
             </Holder2>
         </Container>
     </ContainerHolder> 
