@@ -205,12 +205,13 @@ export default function Dashboard() {
   }
   const [Quote, setQuote] = useState("")
   const [Author, setAuthor] = useState("")
-
+  const { user } = useUser();
+  
   useEffect(()=> {
     GetQuote()
   }, 1000)
 
-  return (
+  return ( user && (
     <Container>
       <Holder1>
         <Menu1 dashsrc="homeActive.svg"/>
@@ -258,5 +259,5 @@ export default function Dashboard() {
       </Holder3>
 
     </Container>
-  )
+  ))
 }
