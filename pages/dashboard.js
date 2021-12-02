@@ -208,7 +208,7 @@ export default function Dashboard() {
             </Column1>
             <Column2>
               <DashboardCard routeTo="/trends"  area="trend" header='Trends' src="/trendsCover.svg" />
-              <DashboardCard routeTo="/talk" area="chat" header='Chat' src="/chatCover.svg" />
+              <DashboardCard routeTo="/talk" area="chat" header='Chat' src="/chatButtonIcon.svg" />
             </Column2>
           </Row1>
 

@@ -13,6 +13,7 @@ const Container = styled.div`
     box-shadow: 0px 0px 20px #F2F3F7;
     border-radius: 25px;
     gap:10px;
+    padding-top: 20px;
 `
 
 const Header = styled.div`

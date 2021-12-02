@@ -11,6 +11,7 @@ height:100vh
 width:100%;
 display:flex;
 flex-direction:row;
+margin-bottom: 20px;
 `;
 
 const Holder2 = styled.div `
@@ -109,10 +110,16 @@ export default function Badges() {
         
         <CardHolder>
           <CardContainer>
-            <EarnedBadges src="/badges.svg" justify="center" text="First Badge"/>
-            <EarnedBadges src="/message.svg" justify="center" text="Message a friend" description="You messaged a friend through the Chat page!" />
-            <EarnedBadges src="/journal.svg" justify="center" text="First Journal Entry" description="You created a public and private journal entry!" />
-            <EarnedBadges src="/moodbooster.svg" justify="center" text="Message a friend" description="You entered your very first mood! You will now be able to track your mood in the Trends page"/>
+            <EarnedBadges src="/badge1.svg" justify="center" text="First Badge"/>
+            <EarnedBadges src="/badge2.svg" justify="center" text="Message a friend" description="You messaged a friend through the Chat page!" />
+            <EarnedBadges src="/badge3.svg" justify="center" text="First Journal Entry" description="You created a public and private journal entry!" />
+          </CardContainer>
+        </CardHolder>
+        <CardHolder>
+          <CardContainer>
+            <EarnedBadges src="/badge4.svg" justify="center" text="First Badge"/>
+            <EarnedBadges src="/badge6.svg" justify="center" text="Message a friend" description="You messaged a friend through the Chat page!" />
+            <EarnedBadges src="/bage5.svg" justify="center" text="First Journal Entry" description="You created a public and private journal entry!" />
           </CardContainer>
         </CardHolder>
         <TitleHolder>
