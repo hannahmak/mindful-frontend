@@ -222,7 +222,7 @@ export default function Dashboard() {
 
         </LogoutCont> */}
         <Row>
-            <h1>Welcome, </h1>
+            <h1>Welcome, {user.name} </h1>
         </Row>
         <Row0>
              <DashFeed dashsize={"24px"} dashweight={"800"}/>
