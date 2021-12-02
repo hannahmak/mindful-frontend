@@ -37,8 +37,9 @@ const Content = styled.img`
     justify-content: center;
     align-items: center;
     align-self: center;
-    height: 100px;
-    width: 100px;
+    height: 40%;
+    width: 40%;
+    padding-bottom: 40px;
 `
 
 const Text = styled.p`
@@ -48,7 +49,7 @@ const JokeCardHolder = ({
     height= "300px",
     width= "300px",
     text= "Header",
-    src="/quotes.svg",
+    src="/jokeIcon.svg",
     area='',
     onButtonInteract=()=>{} //added for joke ftr.
 }) => {
