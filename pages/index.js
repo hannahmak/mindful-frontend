@@ -92,7 +92,7 @@ const Header = styled.h1 `
   @media only screen and (max-width: 1024px) {
     text-align:center;
     margin-bottom:0px;
-    font-size:45px;
+    font-size:35px;
   }
 `
 
@@ -153,12 +153,12 @@ export default function Home({
         hidden: {
           scale:1,
           opacity:0,
-          x:-50
+
         },
         visible: {
           scale: 1,
           opacity: 1,
-          x:0,
+
           transition: {
             delay:.10,
             duration:2

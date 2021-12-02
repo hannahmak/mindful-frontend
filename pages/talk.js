@@ -4,29 +4,41 @@ import Menu1 from '../comps/Menu1';
 import ResponsiveMenuu from '../comps/ResponsiveMenuu';
 
 const Container = styled.div `
-height:100vh
+height:100%
+align-items:center;
+justify-content:center;
 width:100%;
 display:flex;
 flex-direction:row;
-position:relative;
+
 `;
 
 const Holder2 = styled.div `
 display:flex;
 width:100%;
+height:100%;
 flex-direction:column;
 gap:20px;
 align-items:center;
 justify-content:center;
 
+
+@media only screen and (max-width: 1024px) {
+  gap:20px;
+}
 `;
 
 const ContainerHolder = styled.div`
 display:flex;
 width:92%;
+height:100vh;
 padding:100px;
 align-items:center;
 justify-content:center;
+@media only screen and (max-width: 1024px) {
+  padding:0px;
+  width:100%;
+}
 `
 
 const ContainerHolder1 = styled.div`
@@ -51,6 +63,12 @@ flex-direction:row;
 align-items:center;
 justify-content:center;
 width:50%;
+
+
+@media only screen and (max-width: 1024px) {
+  flex-direction:column;
+  gap:20px;
+}
 `
 
 const Title = styled.h1 `
@@ -58,6 +76,10 @@ color:#0F2046;
 margin-bottom:0px;
 font-size: 55px;
 text-align: center;
+
+@media only screen and (max-width: 1024px) {
+  font-size: 35px;
+}
 
 `
 const Title2 = styled.p `
@@ -98,9 +120,8 @@ export default function Talk() {
           <TalkButton text="BC Crisis Centre" routeTo="https://crisiscentre.bc.ca/get-help/" ></TalkButton>
           <TalkButton back="white" color="#0F2046" routeTo="/messaging"></TalkButton>
         </Buttons>
-        <ResponsiveMenuu/>
       </Holder2>
-
       </ContainerHolder>
+        <ResponsiveMenuu/>
     </Container>
 }

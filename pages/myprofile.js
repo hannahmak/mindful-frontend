@@ -115,8 +115,17 @@ width:100%;
 
 const Rowholder = styled.div `
 display:flex;
+width:100%;
 flex-direction:row;
-flex-wrap:wrap;
+align-items:center;
+justify-content:center;
+
+@media only screen and (max-width: 900px) {
+  flex-direction:column;
+}
+
+
+
 `
 
 function MyProfile() {
@@ -183,7 +192,7 @@ function MyProfile() {
 
             </PostHolder>
             <CardHolder>
-                <Rowholder>
+            <Rowholder>
 
               {posts.map(
                 (post) =>
@@ -191,6 +200,9 @@ function MyProfile() {
                     <figure className={styles.myprofcont} key={post.id}>
                       <div className={styles.myprofmoodcont}>
                         <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>
+                        <figcaption>
+                            {moment(post.timestamp).format("MM/DD/YYYY")}
+                          </figcaption>
                       </div>
                       <div className={styles.myprofinfoholder} >
                         <img className={styles.myprofpicpost} 
@@ -200,10 +212,7 @@ function MyProfile() {
                         <figcaption>{post.description}</figcaption>
 
                         <div className={styles.myprofinfo}>
-                          <figcaption className={styles.myproftag}>{JSON.parse(post.tags)} |</figcaption>
-                          <figcaption>
-                            {moment(post.timestamp).format("| YYYY-MMM-DD")}
-                          </figcaption>
+                          <figcaption className={styles.myproftag}>{JSON.parse(post.tags)}</figcaption>
                         </div>
 
                       </div>
