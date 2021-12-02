@@ -18,6 +18,13 @@ width:100%;
 justify-content:center;
 `
 
+const Holder3 = styled.div`
+display:flex;
+height:12%;
+width:100%;
+justify-content:center;
+`
+
 const Images = styled.img`
 max-height:70px;
 max-width:70px;
@@ -48,6 +55,11 @@ width:20px;
 `
 
 const Chat = styled.img`
+height:20px;
+width:20px;
+`
+
+const Logout = styled.img`
 height:20px;
 width:20px;
 `
@@ -111,13 +123,23 @@ width:50px;
 border-radius:100px;
 `
 
+const Circle7 = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+background: #F2F3F7;
+height:50px;
+width:50px;
+border-radius:100px;
+`
+
 const Holder2 = styled.div`
 display:flex;
 flex:4;
 flex-direction:column;
 align-items:center;
 justify-contnet:center;
-gap:70px;
+gap:50px;
 `
 
 const Menu1 = ({
@@ -127,6 +149,7 @@ const Menu1 = ({
     badgesrc="/badgeNormal.svg",
     chatsrc="/chatt.svg",
     trendsrc="/trends.svg",
+    logoutsrc="/logout.svg"
 }) => {
     return <Container>
         <Holder1>
@@ -182,7 +205,20 @@ const Menu1 = ({
             }}  onClick={()=>router.push('/trends')}>
                 <Trends src={trendsrc} />
             </Circle6>
+            
         </Holder2>
+            <Holder3>
+                <Circle7
+                as={motion.div} whileHover={{
+                    scale:1.3,
+                    transition: {
+                        duration:.1,
+                    }
+                }}  onClick={()=>router.push('/profile')}
+                >
+                <Logout src={logoutsrc}/>
+                </Circle7>
+            </Holder3>
     </Container>
 }
 
