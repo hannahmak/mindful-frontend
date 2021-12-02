@@ -28,7 +28,7 @@ const Holder1 = styled.div`
   display: flex;
   width: 8%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     display: none;
     width: 0%;
   }
@@ -45,7 +45,7 @@ const Holder2 = styled.div`
   justify-content: center;
   gap: 10px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -55,7 +55,7 @@ const Holder3 = styled.div`
   display: flex;
   width: 22%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     display: none;
     width: 0%;
   }

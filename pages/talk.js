@@ -32,7 +32,7 @@ justify-content:center;
 const ContainerHolder1 = styled.div`
 background-color:blue;
 width:8%;
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
   width:0%;
 }

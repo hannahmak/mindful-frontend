@@ -20,7 +20,7 @@ flex-direction:column;
 gap:20px;
 align-items:center;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   margin-bottom:150px;
 }
 
@@ -31,7 +31,7 @@ display:flex;
 width:92%;
 margin-top:50px;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:100%;
 }
 `
@@ -39,7 +39,7 @@ margin-top:50px;
 const ContainerHolder1 = styled.div`
 width:8%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
   width:0%;
 }
@@ -50,7 +50,7 @@ display:flex;
 flex-direction:column;
 width:95%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:85%;
 }
 `
@@ -71,7 +71,7 @@ align-items:center;
 justify-content:center;
 gap:20px;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   flex-wrap:wrap;
   width:85%;
 }

@@ -57,7 +57,7 @@ align-items:center;
 height:100vh;
 gap:50px;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:100%;
 }
 `
@@ -66,7 +66,7 @@ const Holder3 = styled.div`
 height:100vh;
 width:22%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
 }
 `
@@ -75,7 +75,7 @@ const AvatarHolder = styled.div `
 display:flex;
 width:95%;
 flex-wrap:wrap;
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:85%;
 }
 `
@@ -87,7 +87,7 @@ flex-direction:row;
 align-items:center;
 justify-content:center;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:85%;
 }
 `

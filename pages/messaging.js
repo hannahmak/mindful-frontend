@@ -14,7 +14,7 @@ flex-direction:row;
 
 const Holder1 = styled.div `
 width:8%;
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
   width:0%;
 }

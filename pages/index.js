@@ -34,7 +34,7 @@ const WelcomeHeader = styled.div `
   display:flex;
   flex-direction:column;
   flex-wrap:wrap;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     justify-content:center;
     align-items:center;
     gap:50px;
@@ -46,7 +46,7 @@ const ButtonHolder = styled.div `
   flex-direction:row;
   gap:30px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     flex-direction:column;
     align-items:center;
     justify-content:center;
@@ -65,7 +65,7 @@ width:50%;
   justify-content:center;
   padding-left:10%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     padding-left:0%;
     gap:50px;
   }
@@ -78,7 +78,7 @@ width:50%;
   display:flex;
   justify-content:center;
   
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     display:none;
   }
 `
@@ -89,7 +89,7 @@ const Header = styled.h1 `
   font-weight: 800;
   color:#0F2046;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     text-align:center;
     margin-bottom:0px;
     font-size:45px;
@@ -102,7 +102,7 @@ const Text = styled.p `
   color:#0F2046;
   width:100%;
   
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     text-align:center;
     width:100%;
     font-size:16px;
@@ -112,7 +112,7 @@ const Text = styled.p `
 const HeroImage = styled.img `
 width:50%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
 }
 `
@@ -121,7 +121,7 @@ const HeroImage2 = styled.img `
 width:50%;
 display:none;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:flex;
   width:80%;
 }

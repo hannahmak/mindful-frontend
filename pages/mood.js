@@ -18,7 +18,7 @@ const Container = styled.div `
   flex-direction:row;
   
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     margin-bottom:100px;
   }
 `;
@@ -34,7 +34,7 @@ align-items:center;
 justify-content:center;
 gap:10px;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   padding:30px;
 }
 `;
@@ -86,7 +86,7 @@ const ContainerHolder = styled.div`
   width:100%;
   padding:50px;
   padding-top:0px;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     padding:0px;
   }
 `
@@ -95,7 +95,7 @@ const ContainerHolder1 = styled.div`
   background-color:blue;
   width:8%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     display:none;
     width:0%;
   }
@@ -115,7 +115,7 @@ const CardHolder = styled.div `
   width:100%;
   justify-content:center;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     flex-wrap:wrap;
   }
 `
