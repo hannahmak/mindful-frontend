@@ -18,19 +18,17 @@ const Holder1 = styled.div `
 display:flex;
 width:8%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
   width:0%;
 }
-
 `
-
 
 const Holder3 = styled.div `
 display:flex;
 width:22%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
   width:0%;
 }
@@ -61,7 +59,7 @@ align-items:center;
 justify-content:center;
 gap:10px;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:100%;
   margin-bottom:70px;
 }
@@ -81,7 +79,7 @@ align-items:center;
 justify-content:center;
 gap:10px;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   flex-wrap:wrap;
 }
 
@@ -92,7 +90,7 @@ align-items:center;
 justify-content:center;
 width:60%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:100%;
 }
 `
@@ -106,7 +104,7 @@ gap:10px;
 width:40%;
 height:100%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:100%;
 }
 `
@@ -141,7 +139,7 @@ align-items:center;
 justify-content:center;
 gap:10px;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   flex-direction:column;
 }
 `
@@ -153,7 +151,7 @@ justify-content:center;
 width:60%;
 max-height:100%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:100%;
 }
 `
@@ -166,7 +164,7 @@ width:60%;
 height:100%;
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   width:100%;
 }
 `

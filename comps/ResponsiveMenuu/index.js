@@ -14,7 +14,7 @@ background-color:#F2F3F7;
 height:10vh;
 width:100%;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     display:flex;
   }
 `
