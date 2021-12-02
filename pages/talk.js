@@ -96,7 +96,7 @@ export default function Talk() {
         </TitleHolder>
         <Buttons>
           <TalkButton text="BC Crisis Centre" routeTo="https://crisiscentre.bc.ca/get-help/" ></TalkButton>
-          <TalkButton back="white" color="#0F2046" routeTo="#"></TalkButton>
+          <TalkButton back="white" color="#0F2046" routeTo="/messaging"></TalkButton>
         </Buttons>
         <ResponsiveMenuu/>
       </Holder2>

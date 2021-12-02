@@ -175,7 +175,7 @@ function Feed() {
                       </div>
                       <div className={styles.feedinfoholder}>
                         <figcaption className={styles.feedemail}>{post.email}</figcaption>
-                        <figcaption>{post.description}</figcaption>
+                        <figcaption className={styles.feeddesc}>{post.description}</figcaption>
                         <img className={styles.feedpicpost}
                           style={{ width: "100%" }}
                           src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}

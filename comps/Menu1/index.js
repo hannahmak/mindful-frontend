@@ -118,8 +118,6 @@ height:50px;
 width:50px;
 border-radius:100px;
 `
-// for button press inset 0px 0px 4px rgba(0, 0, 0, 0.25)
-
 
 const Holder2 = styled.div`
 display:flex;
@@ -181,7 +179,7 @@ const Menu1 = ({
                 transition: {
                     duration:.1,
                 }
-            }}  onClick={()=>router.push('/messaging')}>
+            }}  onClick={()=>router.push('/talk')}>
                 <Trends src={chatsrc} />
             </Circle5>
         </Holder2>

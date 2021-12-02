@@ -14,7 +14,6 @@ import ResponsiveMenu from '../comps/ResponsiveMenu';
 import QuoteCard from '../comps/QuoteCard';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0'
 
 const Holder1 = styled.div `
 display:flex;
@@ -178,7 +177,7 @@ height:100%;
 
 
 
-function Dashboard() {
+export default function Dashboard() {
   const GetQuote = async ()=> {
     const result = await axios.get("https://quotes.rest/qod?category=inspire");
     console.log(result.data.contents.quotes[0].quote)
@@ -189,23 +188,22 @@ function Dashboard() {
   }
   const [Quote, setQuote] = useState("")
   const [Author, setAuthor] = useState("")
-  const { user, error, isLoading } = useUser();
 
   useEffect(()=> {
     GetQuote()
   }, 1000)
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+
 
   return (
-    user && (    
+    
+    
     <Container>
       <Holder1>
         <Menu1 dashsrc="homeActive.svg"/>
       </Holder1>
       <Holder2>
         <Row>
-            <h1>Welcome, {user.name}</h1>
+            <h1>Welcome,</h1>
         </Row>
         <Row0>
              <DashFeed dashsize={"24px"} dashweight={"800"}/>
@@ -239,6 +237,27 @@ function Dashboard() {
       </Holder3>
 
     </Container>
-  ))
+    // <Container>
+    //     <Menu dashsrc= '/homeActive.svg'/>
+
+    //     <DashCont>
+    //         <Greeting>Good Morning Kelly</Greeting>
+    //         <Date>Saturday, October 06</Date>
+    //         <DashFeed dashsize={"24px"} dashweight={"800"}/>
+
+    //         <CardCont>
+    //           <DashboardCard routeTo="/journal" height="451px" width="431px" area="journal" src="/journalCover.svg" iheight="339px" iwidth="351px"/>
+    //           <DashboardCard routeTo="/trends" height="146px" width="310px" area="trend" header='Trends' src="/trendsCover.svg" iheight="209px" iwidth="224px"/>
+    //           <DashboardCard routeTo="/talk" height="146px" width="310px" area="chat" header='Chat' src="/chatCover.svg" iheight="67px" iwidth="206px" />
+    //           <DashboardCard routeTo="/badges" height="187px" width="772px" area="badge" header='Badges' src="/badgeCover.svg" iheight="57px" iwidth="487px"/>
+    //           <DashboardCard routeTo="/mood" height="275px" width="431px" area="mood" header='Mood Boosters' src="/moodCover.svg" iheight="202px" iwidth="196px"/>
+    //           <DashboardCard height="275px" width="310px" area="quote" header='' />
+    //         </CardCont>
+    //     </DashCont>   
+
+        
+    //     <MoodBar/>
+
+    // </Container>
+  )
 }
-export default withPageAuthRequired(Dashboard)
