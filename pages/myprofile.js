@@ -179,7 +179,7 @@ function MyProfile() {
       <Holder2>
       {/* Column 2 */}
         <AvatarHolder>
-          <Avatar appear="none" name={user.name} />
+          <Avatar width="147px" height="147px" name={user.name} />
         </AvatarHolder>
         <ProfileCont>
             {/* <Button routeTo="./" ButtonText="Back to Home" />

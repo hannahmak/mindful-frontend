@@ -65,7 +65,7 @@ const Avatar = ({
 }) => {
     return <Container>
         <AvatarHolder appear={appear}>
-            <AvatarPicture/>
+            <AvatarPicture width="147px" height="147px"/>
         </AvatarHolder>
         
         <Holder>
