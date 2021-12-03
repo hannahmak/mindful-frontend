@@ -198,7 +198,7 @@ function MyProfile() {
 
               {posts.map(
                 (post) =>
-                  post.publish === 0 && (
+                  (
                     <figure className={styles.myprofcont} key={post.id}>
                       <div className={styles.myprofmoodcont}>
                         <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>
