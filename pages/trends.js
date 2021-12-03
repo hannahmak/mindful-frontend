@@ -47,7 +47,7 @@ export default function Trends({
         </NavCont>
         <Holder2>
             <Text>COMING SOON</Text>
-            <Image src="/comingsoon.png"/>
+            <Image src="/logo.svg"/>
         </Holder2>
         <ResponsiveMenuu trendsrc="/trendsActive.svg"/>
     </Container>
