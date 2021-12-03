@@ -18,6 +18,7 @@ import { borderRadius, style } from '@mui/system';
 import Friend from '../comps/Friend';
 import SearchBar from 'material-ui-search-bar';
 
+
 const Container = styled.div `
 width:100%;
 display:flex;
@@ -111,13 +112,37 @@ width:80px;
 const UserName = styled.p ``
 
 const AddImage = styled.img `
-width:50px;
+width:30px;
 `
 
-export default function AddFriends() {
+export default function AddFriends({
+  src="add.svg",
+  src2="add.svg"
+}) {
 
+  const [addFriend, ClickAddFriend] = useState(true);
 
+  const [addFriend2, ClickAddFriend2] = useState(true);
+
+  if (addFriend === true) {
+    src="add.svg"
+  }
+
+  else {
+    src="added.svg"
+    
+  }
   
+  if (addFriend2 === true) {
+    src2="add.svg"
+  }
+
+  else {
+    src2="added.svg"
+    
+  }
+  
+
     return (
       <Container>
         <Holder1>
@@ -143,7 +168,7 @@ export default function AddFriends() {
                       <UserName>KellyBelly@gmail.com</UserName>
                   </UserInfo>
                   <UserAdd>
-                      <AddImage src="plus.svg"/>
+                      <AddImage onClick={()=>{ClickAddFriend2(!addFriend2)}} src={src2}/>
                   </UserAdd>
               </UserHolder>
 
@@ -153,7 +178,7 @@ export default function AddFriends() {
                       <UserName>KellyBelly@gmail.com</UserName>
                   </UserInfo>
                   <UserAdd>
-                      <AddImage src="plus.svg"/>
+                      <AddImage onClick={()=>{ClickAddFriend(!addFriend)}} src={src}/>
                   </UserAdd>
               </UserHolder>
           </FriendHolder>
