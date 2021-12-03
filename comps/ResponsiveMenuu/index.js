@@ -168,7 +168,7 @@ const ResponsiveMenuu = ({
                 transition: {
                     duration:.1,
                 }
-            }}  onClick={()=>router.push('/messaging')}>
+            }}  onClick={()=>router.push('/talk')}>
                 <Trends src={chatsrc} />
             </Circle5>
             <Circle6 as={motion.div} whileHover={{
