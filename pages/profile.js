@@ -50,7 +50,7 @@ function Profile() {
         
       }}
       >
-        <Image className={styles.profileimage} src={"/../public/aura.svg"} alt={user.name} width={200} height={200}/>
+        <Image className={styles.profileimage} src={"/aura.svg"} alt={user.name} width={200} height={200}/>
         <div className={styles.textholderprofile}>
           <h2 className={styles.greetingprofile}>Hey <span className={styles.profilename}> {user.name} </span></h2>
           <p className={styles.profiletext}>We&apos;re so glad you&apos;re here!</p>
