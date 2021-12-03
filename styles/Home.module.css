@@ -417,7 +417,7 @@
 .feedinfoholder {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  
 }
 
 
@@ -439,7 +439,7 @@
 .feedcont {
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   gap: 33px;
   background-color: white;
   padding:30px;
@@ -465,6 +465,13 @@
   width: 100px;
 }
 
+
+.feedmoodcont {
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  gap:30px;
+}
 .myproftag{
   
 }
@@ -475,6 +482,12 @@
   align-items:center;
   justify-content: space-between;
   
+}
+
+.feedcontholder {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;;
 }
 
 .feedemail {
@@ -551,6 +564,7 @@
     display: flex;
     flex-direction: column;
   }
+
 }
 
 .myjournal {

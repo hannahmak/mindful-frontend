@@ -166,25 +166,30 @@ function Feed() {
                 (post) =>
                   post.publish === 0 && (
                     <figure className={styles.feedcont} key={post.id}>
-                      <div className={styles.feedmoodcont}>
-                        <img className={styles.feedmoodstyling}
-                          src={moodIcon[post.mood]}
-                        ></img>
-                      </div>
-                      <div className={styles.feedinfoholder}>
-                        <figcaption className={styles.feedemail}>{post.email}</figcaption>
-                        <figcaption className={styles.feeddesc}>{post.description}</figcaption>
-                        <img className={styles.feedpicpost}
-                          style={{ width: "100%" }}
-                          src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
-                        ></img>
-                        <div className={styles.feedinfo}>
-                          <figcaption className={styles.feedtag}>{JSON.parse(post.tags)}</figcaption>
-                          <figcaption>
-                          {moment(post.timestamp).format("dddd, MMMM Do")}
-                          </figcaption>
+                      <div className={styles.feedcontholder}>
+
+                        <div className={styles.feedmoodcont}>
+                          <img className={styles.feedmoodstyling}
+                            src={moodIcon[post.mood]}
+                          ></img>
+                          <figcaption className={styles.feedemail}>{post.email}</figcaption>
                         </div>
+
+                        <div className={styles.feedinfoholder}>
+                          <figcaption className={styles.feeddesc}>{post.description}</figcaption>
+                          {/* <img className={styles.feedpicpost}
+                            style={{ width: "100%" }}
+                            src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
+                          ></img> */}
+                        </div>
+
                       </div>
+                            <div className={styles.feedinfo}>
+                              <figcaption className={styles.feedtag}>{JSON.parse(post.tags)}</figcaption>
+                              <figcaption>
+                              {moment(post.timestamp).format("dddd, MMMM Do")}
+                              </figcaption>
+                            </div>
                     </figure>
                   )
               )}
