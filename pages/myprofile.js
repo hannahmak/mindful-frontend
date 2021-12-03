@@ -207,11 +207,13 @@ function MyProfile() {
                           </figcaption>
                       </div>
                       <div className={styles.myprofinfoholder} >
-                        <img className={styles.myprofpicpost} 
+                        {/* <img className={styles.myprofpicpost} 
                           style={{ width: "100%" }}
                           src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
-                        ></img>
+                        ></img> */}
+                        <div className={styles.myprofdescription}>
                         <figcaption>{post.description}</figcaption>
+                        </div>
 
                         <div className={styles.myprofinfo}>
                           <figcaption className={styles.myproftag}>{JSON.parse(post.tags)}</figcaption>

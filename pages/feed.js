@@ -176,11 +176,13 @@ function Feed() {
                         </div>
 
                         <div className={styles.feedinfoholder}>
+                          
                           <figcaption className={styles.feeddesc}>{post.description}</figcaption>
-                          <img className={styles.feedpicpost}
+                         
+                          {/* <img className={styles.feedpicpost}
                             style={{ width: "100%" }}
                             src={`https://mindful-3.s3.us-west-2.amazonaws.com/${post.image_url}`}
-                          ></img>
+                          ></img> */}
                         </div>
 
                       </div>
