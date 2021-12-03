@@ -139,7 +139,7 @@ function MyJournal() {
                         <EntryContHeader>New Journal</EntryContHeader>
                     </NewCont>
                     
-                    {posts.map((post) => post.publish === 0 && (
+                    {posts.map((post) => (
                         <div className={styles.myjournal} key={post.id}>
                             <div className={styles.myjournalcont}>
                                 <div ></div>
