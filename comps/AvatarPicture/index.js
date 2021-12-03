@@ -6,18 +6,21 @@ const Container = styled.div`
 `
 
 const Circle = styled.img`
-    width: 81px;
-    height: 81px;
+    width: ${props=>props.width};
+    height: ${props=>props.height};
     border-radius:${props=>props.borderRadius};
 `
 
 const AvatarPicture = ({
-    source="happy.svg",
+    source="aura.svg",
     borderRadius="160px",
+    width= "81px",
+    height= "81px",
+
  
 }) => {
     return <Container>
-        <Circle className="avatarpicture" borderRadius={borderRadius} src={source}/>
+        <Circle width={width} height={height} className="avatarpicture" borderRadius={borderRadius} src={source}/>
     </Container>
 }
 

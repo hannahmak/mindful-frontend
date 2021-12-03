@@ -28,7 +28,7 @@ const NavCont = styled.div `
 const JournalBar = styled.div`
     display: flex;
     padding-left: 48px;
-    padding-top: 99px;
+    padding-top: 20px;
     flex-direction: row;
     flex-direction:column;
     height:100vh;
@@ -47,7 +47,7 @@ const JournalBarHeader = styled.div `
     font-weight: 800;
     font-size: 36px;
     line-height: 44px;
-    padding-bottom: 95px;
+    padding-bottom: 65px;
     @media only screen and (max-width: 1024px) {
         display:none;
     }
@@ -73,6 +73,9 @@ const EntryMood = styled.div`
     border-radius: 50px;
     margin-right: 30px;
     background-color: #B0D8D2;
+    background-image: url('/addjournalcircle.svg');
+    background-repeat: no-repeat;
+    background-position: center; 
 `
 
 const EntryContHeader = styled.div`
@@ -82,6 +85,54 @@ const EntryContHeader = styled.div`
     @media only screen and (max-width: 1024px) {
         display: none;        
     }
+`
+
+const JournalPostCont = styled.div`
+    display:flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 48px;
+    padding-right: 48px;
+`
+
+const JournalPostHeader = styled.div`
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    color: #0F2046;
+
+    @media only screen and (max-width: 1024px) {
+        font-size: 22px;       
+    }
+`
+
+const JournalPostInfoCont = styled.div`
+    display:flex;
+    margin-top: 86px;
+
+`
+
+const JournalMood = styled.div`
+    min-height: 79px;
+    min-width: 79px;
+    border-radius: 50px;
+    margin-right: 40px;
+    background-image: url('/stressed.svg');
+    background-repeat: no-repeat;
+    background-position: center; 
+`
+
+const JournalText = styled.div`
+    display:flex;
+    flex-grow: 1;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    color: #0F2046;
 `
 
 function MyJournal() {
@@ -153,6 +204,17 @@ function MyJournal() {
                     ))}
                 </MyJournalCont>
             </JournalBar>
+
+            <JournalPostCont>
+                <JournalPostHeader>Friday, December 3rd</JournalPostHeader>
+                <JournalPostInfoCont>
+                    <JournalMood/>
+                    <JournalText>
+                        I am feeling so stressed out. I don’t want to do anything. 
+                    </JournalText>
+                </JournalPostInfoCont>
+
+            </JournalPostCont>
             
             {/* Navigation 2 */}
             <ResponsiveMenuu journsrc="journalActive.svg"/>

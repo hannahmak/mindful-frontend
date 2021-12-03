@@ -33,7 +33,7 @@ const Text = styled.p `
 font-size:55px;
 margin-bottom:-20px;
 font-weight: 800;
-color:#3C2743;
+color:#0F2046;
 `
 const Image = styled.img `
 height:500px;
@@ -50,7 +50,7 @@ export default function Messaging({
         </Holder1>
         <Holder2>
             <Text>COMING SOON</Text>
-            <Image src="/comingsoon.png"/>
+            <Image src="/logo.svg"/>
         </Holder2>
     </Container>
   )
