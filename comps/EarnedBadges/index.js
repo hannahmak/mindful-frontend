@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import router, {useRouter} from 'next/router';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
     display:flex;
@@ -55,7 +56,15 @@ const EarnedBadges = ({
     background="#FFFFFF",
     justify="center",
 }) => {
-    return <Container background={background} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
+    return <Container 
+    as={motion.div}
+    whileHover={{
+        scale:1.05,
+        transition: {
+            duration:.1,
+        }
+        }}
+    background={background} onClick={()=>router.push(routeTo)} area={area} height={height} width={width}>
         <ContentCont justify={justify}>
             <Content src={src}/>
         </ContentCont>
