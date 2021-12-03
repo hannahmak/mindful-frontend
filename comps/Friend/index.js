@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import AvatarPicture from '../AvatarPicture';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div`
 display:flex;
@@ -58,7 +59,7 @@ const Friend = ({
 
 }) => {
 
-    return <Container>
+    return <Container onClick={()=>router.push("./friendprofile")} >
         <Row1>
             <Image src={source}/>
             <Active></Active>
