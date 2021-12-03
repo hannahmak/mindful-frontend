@@ -27,7 +27,6 @@ const FeedCont = styled.div`
 const Holder1 = styled.div`
   display: flex;
   width: 8%;
-
   @media only screen and (max-width: 1024px) {
     display: none;
     width: 0%;
@@ -38,7 +37,6 @@ const Holder2 = styled.div`
   display: flex;
   padding: 40px;
   flex-direction: column;
-  flex-wrap: wrap;
   width: 70%;
   height: 100%;
   align-items: center;

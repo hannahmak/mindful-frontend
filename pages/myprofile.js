@@ -43,7 +43,7 @@ const NewJournalButton = styled.div`
 const Holder1 = styled.div`
 display:flex;
 width:8%;
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display:none;
 }
 `
@@ -116,13 +116,15 @@ width:100%;
 const Rowholder = styled.div `
 display:flex;
 width:100%;
-flex-direction:row;
+flex-direction:column;
 align-items:center;
 justify-content:center;
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   flex-direction:column;
 }
+
+
 
 
 
@@ -196,7 +198,7 @@ function MyProfile() {
 
               {posts.map(
                 (post) =>
-                  post.publish === 0 && (
+                  (
                     <figure className={styles.myprofcont} key={post.id}>
                       <div className={styles.myprofmoodcont}>
                         <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>

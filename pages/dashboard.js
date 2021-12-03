@@ -194,7 +194,7 @@ text-decoration:underline;
 `
 
 
-export default function Dashboard() {
+function Dashboard() {
   const GetQuote = async ()=> {
     const result = await axios.get("https://quotes.rest/qod?category=inspire");
     console.log(result.data.contents.quotes[0].quote)
@@ -205,12 +205,13 @@ export default function Dashboard() {
   }
   const [Quote, setQuote] = useState("")
   const [Author, setAuthor] = useState("")
-
+  const { user } = useUser();
+  
   useEffect(()=> {
     GetQuote()
   }, 1000)
 
-  return (
+  return ( user && (
     <Container>
       <Holder1>
         <Menu1 dashsrc="homeActive.svg"/>
@@ -221,7 +222,7 @@ export default function Dashboard() {
 
         </LogoutCont> */}
         <Row>
-            <h1>Welcome, </h1>
+            <h1>Welcome, {user.name} </h1>
         </Row>
         <Row0>
              <DashFeed dashsize={"24px"} dashweight={"800"}/>
@@ -258,5 +259,6 @@ export default function Dashboard() {
       </Holder3>
 
     </Container>
-  )
+  ))
 }
+export default withPageAuthRequired(Dashboard)

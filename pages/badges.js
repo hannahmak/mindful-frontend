@@ -118,8 +118,8 @@ export default function Badges() {
         <CardHolder>
           <CardContainer>
             <EarnedBadges src="/badge4.svg" justify="center" text="First Badge"/>
-            <EarnedBadges src="/badge6.svg" justify="center" text="Message a friend" description="You messaged a friend through the Chat page!" />
-            <EarnedBadges src="/bage5.svg" justify="center" text="First Journal Entry" description="You created a public and private journal entry!" />
+            <EarnedBadges src="/badge5.svg" justify="center" text="Message a friend" description="You messaged a friend through the Chat page!" />
+            <EarnedBadges src="/badge6.svg" justify="center" text="First Journal Entry" description="You created a public and private journal entry!" />
           </CardContainer>
         </CardHolder>
         <TitleHolder>
