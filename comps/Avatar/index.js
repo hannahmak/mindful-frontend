@@ -49,6 +49,10 @@ const FollowerNumber = styled.span`
     font-weight:800;
 `
 
+const AvatarHolder = styled.div`
+display:${props=>props.appear};
+`
+
 
 const Avatar = ({
     name="John Smith",
@@ -56,9 +60,14 @@ const Avatar = ({
     following="0",
     follower="0",
     display="flex",
+    appear="block"
+    
 }) => {
     return <Container>
-        <AvatarPicture/>
+        <AvatarHolder appear={appear}>
+            <AvatarPicture/>
+        </AvatarHolder>
+        
         <Holder>
             <Name show={show}>{name}</Name>
             <Follow display={display}>

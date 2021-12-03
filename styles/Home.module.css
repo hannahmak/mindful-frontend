@@ -425,6 +425,11 @@
 
 
 /* my profile */
+.myproftimestamp {
+  font-weight: 600;
+  color: #0F2046;
+}
+
 
 .myprofcont {
   display: flex;

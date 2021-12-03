@@ -73,7 +73,7 @@ width:22%;
 
 const AvatarHolder = styled.div `
 display:flex;
-width:95%;
+width:92%;
 flex-wrap:wrap;
 @media only screen and (max-width: 1024px) {
   width:85%;
@@ -179,7 +179,7 @@ function MyProfile() {
       <Holder2>
       {/* Column 2 */}
         <AvatarHolder>
-          <Avatar name={user.name} />
+          <Avatar appear="none" name={user.name} />
         </AvatarHolder>
         <ProfileCont>
             {/* <Button routeTo="./" ButtonText="Back to Home" />
@@ -202,7 +202,7 @@ function MyProfile() {
                     <figure className={styles.myprofcont} key={post.id}>
                       <div className={styles.myprofmoodcont}>
                         <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>
-                        <figcaption>
+                        <figcaption className={styles.myproftimestamp}>
                             {moment(post.timestamp).format("dddd, MMMM Do")}
                           </figcaption>
                       </div>
