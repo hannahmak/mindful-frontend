@@ -181,9 +181,8 @@ function Feed() {
                         <div className={styles.feedinfo}>
                           <figcaption className={styles.feedtag}>{JSON.parse(post.tags)}</figcaption>
                           <figcaption>
-                          {moment(post.timestamp).format("YYYY-MMM-DD")}
+                          {moment(post.timestamp).format("dddd, MMMM Do")}
                           </figcaption>
-
                         </div>
                       </div>
                     </figure>

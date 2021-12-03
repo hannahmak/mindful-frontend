@@ -203,7 +203,7 @@ function MyProfile() {
                       <div className={styles.myprofmoodcont}>
                         <img className={styles.myprofmoodstyling}  src={moodIcon[post.mood]}></img>
                         <figcaption>
-                            {moment(post.timestamp).format("MM/DD/YYYY")}
+                            {moment(post.timestamp).format("dddd, MMMM Do")}
                           </figcaption>
                       </div>
                       <div className={styles.myprofinfoholder} >
