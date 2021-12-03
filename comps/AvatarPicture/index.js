@@ -12,12 +12,12 @@ const Circle = styled.img`
 `
 
 const AvatarPicture = ({
-    source="/",
+    source="happy.svg",
     borderRadius="160px",
  
 }) => {
     return <Container>
-        <Circle borderRadius={borderRadius} src={source}/>
+        <Circle className="avatarpicture" borderRadius={borderRadius} src={source}/>
     </Container>
 }
 

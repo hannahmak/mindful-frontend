@@ -63,7 +63,7 @@ flex-direction:row;
 align-items:center;
 justify-content:center;
 width:50%;
-
+gap:50px;
 
 @media only screen and (max-width: 1024px) {
   flex-direction:column;
