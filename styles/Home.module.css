@@ -415,8 +415,11 @@
 }
 
 .feedinfoholder {
+  align-items: left;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding-left: 100px;
   
 }
 
@@ -462,7 +465,7 @@
 }
 
 .feedmoodstyling {
-  width: 100px;
+  width: 70px;
 }
 
 
@@ -619,6 +622,11 @@
   .myjournalcont {
     justify-content: center;
 
+  }
+
+  .feedinfoholder {
+    padding-left: 90px;
+    
   }
 }
 
