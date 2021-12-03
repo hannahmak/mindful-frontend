@@ -1,6 +1,7 @@
 import { borderRadius, width } from '@mui/system';
 import styled from 'styled-components';
 import AvatarPicture from '../AvatarPicture';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div`
     display:flex;
@@ -61,7 +62,7 @@ const Avatar = ({
         <Holder>
             <Name show={show}>{name}</Name>
             <Follow display={display}>
-                <Following><FollowingNumber>{following}</FollowingNumber> Friends</Following>
+                <Following onClick={()=>router.push("./myfriends")} ><FollowingNumber>{following}</FollowingNumber> Friends</Following>
                 <Follower><FollowerNumber>{follower}</FollowerNumber> Journals</Follower>
             </Follow>
         </Holder>

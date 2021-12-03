@@ -43,6 +43,7 @@ align-items:center;
 justify-content:center;
 margin-bottom:100px;
 z-index:0;
+margin-top:100px;
 
 @media only screen and (max-width: 1024px) {
   width:100%;
@@ -74,17 +75,6 @@ const AddCont = styled.div ``
 
 const FriendCont = styled.div ``
 
-const Left = styled.div `
-display:flex;
-flex-direction:column;
-gap:30px;
-`
-
-const Right = styled.div `
-display:flex;
-flex-direction:column;
-gap:50px;
-`
 
 const FriendHolder = styled.div `
 display:flex;
@@ -103,17 +93,19 @@ const UserHolder = styled.div `
 display:flex;
 width:80%;
 justify-content:space-between;
+align-items:center;
 `
 
 const UserInfo = styled.div `
 display:flex;
 gap:30px;
+align-items:center;
 `
 
 const UserAdd = styled.div ``
 
 const UserImage = styled.img `
-width:50px;
+width:80px;
 `
 
 const UserName = styled.p ``

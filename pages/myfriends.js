@@ -16,6 +16,7 @@ import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import SearchFriends from '../comps/SearchFriends'
 import { style } from '@mui/system';
 import Friend from '../comps/Friend';
+import router, {useRouter} from 'next/router';
 
 const Container = styled.div `
 width:100%;
@@ -42,6 +43,7 @@ align-items:center;
 justify-content:center;
 margin-bottom:100px;
 z-index:0;
+margin-top:100px;
 
 @media only screen and (max-width: 1024px) {
   width:100%;
@@ -114,9 +116,9 @@ export default function Friends() {
 
           <FriendAdd>
             <FriendCont>
-              <FriendName>Number</FriendName>
+              <FriendName>15 Friends</FriendName>
             </FriendCont>
-            <AddCont>
+            <AddCont onClick={()=>router.push("./addfriends")}>
               <Add>Add</Add>
             </AddCont>
           </FriendAdd>
